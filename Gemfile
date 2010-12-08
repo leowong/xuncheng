@@ -31,6 +31,14 @@ group :development, :test do
   gem 'webrat', '0.7.2'
 end
 
+group :development do
+  gem 'capistrano'
+end
+
 group :test do
   gem 'factory_girl_rails', '1.0'
+end
+
+group :production do
+  gem 'pg'
 end
