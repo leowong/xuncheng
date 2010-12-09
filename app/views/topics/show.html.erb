@@ -1,6 +1,9 @@
 <p id="notice"><%= notice %></p>
 
-<%= render @topic %>
+<% div_for @topic do %>
+  <h2><%= @topic.title %></h2>
+  <%= simple_format @topic.content %>
+<% end %>
 
 <p>
   <%= link_to 'Edit', edit_topic_path(@topic) %> |

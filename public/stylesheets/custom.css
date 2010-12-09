@@ -1,5 +1,6 @@
-html {
-    /* do nothing */
+body {
+    font-size: 14px;
+    font-family: "Helvetica Neue", "Luxi Sans", "DejaVu Sans", Tahoma, "Hiragino Sans GB", STHeiti !important;
 }
 
 .container {
