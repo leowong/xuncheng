@@ -2,7 +2,8 @@
 
 <% @topics.each do |topic| %>
   <p>
-    <%= link_to topic.title, topic %>
+    <%= link_to topic.title, topic %><br />
+    <%= time_ago_in_words(topic.updated_at) %> ago
   </p>
 <% end %>
 

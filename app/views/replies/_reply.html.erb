@@ -1,0 +1,6 @@
+<%= div_for reply do %>
+  <p>
+    <strong>Posted <%= time_ago_in_words(reply.created_at) %> ago</strong><br />
+    <%= reply.content %>
+  </p>
+<% end %>
