@@ -1,3 +1,7 @@
 html {
     /* do nothing */
 }
+
+.container {
+    width: 710px;
+}

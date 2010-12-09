@@ -1,15 +1,9 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <b>Title:</b>
-  <%= @topic.title %>
-</p>
+<%= render @topic %>
 
 <p>
-  <b>Content:</b>
-  <%= @topic.content %>
+  <%= link_to 'Edit', edit_topic_path(@topic) %> |
+  <%= link_to 'Destroy', @topic, :confirm => 'Are you sure?', :method => :delete %> |
+  <%= link_to 'See All Topics', topics_path %>
 </p>
-
-
-<%= link_to 'Edit', edit_topic_path(@topic) %> |
-<%= link_to 'Back', topics_path %>
