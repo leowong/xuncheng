@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20101209141331) do
+ActiveRecord::Schema.define(:version => 20101210010033) do
 
   create_table "replies", :force => true do |t|
     t.text     "content"
@@ -18,6 +18,8 @@ ActiveRecord::Schema.define(:version => 20101209141331) do
     t.datetime "created_at"
     t.datetime "updated_at"
   end
+
+  add_index "replies", ["topic_id"], :name => "index_replies_on_topic_id"
 
   create_table "topics", :force => true do |t|
     t.string   "title"
