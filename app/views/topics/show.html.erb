@@ -1,5 +1,3 @@
-<p id="notice"><%= notice %></p>
-
 <%= div_for @topic do %>
   <h2><%= @topic.title %></h2>
   <%= simple_format @topic.content %>
@@ -16,10 +14,12 @@
   <%= render @topic.replies %>
 </div>
 
-<%= form_for [@topic, Reply.new] do |f| %>
-  <p>
-    <%= f.label :content, "New Comment" %><br />
-    <%= f.text_area :content %>
-  </p>
-  <p><%= f.submit "Add Reply" %></p>
+<% if user_signed_in? %>
+  <%= form_for [@topic, Reply.new] do |f| %>
+    <p>
+      <%= f.label :content, "New Comment" %><br />
+      <%= f.text_area :content %>
+    </p>
+    <p><%= f.submit "Add Reply" %></p>
+  <% end %>
 <% end %>
