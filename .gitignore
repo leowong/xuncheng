@@ -1,6 +1,7 @@
 .bundle
 db/*.sqlite3*
 config/database.yml
+config/initializers/setup_mail.rb
 log/*.log
 *.log
 tmp/**/*

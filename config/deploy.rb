@@ -44,6 +44,7 @@ namespace :shared do
   desc "Upload shared config files"
   task :upload_configs do
     upload "config/database.yml", "#{shared_path}/config/database.yml"
+    upload "config/initializers/setup_mail.rb", "#{shared_path}/config/initializers/setup_mail.rb"
   end
 
   desc "Link shared config files"
@@ -53,6 +54,11 @@ namespace :shared do
         ln -sf #{shared_path}/config/$(basename $FILE) #{release_path}/config/$(basename $FILE);
       done
     }
+    run %{
+      for FILE in $(ls #{shared_path}/config/initializers); do
+        ln -sf #{shared_path}/config/initializers/$(basename $FILE) #{release_path}/config/initializers/$(basename $FILE);
+      done
+    }
   end
 
   desc "Setup shared directory."
@@ -60,6 +66,11 @@ namespace :shared do
     run %{
       if [ ! -d "#{shared_path}/config" ]; then
         mkdir #{shared_path}/config;
+      fi
+    }
+    run %{
+      if [ ! -d "#{shared_path}/config/initializers" ]; then
+        mkdir #{shared_path}/config/initializers;
       fi
     }
   end
