@@ -3,6 +3,7 @@
 <% @topics.each do |topic| %>
   <p>
     <%= link_to topic.title, topic %><br />
+    By <strong><%= topic.user.username %></strong><br />
     <%= time_ago_in_words(topic.updated_at) %> ago
   </p>
 <% end %>
