@@ -4,5 +4,84 @@ body {
 }
 
 .container {
-    width: 710px;
+    width: 960px;
+}
+
+.box {
+    background: #fff;
+    border: 2px solid rgba(0, 0, 0, 0.15);
+    border-bottom: 2px solid #ccc;
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    margin-bottom: 0;
+    pading: 0;
+}
+
+#header {
+    height: 40px;
+    background-color: #222;
+    background: -moz-linear-gradient(center top , #444, #111) repeat scroll 0 0 transparent;
+    background: -webkit-gradient(linear, left top, left bottom, from(#444), to(#111));
+}
+
+#wrapper {
+    background-color: #fff;
+    background-image: url("http://www.v2ex.com/static/img/bg.png");
+}
+
+#footer {
+    background-color: white;
+    height: 143px;
+}
+
+#logo {
+    color: white;
+    float: left;
+    font-size: 24px;
+    font-weight: bold;
+    margin-left: 15px;
+}
+
+#logo a {
+    color: white;
+    text-decoration: none;
+}
+
+#navigation {
+    color: white;
+    float: right;
+    font-size: 14px;
+    line-height: 14px;
+    margin-top: 13px;
+    text-align: right;
+}
+
+#navigation a {
+    color: white;
+}
+
+.columns {
+    margin: 0 auto;
+    padding: 12px 0 30px 0;
+}
+
+#main {
+    width: 658px;
+    padding: 10px;
+    float: left;
+}
+
+#side {
+    background-color: transparent;
+    width: 272px;
+    float: right;
+    padding: 10px 0 10px 10px;
+}
+
+#notification .notice.box,
+#notification .alert.box {
+    font-size: 12px;
+    line-height: 16px;
+    padding: 10px;
+    margin-bottom: 20px;
 }

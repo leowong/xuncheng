@@ -7,22 +7,38 @@
   <%= csrf_meta_tag %>
 </head>
 <body>
-  <div class="container">
-    <div id="user_nav">
-      <% if user_signed_in? %>
-        Signed in as <strong><%= current_user.username %></strong>. Not you?
-        <%= link_to "Sign out", destroy_user_session_path %>
-      <% else %>
-        <%= link_to "Sign up", new_user_registration_path %> or <%= link_to "sign in", new_user_session_path %>.
-      <% end %>
+  <div id="header">
+    <div class="container">
+      <div id="logo">
+	<span><%= link_to "Xuncheng", root_url %></span>
+      </div>
+      <div id="navigation">
+	<%= render 'shared/navigation' %>
+      </div>
     </div>
-
-    <p>
-      <%= content_tag :div, notice, :class => 'notice' if notice.present? %>
-      <%= content_tag :div, alert, :class => 'alert' if alert.present? %>
-    </p>
-
-    <%= yield %>
+  </div>
+  <div id="wrapper">
+    <div class="columns container">
+      <div id="main">
+	<div id="notification">
+	  <%= content_tag :div, notice, :class => 'notice box' if notice.present? %>
+	  <%= content_tag :div, alert, :class => 'alert box' if alert.present? %>
+	</div>
+	<div class="box">
+	  <%= yield %>
+	</div>
+      </div>
+      <div id="side">
+	<div class="box">
+	  side...
+	</div>
+      </div>
+    </div>
+    <div id="footer">
+      <div class="container">
+	footer...
+      </div>
+    </div>
   </div>
 </body>
 </html>
