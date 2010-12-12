@@ -3,7 +3,7 @@ class RepliesController < ApplicationController
 
   def create
     @topic = Topic.find(params[:topic_id])
-    @reply = @topic.replies.create(params[:reply])
+    @reply = current_user.replies.create(params[:reply].merge(:topic_id => @topic.id))
 
     redirect_to @topic
   end

@@ -10,16 +10,18 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20101212123050) do
+ActiveRecord::Schema.define(:version => 20101212151951) do
 
   create_table "replies", :force => true do |t|
     t.text     "content"
     t.integer  "topic_id"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "user_id"
   end
 
   add_index "replies", ["topic_id"], :name => "index_replies_on_topic_id"
+  add_index "replies", ["user_id"], :name => "index_replies_on_user_id"
 
   create_table "sessions", :force => true do |t|
     t.string   "session_id", :null => false

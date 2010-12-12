@@ -1,6 +1,11 @@
 <%= div_for reply do %>
   <p>
-    <strong>Posted <%= time_ago_in_words(reply.created_at) %> ago</strong><br />
-    <%= reply.content %>
+    <div style="float:right">
+      #<%= reply_counter + 1 %> - <%= time_ago_in_words(reply.created_at) %> ago<br />
+    </div>
+    <div>
+      <strong><%= reply.user.username %></strong><br />
+      <%= reply.content %>
+    </div>
   </p>
 <% end %>

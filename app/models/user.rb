@@ -3,6 +3,7 @@ class User < ActiveRecord::Base
   attr_accessible :username, :email, :password, :password_confirmation, :remember_me
 
   has_many :topics
+  has_many :replies
 
   validates :username, :presence => true, :uniqueness => true
 
