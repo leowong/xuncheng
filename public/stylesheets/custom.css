@@ -1,8 +1,15 @@
 body {
     font-size: 14px;
     font-family: "Helvetica Neue", "Luxi Sans", "DejaVu Sans", Tahoma, "Hiragino Sans GB", STHeiti !important;
-    /* line-height: 100%; */
     line-height: normal;
+}
+
+h2 {
+    font-size: 22px;
+    font-weight: bold;
+    line-height: 25px;
+    margin: 0;
+    padding: 10px 0 11px 0;
 }
 
 a:link, a:visited, a:active {
@@ -22,6 +29,16 @@ a:link, a:visited, a:active {
     -webkit-border-radius: 5px;
     margin-bottom: 0;
     padding: 0;
+}
+
+.cell {
+    border-bottom: 1px solid #E2E2E2;
+    padding: 10px;
+}
+
+.box .cell {
+    font-size: 12px;
+    line-height: 16px;
 }
 
 #header {
@@ -94,11 +111,6 @@ a:link, a:visited, a:active {
     margin-bottom: 20px;
 }
 
-div.topic {
-    border-bottom: 1px solid #E2E2E2;
-    padding: 10px;
-}
-
 table {
     margin-bottom: 0;
 }
@@ -112,30 +124,63 @@ td {
     vertical-align: top;
 }
 
-.topic td.detail {
+.topic td.details {
     padding-left: 12px;
 }
 
-.topic td.detail .title {
+.topic td.details .title {
     font-size: 16px;
     padding: 3px 0 5px 0;
 }
 
-.topic td.detail .title a:hover,
+.topic td.details .title a:hover,
 .topic td.detail .title a:active {
     text-decoration: underline;
 }
 
-.topic td.detail .summary {
+.topic .meta {
     color: #999;
     font-size: 10px;
     line-height: 16px;
 }
 
-.topic td.detail .summary a:link {
+.topic .meta a:link {
     color: gray;
 }
 
-.topic td.detail .summary a:hover {
+.topic .meta a:hover {
     color: #385F8A;
 }
+
+.breadcrumbs {
+    color: #666;
+    font-size: 16px;
+    height: 18px;
+}
+
+.breadcrumbs .chevron {
+    font-family: 'Lucida Grande';
+}
+
+.breadcrumbs a:hover,
+.breadcrumbs a:active {
+    text-decoration: underline;
+}
+
+.topic .cell .avatar {
+    float: right;
+}
+
+.topic .content {
+    color: #000;
+    font-size: 14px;
+    padding: 10px;
+    line-height: 1.8;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.topic .content p {
+    margin-bottom: 1.8em;
+}
+

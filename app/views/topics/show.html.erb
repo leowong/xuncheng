@@ -1,25 +1,40 @@
-<%= div_for @topic do %>
-  <h2><%= @topic.title %></h2>
-  <%= simple_format @topic.content %>
+<%= div_for @topic, :class => "box" do %>
+  <div class="cell">
+    <div class="avatar">
+      <%= image_tag "http://www.v2ex.com/avatar/1/large" %>
+    </div>
+    <div class="breadcrumbs">
+      <%= link_to "Home", root_url %>
+      <span class="chevron">&nbsp;›&nbsp;</span>
+      <%= link_to "Project Babel", "javascript:void(0)" %>
+    </div>
+    <h2><%= @topic.title %></h2>
+    <div class="meta">
+      By <%= link_to "#{@topic.user.username}", "javascript:void(0)" %>
+      at <%= time_ago_in_words(@topic.updated_at) %> ago
+    </div>
+  </div>
+  <div class="content">
+    <%= simple_format @topic.content %>
+  </div>
 <% end %>
 
-<p>
-  <%= link_to 'Edit', edit_topic_path(@topic) %> |
-  <%= link_to 'Destroy', @topic, :confirm => 'Are you sure?', :method => :delete %> |
-  <%= link_to 'See All Topics', topics_path %>
-</p>
-
-<h2>Replies</h2>
-<div id="replies">
-  <%= render @topic.replies %>
-</div>
+<% unless @topic.replies.empty? %>
+  <div style="height:20px"></div>
+  <div id="replies" class="box">
+    <%= render @topic.replies %>
+  </div>
+<% end %>
 
 <% if user_signed_in? %>
-  <%= form_for [@topic, Reply.new] do |f| %>
-    <p>
-      <%= f.label :content, "New reply" %><br />
-      <%= f.text_area :content %>
-    </p>
-    <p><%= f.submit "Add Reply" %></p>
-  <% end %>
+  <div style="height:20px"></div>
+  <div class="box">
+    <%= form_for [@topic, Reply.new] do |f| %>
+      <p>
+        <%= f.label :content, "New reply" %><br />
+        <%= f.text_area :content %>
+      </p>
+      <p><%= f.submit "Add Reply" %></p>
+    <% end %>
+  </div>
 <% end %>
