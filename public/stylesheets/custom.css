@@ -1,6 +1,13 @@
 body {
     font-size: 14px;
     font-family: "Helvetica Neue", "Luxi Sans", "DejaVu Sans", Tahoma, "Hiragino Sans GB", STHeiti !important;
+    /* line-height: 100%; */
+    line-height: normal;
+}
+
+a:link, a:visited, a:active {
+    color: #636A86;
+    text-decoration: none;
 }
 
 .container {
@@ -14,7 +21,7 @@ body {
     -moz-border-radius: 5px;
     -webkit-border-radius: 5px;
     margin-bottom: 0;
-    pading: 0;
+    padding: 0;
 }
 
 #header {
@@ -40,6 +47,7 @@ body {
     font-size: 24px;
     font-weight: bold;
     margin-left: 15px;
+    line-height: 36px;
 }
 
 #logo a {
@@ -84,4 +92,50 @@ body {
     line-height: 16px;
     padding: 10px;
     margin-bottom: 20px;
+}
+
+div.topic {
+    border-bottom: 1px solid #E2E2E2;
+    padding: 10px;
+}
+
+table {
+    margin-bottom: 0;
+}
+
+td {
+    padding: 0;
+}
+
+.topic td.avatar {
+    width: 48px;
+    vertical-align: top;
+}
+
+.topic td.detail {
+    padding-left: 12px;
+}
+
+.topic td.detail .title {
+    font-size: 16px;
+    padding: 3px 0 5px 0;
+}
+
+.topic td.detail .title a:hover,
+.topic td.detail .title a:active {
+    text-decoration: underline;
+}
+
+.topic td.detail .summary {
+    color: #999;
+    font-size: 10px;
+    line-height: 16px;
+}
+
+.topic td.detail .summary a:link {
+    color: gray;
+}
+
+.topic td.detail .summary a:hover {
+    color: #385F8A;
 }

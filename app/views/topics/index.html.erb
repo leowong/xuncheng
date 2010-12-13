@@ -1,9 +1,24 @@
 <% @topics.each do |topic| %>
-  <p>
-    <%= link_to topic.title, topic %><br />
-    By <strong><%= topic.user.username %></strong><br />
-    <%= time_ago_in_words(topic.updated_at) %> ago
-  </p>
+  <%= div_for topic do %>
+    <table class="topic" cellpadding="0" cellspacing="0" border="0" width="100%">
+      <tr>
+        <td valign="top" class="avatar">
+	  <%= image_tag("http://www.v2ex.com/avatar/428/normal") %>
+        </td>
+        <td class="detail">
+	  <div class="title">
+	    <%= link_to topic.title, topic %>
+	  </div>
+	  <div class="summary">
+	    By <strong><%= link_to "#{topic.user.username}", "javascript:void(0)" %></strong>
+	    in <strong><%= link_to "Misc", "javascript:void(0)" %></strong><br />
+	    <%= time_ago_in_words(topic.updated_at) %> ago
+	    <% unless topic.replies.empty? %>
+	      replied by <strong><%= link_to "#{topic.replies.last.user.username}", "javascript:void(0)" %></strong>
+	    <% end %>
+	  </div>
+        </td>
+      </tr>
+    </table>
+  <% end %>
 <% end %>
-
-<%= link_to 'New Topic', new_topic_path %>
