@@ -1,4 +1,6 @@
 Xuncheng::Application.routes.draw do
+  resources :nodes
+
   devise_for :users
 
   resources :topics do
