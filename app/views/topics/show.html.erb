@@ -23,8 +23,10 @@
   <hr class="space" />
   <div id="replies" class="box">
     <div class="cell">
-      <%= pluralize(@topic.replies.size, "reply") %> |
-      <%= @topic.replies.last.created_at.to_datetime.strftime('%Y-%m-%d %H:%M:%S') %>
+      <div class="summary">
+	<%= pluralize(@topic.replies.size, "reply") %> |
+	<%= @topic.replies.last.created_at.to_datetime.strftime('%Y-%m-%d %H:%M:%S') %>
+      </div>
     </div>
     <%= render @topic.replies %>
   </div>
@@ -33,14 +35,19 @@
 <% if user_signed_in? %>
   <hr class="space" />
   <div class="box">
-    <div class="cell">
     <%= form_for [@topic, Reply.new] do |f| %>
-      <p>
-        <%= f.label :content, "New reply" %><br />
-        <%= f.text_area :content %>
-      </p>
-      <p><%= f.submit "Add Reply" %></p>
+      <div class="cell">
+	<div class="top">
+	  ⬆ <%= link_to "Top", "#top" %>
+	</div>
+        <%= f.label :content, "New reply" %>
+      </div>
+      <div class="cell">
+	<div class="content">
+          <%= f.text_area :content %>
+	  <%= f.submit "Add Reply", :class => "super normal button" %>
+	</div>
+      </div>
     <% end %>
-    </div>
   </div>
 <% end %>
