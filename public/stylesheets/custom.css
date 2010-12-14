@@ -119,13 +119,16 @@ td {
     padding: 0;
 }
 
-.topic td.avatar {
+.topic td.avatar,
+.reply td.avatar {
     width: 48px;
     vertical-align: top;
 }
 
-.topic td.details {
+.topic td.details,
+.reply td.details {
     padding-left: 12px;
+    vertical-align:top;
 }
 
 .topic td.details .title {
@@ -174,13 +177,37 @@ td {
 .topic .content {
     color: #000;
     font-size: 14px;
-    padding: 10px;
+    padding: 10px 10px 0 10px;
     line-height: 1.8;
     overflow: hidden;
     text-overflow: ellipsis;
 }
 
-.topic .content p {
-    margin-bottom: 1.8em;
+.reply .content {
+    color: #000;
+    font-size: 14px;
+    padding: 0;
+    line-height: 1.8;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 
+.topic .content p,
+.reply .content p {
+    margin-bottom: 1em;
+}
+
+.reply .meta {
+    float: right;
+    color: #DDD;
+    font-size: 10px;
+    font-weight: bold;
+}
+
+.reply .author a:link {
+    color: gray;
+}
+
+.reply .author a:hover {
+    color: #385F8A;
+}
