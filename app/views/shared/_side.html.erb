@@ -1,0 +1,12 @@
+<div class="box">
+  <div class="cell">
+    <div class="summary">
+      Nodes
+    </div>
+  </div>
+  <div class="cell" style="font-size:14px">
+    <% Node.all.each do |node| %>
+      <%= link_to node.name, node, :class => 'node' %>
+    <% end %>
+  </div>
+</div>

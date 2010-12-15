@@ -30,17 +30,14 @@
 	</div>
       </div>
       <div id="side">
-	<div class="box">
-	  <div style="padding:10px">
-	    <%= link_to 'New Topic', new_topic_path %>
-	  </div>
-	</div>
+	<%= render 'shared/side' %>
       </div>
     </div>
     <div id="footer">
       <div class="container">
 	  <div style="padding:10px">
 	    Placeholder for footer...
+    	    <%= debug(params) if Rails.env.development? %>
 	  </div>
       </div>
     </div>

@@ -5,8 +5,8 @@
     </div>
     <div class="breadcrumbs">
       <%= link_to "Home", root_url %>
-      <span class="chevron">&nbsp;›&nbsp;</span>
-      <%= link_to "Project Babel", "javascript:void(0)" %>
+      <span class="separator">&nbsp;›&nbsp;</span>
+      <%= link_to @topic.node.name, @topic.node %>
     </div>
     <h2><%= @topic.title %></h2>
     <div class="meta">

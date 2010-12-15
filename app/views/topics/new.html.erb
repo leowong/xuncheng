@@ -1,5 +1,17 @@
-<h1>New topic</h1>
-
-<%= render 'form' %>
-
-<%= link_to 'Back', topics_path %>
+<div class="box">
+  <div class="cell">
+    <div class="breadcrumbs">
+      <%= link_to "Home", root_url %>
+      <span class="separator">&nbsp;›&nbsp;</span>
+      <%= link_to @node.name, @node %>
+      <span class="separator">&nbsp;›&nbsp;</span>
+      New topic
+    </div>
+  </div>
+  <div class="cell new_topic">
+    <%= render 'form' %>
+  </div>
+  <div class="cell cancel_button">
+    <span class="fade"><span class="separator">‹&nbsp;</span>Back to <%= link_to @node.name, @node %></span> 
+  </div>
+</div>

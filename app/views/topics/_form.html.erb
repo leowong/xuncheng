@@ -1,8 +1,8 @@
-<%= form_for(@topic) do |f| %>
+<%= form_for [@node, @topic] do |f| %>
   <% if @topic.errors.any? %>
     <div id="error_explanation">
-      <h2><%= pluralize(@topic.errors.count, "error") %> prohibited this topic from being saved:</h2>
-
+      <strong><%= pluralize(@topic.errors.count, "error") %> prohibited this topic from being saved:</strong>
+      <hr class="space" style="margin-bottom:9px" />
       <ul>
       <% @topic.errors.full_messages.each do |msg| %>
         <li><%= msg %></li>
@@ -12,14 +12,12 @@
   <% end %>
 
   <div class="field">
-    <%= f.label :title %><br />
-    <%= f.text_field :title %>
+    <%= f.text_field :title, :class => 'title' %>
   </div>
   <div class="field">
-    <%= f.label :content %><br />
-    <%= f.text_area :content %>
+    <%= f.text_area :content, :class => 'content' %>
   </div>
   <div class="actions">
-    <%= f.submit %>
+    <%= f.submit :class => 'super normal button' %>
   </div>
 <% end %>

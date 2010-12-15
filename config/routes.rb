@@ -1,11 +1,13 @@
 Xuncheng::Application.routes.draw do
-  resources :nodes
-
-  devise_for :users
-
-  resources :topics do
+  resources :topics, :except => [:new, :create] do
     resources :replies, :only => :create
   end
+
+  resources :nodes do
+    resources :topics, :only => [:new, :create]
+  end
+
+  devise_for :users
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

@@ -11,8 +11,8 @@
 	      <%= link_to topic.title, topic %>
 	    </div>
 	    <div class="meta">
-	      By <strong><%= link_to "#{topic.user.username}", "javascript:void(0)" %></strong>
-	      in <strong><%= link_to "Misc", "javascript:void(0)" %></strong><br />
+	      By <strong><%= link_to topic.user.username, "javascript:void(0)" %></strong>
+	      in <strong><%= link_to topic.node.name, topic.node %></strong><br />
 	      <%= time_ago_in_words(topic.updated_at) %> ago
 	      <% unless topic.replies.empty? %>
 	        replied by <strong><%= link_to "#{topic.replies.last.user.username}", "javascript:void(0)" %></strong>

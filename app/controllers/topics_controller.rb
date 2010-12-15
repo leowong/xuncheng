@@ -10,7 +10,8 @@ class TopicsController < ApplicationController
   end
 
   def new
-    @topic = Topic.new
+    @node = Node.find(params[:node_id])
+    @topic = @node.topics.new
   end
 
   def edit
@@ -18,7 +19,8 @@ class TopicsController < ApplicationController
   end
 
   def create
-    @topic = current_user.topics.build(params[:topic])
+    @node = Node.find(params[:node_id])
+    @topic = current_user.topics.build(params[:topic].merge(:node_id => @node.id))
 
     if @topic.save
       redirect_to(@topic, :notice => 'Topic was successfully created.')

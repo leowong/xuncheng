@@ -1,15 +1,61 @@
-<p id="notice"><%= notice %></p>
-
-<p>
-  <b>Name:</b>
-  <%= @node.name %>
-</p>
-
-<p>
-  <b>Description:</b>
-  <%= @node.description %>
-</p>
-
-
-<%= link_to 'Edit', edit_node_path(@node) %> |
-<%= link_to 'Back', nodes_path %>
+<div class="box">
+  <div class="cell">
+    <div class="topics_counter">
+      <span class="light_light_gray">Total Topics</span>
+      <span class="gray"><strong><%= @node.topics.size %></strong></span>
+    </div>
+    <div class="breadcrumbs">
+      <%= link_to "Home", root_url %>
+      <span class="separator">&nbsp;›&nbsp;</span>
+      <%= @node.name %>
+    </div>
+    <% unless @node.description.empty? %>
+      <div>
+        <hr class="space" style="margin-bottom:10px" />
+        <span class="light_gray"><%= @node.description %></span>
+      </div>
+    <% end %>
+    <div>
+      <hr class="space" style="margin-bottom:15px" />
+      <%= link_to 'New Topic', new_node_topic_path(@node), :class => 'super normal button' %>
+      <hr class="space" style="margin-bottom:4px" />
+    </div>
+  </div>
+  <% unless @node.topics.empty? %>
+    <div class="cell">
+      <table class="node_topics">
+        <thead>
+	  <tr>
+	    <th class="replies">Replies</th>
+	    <th class="subject">Subject</th>
+	    <th class="author">Author</th>
+	    <th class="last_replied">Last Replied</th>
+	   </tr>
+        </thead>
+        <tbody>
+	  <% @node.topics.each do |t| %>
+            <tr class="<%= cycle("odd", "even") %>">
+	      <td class="replies">
+	        <%= t.replies.size %>
+	      </td>
+	      <td class="subject">
+	        <%= link_to t.title, t %>
+	      </td>
+	      <td class="author">
+	        <%= t.user.username %>
+	      </td>
+	      <td class="last_replied">
+	        <%= (t.replies.empty? ? t.created_at : t.replies.first.created_at).to_datetime.strftime('%Y-%m-%d %H:%M:%S') %>
+	      </td>
+            </tr>
+	  <% end %>
+	</tbody>
+      </table>
+    </div>
+  <% end %>
+  <div class="cell">
+    <% if @node.topics.empty? %>
+	Currently there are no topics in this node. You are welcome to create the first one.
+    <% end %>
+  </div>
+</div>
