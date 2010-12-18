@@ -44,7 +44,7 @@ namespace :shared do
   desc "Upload shared config files"
   task :upload_configs do
     upload "config/database.yml", "#{shared_path}/config/database.yml"
-    upload "config/aws_s3.yml", "#{shared_path}/config/database.yml"
+    upload "config/aws_s3.yml", "#{shared_path}/config/aws_s3.yml"
     upload "config/initializers/setup_mail.rb", "#{shared_path}/config/initializers/setup_mail.rb"
   end
 
