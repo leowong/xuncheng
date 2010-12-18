@@ -1,0 +1,12 @@
+<div class="box">
+  <div class="cell">
+    <% @users.each do |user| %>
+      <div>
+	<%= image_tag user.avatar_path %>
+      </div>
+      <div>
+	<%= user.username %>
+      </div>
+    <% end %>
+  </div>
+</div>

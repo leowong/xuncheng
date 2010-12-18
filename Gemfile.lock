@@ -63,6 +63,9 @@ GEM
     net-ssh-gateway (1.0.1)
       net-ssh (>= 1.99.1)
     nokogiri (1.4.4)
+    paperclip (2.3.8)
+      activerecord
+      activesupport
     pg (0.10.0)
     polyglot (0.3.1)
     rack (1.2.1)
@@ -116,6 +119,7 @@ DEPENDENCIES
   capistrano
   devise (= 1.1.5)
   factory_girl_rails (= 1.0)
+  paperclip (= 2.3.8)
   pg
   rails (= 3.0.3)
   rspec-rails (= 2.2.1)

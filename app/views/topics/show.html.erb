@@ -1,7 +1,7 @@
 <%= div_for @topic, :class => "box" do %>
   <div class="cell">
     <div class="avatar">
-      <%= image_tag "http://www.v2ex.com/avatar/1/large" %>
+      <%= link_to image_tag(@topic.user.avatar_path(:original)), @topic.user %>
     </div>
     <div class="breadcrumbs">
       <%= link_to "Home", root_url %>
@@ -10,7 +10,7 @@
     </div>
     <h2><%= @topic.title %></h2>
     <div class="meta">
-      By <%= link_to "#{@topic.user.username}", "javascript:void(0)" %>
+      By <%= link_to "#{@topic.user.username}", @topic.user %>
       at <%= time_ago_in_words(@topic.updated_at) %> ago
     </div>
   </div>
