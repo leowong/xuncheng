@@ -15,7 +15,7 @@
     </div>
   </div>
   <div class="content">
-    <%= simple_format @topic.content %>
+    <%= wrap_text(@topic.content) %>
   </div>
 <% end %>
 
