@@ -1,14 +1,15 @@
 Xuncheng::Application.routes.draw do
-  resources :topics, :except => [:new, :create] do
-    resources :replies, :only => :create
+  resources :topics, :except => [:new, :create], :path => "t" do
+    resources :replies, :only => :create, :path => "r"
   end
 
-  resources :nodes do
-    resources :topics, :only => [:new, :create]
+  resources :nodes, :path => "n" do
+    resources :topics, :only => [:new, :create], :path => "t"
   end
 
   devise_for :users
-  resources :users, :only => [:index, :show, :edit, :update]
+
+  resources :users, :only => [:index, :show, :edit, :update], :path => "u"
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
