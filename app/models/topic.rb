@@ -10,4 +10,14 @@ class Topic < ActiveRecord::Base
   validates :user_id, :presence => true
 
   default_scope :order => 'topics.updated_at DESC'
+
+  scope :replied_by, lambda { |user| topics_replied_by(user) }
+
+  private
+
+  def self.topics_replied_by(user)
+    joins(:user, :replies).
+      where('topics.user_id <> :user_id and replies.user_id = :user_id', :user_id => user).
+      select('DISTINCT topics.*')
+  end
 end

@@ -1,0 +1,34 @@
+<table class="item_listing">
+  <thead>
+    <tr>
+      <th class="replies">Replies</th>
+      <th class="subject">Subject</th>
+      <th class="author">Author</th>
+      <th class="last_replied">Last Replied</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% items.each do |t| %>
+      <tr class="<%= cycle("odd", "even") %>">
+	<td class="replies">
+	  <span <%= raw('class="mist"') if t.replies.size == 0 %>>
+	    <%= t.replies.size %>
+          </span>
+	</td>
+	<td class="subject">
+	  <%= link_to t.title, t %>
+	</td>
+	<td class="author">
+	  <% if (writer ||= nil) == "replier" && !t.replies.empty? %>
+	    <%= link_to t.replies.first.user.username, t.replies.first.user %>
+	  <% else %>
+	    <%= link_to t.user.username, t.user %>
+	  <% end %>
+	</td>
+	<td class="last_replied">
+	  <%= (t.replies.empty? ? t.created_at : t.replies.first.created_at).to_datetime.strftime('%Y-%m-%d %H:%M:%S') %>
+	</td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

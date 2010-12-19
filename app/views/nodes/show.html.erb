@@ -1,7 +1,7 @@
 <div class="box">
   <div class="cell">
     <div class="topics_counter">
-      <span class="light_light_gray">Total Topics</span>
+      <span class="mist">Total Topics</span>
       <span class="gray"><strong><%= @node.topics.size %></strong></span>
     </div>
     <div class="breadcrumbs">
@@ -12,7 +12,7 @@
     <% unless @node.description.empty? %>
       <div>
         <hr class="space" style="margin-bottom:10px" />
-        <span class="light_gray"><%= @node.description %></span>
+        <span class="ash"><%= @node.description %></span>
       </div>
     <% end %>
     <div>
@@ -23,39 +23,14 @@
   </div>
   <% unless @node.topics.empty? %>
     <div class="cell">
-      <table class="node_topics">
-        <thead>
-	  <tr>
-	    <th class="replies">Replies</th>
-	    <th class="subject">Subject</th>
-	    <th class="author">Author</th>
-	    <th class="last_replied">Last Replied</th>
-	   </tr>
-        </thead>
-        <tbody>
-	  <% @node.topics.each do |t| %>
-            <tr class="<%= cycle("odd", "even") %>">
-	      <td class="replies">
-	        <%= t.replies.size %>
-	      </td>
-	      <td class="subject">
-	        <%= link_to t.title, t %>
-	      </td>
-	      <td class="author">
-	        <%= t.user.username %>
-	      </td>
-	      <td class="last_replied">
-	        <%= (t.replies.empty? ? t.created_at : t.replies.first.created_at).to_datetime.strftime('%Y-%m-%d %H:%M:%S') %>
-	      </td>
-            </tr>
-	  <% end %>
-	</tbody>
-      </table>
+      <div class="node_topics">
+	<%= render 'shared/item_listing', :items => @node.topics %>
+      </div>
     </div>
   <% end %>
   <div class="cell">
     <% if @node.topics.empty? %>
-	Currently there are no topics in this node. You are welcome to create the first one.
+	Be the first one!
     <% end %>
   </div>
 </div>

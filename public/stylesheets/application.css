@@ -4,46 +4,13 @@ body {
     line-height: normal;
 }
 
-hr.space {
-    margin-bottom: 19px;
-}
-
-.fade {
-    #999;
-}
-
-h2 {
-    font-size: 22px;
-    font-weight: bold;
-    line-height: 25px;
-    margin: 0;
-    padding: 10px 0 11px 0;
-}
-
-a:link, a:visited, a:active {
-    color: #636A86;
-    text-decoration: none;
-}
-
-.light_light_gray {
-    color: #DDD;
-}
-
-.light_gray {
-    color: #AAA;
-}
-
-.gray {
-    color: gray;
-}
-
 .container {
     width: 960px;
 }
 
 .box {
-    background: #fff;
-    border: 2px solid rgba(0, 0, 0, 0.15);
+    background: #FFF;
+    border: 2px solid #DDD;
     border-bottom: 2px solid #ccc;
     -moz-border-radius: 5px;
     -webkit-border-radius: 5px;
@@ -61,6 +28,43 @@ a:link, a:visited, a:active {
     line-height: 16px;
 }
 
+a:link, a:visited, a:active {
+    color: #636A86;
+    text-decoration: none;
+}
+
+.fade {
+    #999;
+}
+
+.mist {
+    color: #DDD;
+}
+
+.ash {
+    color: #AAA;
+}
+
+.gray {
+    color: gray;
+}
+
+.orange {
+    color: #F93;
+}
+
+hr.space {
+    margin-bottom: 19px;
+}
+
+h2 {
+    font-size: 22px;
+    font-weight: bold;
+    line-height: 25px;
+    margin: 0;
+    padding: 10px 0 11px 0;
+}
+
 #header {
     height: 40px;
     background-color: #222;
@@ -70,7 +74,7 @@ a:link, a:visited, a:active {
 
 #wrapper {
     background-color: #fff;
-    background-image: url("http://www.v2ex.com/static/img/bg.png");
+    background-image: url("/images/background/default.png");
 }
 
 #footer {
@@ -291,56 +295,6 @@ td {
     text-decoration: underline;
 }
 
-
-table.node_topics th,
-table.node_topics td {
-    font-size: 14px;
-    line-height: 24px;
-}
-
-table.node_topics th.replies,
-table.node_topics td.replies {
-    width: 50px;
-    text-align: right;
-}
-
-table.node_topics td.replies {
-    color: #F93;
-    font-weight: bold;
-}
-
-table.node_topics th.subject,
-table.node_topics td.subject {
-    width: auto;
-    text-align: left;
-}
-
-table.node_topics th.author,
-table.node_topics td.author {
-    width: 80px;
-    text-align: left;
-}
-
-table.node_topics td.author {
-    color: gray;
-}
-
-table.node_topics th.last_replied,
-table.node_topics td.last_replied {
-    width: 110px;
-    text-align: left;
-}
-
-table.node_topics td.last_replied {
-    color: #999;
-    font-size: 12px;
-}
-
-.box .cell .topics_counter {
-    float: right;
-    font-size:14px;
-}
-
 table tr th {
     background-color: #FFF;
     color: #CCC;
@@ -354,6 +308,65 @@ table tr td {
 
 table tr.even td {
     background-color: #F9F9F9;
+}
+
+.item_listing th,
+.item_listing td {
+    font-size: 14px;
+    line-height: 24px;
+}
+
+.item_listing th.replies,
+.item_listing td.replies {
+    width: 50px;
+    text-align: right;
+}
+
+.item_listing td.replies {
+    color: #F93;
+    font-weight: bold;
+}
+
+.user_topics .item_listing td.replies,
+.user_replies .item_listing td.replies {
+    color: #393;
+}
+
+.item_listing th.subject,
+.item_listing td.subject {
+    width: auto;
+    text-align: left;
+}
+
+.item_listing th.author,
+.item_listing td.author {
+    width: 80px;
+    text-align: left;
+}
+
+.item_listing td.author a {
+    color: gray;
+}
+
+.item_listing td.author a:hover {
+    color: #385F8A;
+    text-decoration: none;
+}
+
+.item_listing th.last_replied,
+.item_listing td.last_replied {
+    width: 110px;
+    text-align: left;
+}
+
+.item_listing td.last_replied {
+    color: #999;
+    font-size: 12px;
+}
+
+.box .cell .topics_counter {
+    float: right;
+    font-size:14px;
 }
 
 #error_explanation ul {
@@ -412,6 +425,37 @@ table tr.even td {
 .cell.cancel_button a:hover {
     color: #636A86;
     text-decoration: underline;
+}
+
+table.user td.avatar {
+    width: 73px;
+    align: center;
+    vertical-align: top;
+    padding: 0 5px;
+}
+
+table.user td.details {
+    padding: 0 0 0 10px;
+    vertical-align: top;
+}
+
+table.user td.details h2 {
+    margin: 0;
+    padding: 0 0 5px 0;
+    font-size: 22px;
+    line-height: 22px;
+}
+
+table.user td.details .signature {
+    color: #999;
+    font-size: 16px;
+    line-height: 16px;
+    padding-bottom: 5px;
+}
+
+table.user td.details .meta {
+    color: #DDD;
+    font-size: 12px;
 }
 
 .super.button { background-image: url("/images/bg_blended.png"); padding: 4px 15px 4px 15px; border: 1px solid rgba(0,0,0,.25); border-bottom-color: rgba(0,0,0,.35); -webkit-border-radius: 5px; -moz-border-radius: 5px; border-radius: 5px; font-size: 12px; line-height: 12px; outline: none; }
