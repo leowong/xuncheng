@@ -327,6 +327,32 @@ td {
     vertical-align:top;
 }
 
+.topic td.details .counter {
+    float: right;
+}
+
+.topic td.details .counter a {
+    line-height: 12px;
+    font-weight: bold;
+    color: white;
+    background-color: #AAB0C6;
+    display: block;
+    padding: 2px 10px 2px 10px;
+    border-radius: 12px;
+    -moz-border-radius: 12px;
+    -webkit-border-radius: 12px;
+    margin: 18px 12px 0 0;
+    text-decoration: none;
+}
+
+.topic td.details .counter a:visited {
+    background-color: #E5E5E5;
+}
+
+.topic td.details .counter a:hover {
+    background-color: #969CB1;
+}
+
 .topic td.details .title {
     font-size: 16px;
     padding: 3px 0 5px 0;

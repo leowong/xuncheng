@@ -7,8 +7,11 @@
 	    <%= link_to image_tag(topic.user.avatar_path, :alt => topic.user.username), topic.user %>
           </td>
           <td class="details">
+	    <div class="counter">
+	      <%= link_to topic.replies.size.to_s, "#{url_for(topic)}#u#{topic.replies.size}" %>
+	    </div>
 	    <div class="title">
-	      <%= link_to topic.title, topic %>
+	      <%= link_to topic.title, "#{url_for(topic)}#u#{topic.replies.size}" %>
 	    </div>
 	    <div class="meta">
 	      By <strong><%= link_to topic.user.username, topic.user %></strong>
