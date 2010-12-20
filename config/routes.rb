@@ -7,7 +7,13 @@ Xuncheng::Application.routes.draw do
     resources :topics, :only => [:new, :create], :path => "t"
   end
 
-  devise_for :users
+  devise_for :users, :path => "d" do
+    get "login", :to => "devise/sessions#new"
+    get "logout", :to => "devise/sessions#destroy"
+    get "signup", :to => "devise/registrations#new"
+  end
+
+  match 'settings' => 'users#edit', :as => :settings
 
   resources :users, :only => [:index, :show, :edit, :update], :path => "u"
 

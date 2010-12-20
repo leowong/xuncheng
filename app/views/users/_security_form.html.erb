@@ -1,0 +1,29 @@
+<%= form_for setup_user(@user), :html => { :multipart => true } do |f| %>
+  <%# TODO gracefully displaying error messages %>
+
+  <table cellpadding="5" cellspacing="0" border="0">
+    <tr>
+      <td class="name">
+	<%= f.label :password %>
+      </td>
+      <td class="value">
+	<%= f.password_field :password, :class => "sl" %>
+      </td>
+    </tr>
+    <tr>
+      <td class="name">
+	<%= f.label :password_confirmation, "Confirmation" %>
+      </td>
+      <td class="value">
+	<%= f.password_field :password_confirmation, :class => "sl" %>
+      </td>
+    </tr>
+    <tr>
+      <td>
+      </td>
+      <td>
+	<%= f.submit "Change Password", :class => "super normal button" %>
+      </td>
+    </tr>
+  </table>
+<% end %>

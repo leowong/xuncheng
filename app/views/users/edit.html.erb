@@ -1,26 +1,39 @@
 <div class="box">
   <div class="cell">
-    <%= form_for setup_user(@user), :html => { :multipart => true } do |f| %>
-      <% if @user.errors.any? %>
-        <div id="error_explanation">
-          <h2><%= pluralize(@user.errors.count, "error") %> prohibited this user from being saved:</h2>
+    <div class="breadcrumbs">
+      <%= link_to "Home", root_url %>
+      <span class="separator">&nbsp;›&nbsp;</span>
+      Settings
+    </div>
+  </div>
 
-          <ul>
-            <% @user.errors.full_messages.each do |msg| %>
-              <li><%= msg %></li>
-            <% end %>
-          </ul>
-        </div>
-      <% end %>
+  <div class="cell">
+    <div class="form">
+      <%= render 'profile_form' %>
+    </div>
+  </div>
+</div>
 
-      <div>
-	<%= f.fields_for :avatar do |builder| %>
-	  <%= builder.file_field :attachment %>
-        <% end %>
-      </div>
-      <div>
-	<%= f.submit %>
-      </div>
-    <% end %>
+<hr class="space" />
+<div class="box">
+  <div class="cell">
+    Avatar
+  </div>
+  <div class="cell">
+    <div class="form">
+      <%= render 'avatar_form' %>
+    </div>
+  </div>
+</div>
+
+<hr class="space" />
+<div class="box">
+  <div class="cell">
+    Security
+  </div>
+  <div class="cell">
+    <div class="form">
+      <%= render 'security_form' %>
+    </div>
   </div>
 </div>

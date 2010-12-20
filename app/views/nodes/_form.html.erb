@@ -1,25 +1,29 @@
 <%= form_for(@node) do |f| %>
-  <% if @node.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@node.errors.count, "error") %> prohibited this node from being saved:</h2>
+  <%= render 'shared/error_messages', :object => f.object %>
 
-      <ul>
-      <% @node.errors.full_messages.each do |msg| %>
-        <li><%= msg %></li>
-      <% end %>
-      </ul>
-    </div>
-  <% end %>
-
-  <div class="field">
-    <%= f.label :name %><br />
-    <%= f.text_field :name %>
-  </div>
-  <div class="field">
-    <%= f.label :description %><br />
-    <%= f.text_field :description %>
-  </div>
-  <div class="actions">
-    <%= f.submit %>
-  </div>
+  <table cellpadding="5" cellspacing="0" border="0">
+    <tr>
+      <td class="name">
+	<%= f.label :name %>
+      </td>
+      <td class="value">
+	<%= f.text_field :name, :class => "sl" %>
+      </td>
+    </tr>
+    <tr>
+      <td class="name">
+	<%= f.label :description %>
+      </td>
+      <td class="value">
+	<%= f.text_field :description, :class => "sl" %>
+      </td>
+    </tr>
+    <tr>
+      <td>
+      </td>
+      <td>
+	<%= f.submit "Create Node", :class => "super normal button" %>
+      </td>
+    </tr>
+  </table>
 <% end %>

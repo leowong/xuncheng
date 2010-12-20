@@ -1,0 +1,29 @@
+<%= form_for setup_user(@user), :html => { :multipart => true } do |f| %>
+  <%# TODO gracefully displaying error messages %>
+
+  <table cellpadding="5" cellspacing="0" border="0">
+    <tr>
+      <td class="name">
+	<%= f.label :username %>
+      </td>
+      <td class="value">
+	<%= f.text_field :username, :class => "sl" %>
+      </td>
+    </tr>
+    <tr>
+      <td class="name">
+	<%= f.label :email %>
+      </td>
+      <td class="value">
+	<%= f.text_field :email, :class => "sl" %>
+      </td>
+    </tr>
+    <tr>
+      <td>
+      </td>
+      <td>
+	<%= f.submit "Save Settings", :class => "super normal button" %>
+      </td>
+    </tr>
+  </table>
+<% end %>

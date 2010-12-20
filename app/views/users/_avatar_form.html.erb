@@ -1,0 +1,33 @@
+<%= form_for setup_user(@user), :html => { :multipart => true } do |f| %>
+  <%# TODO gracefully displaying error messages %>
+
+  <table cellpadding="5" cellspacing="0" border="0">
+    <tr>
+      <td class="name">
+	Current
+      </td>
+      <td class="value">
+	<%= image_tag @user.avatar.attachment.url %> &nbsp;
+	<%= image_tag @user.avatar.attachment.url(:normal) %> &nbsp;
+	<%= image_tag @user.avatar.attachment.url(:mini) %>
+      </td>
+    </tr>
+    <%= f.fields_for :avatar do |builder| %>
+      <tr>
+	<td class="name">
+	  <%= f.label :attachment, "New" %>
+	</td>
+	<td class="value">
+	  <%= builder.file_field :attachment %>
+	</td>
+      </tr>
+    <% end %>
+    <tr>
+      <td>
+      </td>
+      <td>
+	<%= f.submit "Upload Avatar", :class => "super normal button" %>
+      </td>
+    </tr>
+  </table>
+<% end %>

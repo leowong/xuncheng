@@ -1,15 +1,5 @@
 <%= form_for [@node, @topic] do |f| %>
-  <% if @topic.errors.any? %>
-    <div id="error_explanation">
-      <strong><%= pluralize(@topic.errors.count, "error") %> prohibited this topic from being saved:</strong>
-      <hr class="space" style="margin-bottom:9px" />
-      <ul>
-      <% @topic.errors.full_messages.each do |msg| %>
-        <li><%= msg %></li>
-      <% end %>
-      </ul>
-    </div>
-  <% end %>
+  <%= render 'shared/error_messages', :object => f.object %>
 
   <div class="field">
     <%= f.text_field :title, :class => 'title' %>
