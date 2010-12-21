@@ -11,8 +11,8 @@ class User < ActiveRecord::Base
   validates :username, :presence => true, :uniqueness => true
 
   # Include default devise modules. Others available are:
-  # :token_authenticatable, :confirmable, :lockable and :timeoutable
-  devise :database_authenticatable, :registerable,
+  # :registerable, :token_authenticatable, :confirmable, :lockable and :timeoutable
+  devise :database_authenticatable,
          :recoverable, :rememberable, :trackable, :validatable
 
   def avatar_path(style = :normal)

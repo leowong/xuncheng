@@ -1,21 +1,21 @@
 <%= form_for setup_user(@user), :html => { :multipart => true } do |f| %>
-  <%# TODO gracefully displaying error messages %>
+  <%= render 'shared/error_messages', :object => f.object %>
 
   <table cellpadding="5" cellspacing="0" border="0">
     <tr>
       <td class="name">
-	<%= f.label :username %>
+	Username
       </td>
       <td class="value">
-	<%= f.text_field :username, :class => "sl" %>
+	<%= @user.username %>
       </td>
     </tr>
     <tr>
       <td class="name">
-	<%= f.label :email %>
+	Email
       </td>
       <td class="value">
-	<%= f.text_field :email, :class => "sl" %>
+	<%= @user.email %>
       </td>
     </tr>
     <tr>

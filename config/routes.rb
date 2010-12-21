@@ -10,12 +10,12 @@ Xuncheng::Application.routes.draw do
   devise_for :users, :path => "d" do
     get "login", :to => "devise/sessions#new"
     get "logout", :to => "devise/sessions#destroy"
-    get "signup", :to => "devise/registrations#new"
   end
 
+  match 'signup' => 'users#new', :as => :signup
   match 'settings' => 'users#edit', :as => :settings
 
-  resources :users, :only => [:index, :show, :edit, :update], :path => "u"
+  resources :users, :only => [:index, :show, :new, :edit, :create, :update], :path => "u"
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

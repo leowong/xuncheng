@@ -7,9 +7,9 @@
 	Current
       </td>
       <td class="value">
-	<%= image_tag @user.avatar.attachment.url %> &nbsp;
-	<%= image_tag @user.avatar.attachment.url(:normal) %> &nbsp;
-	<%= image_tag @user.avatar.attachment.url(:mini) %>
+	<%= image_tag @user.avatar_path(:original) %> &nbsp;
+	<%= image_tag @user.avatar_path(:normal) %> &nbsp;
+	<%= image_tag @user.avatar_path(:mini) %>
       </td>
     </tr>
     <%= f.fields_for :avatar do |builder| %>

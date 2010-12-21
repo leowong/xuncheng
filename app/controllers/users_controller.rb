@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-  before_filter :authenticate_user!, :except => [:index, :show]
+  before_filter :authenticate_user!, :except => [:index, :show, :new, :create]
 
   def index
     @users = User.all
@@ -9,16 +9,43 @@ class UsersController < ApplicationController
     @user = User.find(params[:id])
   end
 
+  def new
+    @user = User.new
+  end
+
   def edit
     @user = current_user
+  end
+
+  def create
+    @user = User.new(params[:user])
+
+    if @user.save
+      sign_in @user
+      redirect_to(root_url, :notice => 'You have signed up successfully. Please update your profile.')
+    else
+      @user.clean_up_passwords
+      render :action => "new"
+    end
   end
 
   def update
     @user = current_user
 
-    if @user.update_attributes(params[:user])
+    [:username, :email].map { |p| params[:user].delete(p) }
+
+    if params[:user][:password].blank?
+      [:password, :password_confirmation, :current_password].map { |p| params[:user].delete(p) }
+    else
+      unless @user.valid_password?(params[:user][:current_password])
+        @user.errors[:base] << "The password you entered is incorrect"
+      end
+    end
+
+    if  @user.errors[:base].empty? && @user.update_attributes(params[:user])
       redirect_to(@user, :notice => 'User was successfully updated.')
     else
+      @user.clean_up_passwords
       render :action => "edit"
     end
   end

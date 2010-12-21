@@ -8,6 +8,7 @@ class Avatar < Asset
 
     :storage => Rails.env.production? ? :s3 : :filesystem,
 
+    :default_url => '/images/avatar/default/:style.png',
     :url => (Rails.env.production? ? "" : "/") +  "avatar/:hash_path/:style.:extension",
     :path => (Rails.env.production? ? "" : ":rails_root/public/") + "avatar/:hash_path/:style.:extension",
 

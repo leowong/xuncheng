@@ -1,0 +1,63 @@
+<div class="box">
+  <div class="cell">
+    <div class="breadcrumbs">
+      <%= link_to "Home", root_url %>
+      <span class="separator">&nbsp;›&nbsp;</span>
+      Sign up
+    </div>
+  </div>
+
+  <div class="cell">
+    <div class="form">
+      <%= form_for setup_user(@user), :html => { :multipart => true } do |f| %>
+        <%= render 'shared/error_messages', :object => f.object %>
+
+	<table cellpadding="5" cellspacing="0" border="0">
+	  <tr>
+	    <td class="name">
+	      <%= f.label :username %>
+	    </td>
+	    <td class="value">
+	      <%= f.text_field :username, :class => "sl" %>
+	    </td>
+	  </tr>
+	  <tr>
+	    <td class="name">
+	      <%= f.label :email %>
+	    </td>
+	    <td class="value">
+	      <%= f.text_field :email, :class => "sl" %>
+	    </td>
+	  </tr>
+	  <tr>
+	    <td class="name">
+	      <%= f.label :password %>
+	    </td>
+	    <td class="value">
+	      <%= f.password_field :password, :class => "sl" %>
+	    </td>
+	  </tr>
+	  <tr>
+	    <td class="name">
+	      <%= f.label :password_confirmation, "Confirmation" %>
+	    </td>
+	    <td class="value">
+	      <%= f.password_field :password_confirmation, :class => "sl" %>
+	    </td>
+	  </tr>
+	  <tr>
+	    <td>
+	    </td>
+	    <td>
+	      <%= f.submit "Sign Up", :class => "super normal button" %>
+	    </td>
+	  </tr>
+	</table>
+      <% end %>
+    </div>
+  </div>
+
+  <div class="cell">
+    <%= link_to "Forgot your password?", new_password_path(:user) %>
+  </div>
+</div>
