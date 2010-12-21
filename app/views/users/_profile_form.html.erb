@@ -19,6 +19,30 @@
       </td>
     </tr>
     <tr>
+      <td class="name">
+	<%= f.label :signature %>
+      </td>
+      <td class="value">
+	<%= f.text_field :signature, :class => "sl" %>
+      </td>
+    </tr>
+    <tr>
+      <td class="name">
+	<%= f.label :biography, "Bio" %>
+      </td>
+      <td class="value">
+	<%= f.text_area :biography, :class => "ml" %>
+      </td>
+    </tr>
+    <tr>
+      <td class="name">
+      </td>
+      <td class="value">
+	<%= f.check_box :email_publishing %>
+	<%= f.label :email_publishing, "Let others see my email address" %>
+      </td>
+    </tr>
+    <tr>
       <td>
       </td>
       <td>

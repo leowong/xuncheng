@@ -6,19 +6,42 @@
 	  <%= image_tag @user.avatar_path(:original), :alt => @user.username %>
 	</td>
 	<td class="details" width="auto" align="left" valign="top">
+
 	  <div class="username">
 	    <h2><%= @user.username %></h2>
 	  </div>
-	  <div class="signature">
-	    <%= @user.email %>
-	  </div>
+
+	  <% if @user.signature %>
+	    <div class="signature">
+	      <%= @user.signature %>
+	    </div>
+          <% end %>
+
 	  <div class="meta">
 	    Member #<%= @user.id %>.
 	    Joined at <%= @user.created_at.to_datetime.strftime('%Y-%m-%d %H:%M:%S') %>.
 	  </div>
+
+	  <% if @user.email_publishing %>
+	    <hr class="space" style="margin-bottom:2px" />
+	    <div class="email">
+	      <div class="icon"><%= image_tag 'icons/email.png', :size => "16x16" %></div>
+	      <div>
+		<%= mail_to @user.email, @user.email, :encode => "hex" %>
+	      </div>
+	    </div>
+          <% end %>
+
 	</td>
       </tr>
     </table>
+  </div>
+  <div class="cell biography">
+    <% if @user.biography %>
+      <div class="biography">
+        <%= wrap_text(@user.biography) %>
+      </div>
+    <% end %>
   </div>
 </div>
 

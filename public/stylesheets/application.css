@@ -656,6 +656,21 @@ table.user td.details .meta {
     font-size: 12px;
 }
 
+table.user td.details .email .icon {
+    float: left;
+    line-height: 16px;
+    margin-right: 5px;
+}
+
+.cell.biography {
+    padding-bottom: 0;
+}
+
+.cell.biography p {
+    font-size: 12px;
+    margin: 0 0 1em;
+}
+
 .form table {
     width: auto;
 }
