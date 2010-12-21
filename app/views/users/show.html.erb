@@ -36,13 +36,13 @@
       </tr>
     </table>
   </div>
-  <div class="cell biography">
-    <% if @user.biography %>
+  <% if @user.biography %>
+    <div class="cell biography">
       <div class="biography">
         <%= wrap_text(@user.biography) %>
       </div>
-    <% end %>
-  </div>
+    </div>
+  <% end %>
 </div>
 
 <hr class="space" />
