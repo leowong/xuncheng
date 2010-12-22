@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20101220223330) do
+ActiveRecord::Schema.define(:version => 20101222213433) do
 
   create_table "assets", :force => true do |t|
     t.integer  "viewable_id"
@@ -83,6 +83,7 @@ ActiveRecord::Schema.define(:version => 20101220223330) do
     t.string   "signature"
     t.text     "biography"
     t.boolean  "email_publishing",                    :default => false
+    t.integer  "roles_mask"
   end
 
   add_index "users", ["email"], :name => "index_users_on_email", :unique => true

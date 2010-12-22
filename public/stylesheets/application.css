@@ -272,9 +272,8 @@ h2 {
 }
 
 #navigation ul li {
-    list-style: none;
-    float: left;
-    margin-left: 10px;
+    display: inline;
+    padding-left: 10px;
 }
 
 #navigation a {

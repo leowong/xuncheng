@@ -20,6 +20,12 @@ class UsersController < ApplicationController
   def create
     @user = User.new(params[:user])
 
+    if User.count == 0
+      @user.roles = %w[admin moderator author]
+    else
+      @user.roles = %w[author]
+    end
+
     if @user.save
       sign_in @user
       redirect_to(root_url, :notice => 'You have signed up successfully. Please update your profile.')
