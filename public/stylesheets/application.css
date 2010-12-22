@@ -690,7 +690,10 @@ table.user td.details .email .icon {
 }
 
 .form td.value {
-    font-size: 14px;
     width: 200px;
     text-align: left;
+}
+
+.form tr.immutable td.value {
+    font-size: 14px;
 }
