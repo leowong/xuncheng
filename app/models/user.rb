@@ -27,6 +27,10 @@ class User < ActiveRecord::Base
     ROLES.reject { |r| ((roles_mask || 0) & 2**ROLES.index(r)).zero? }
   end
 
+  def role?(role)
+    roles.include? role.to_s
+  end
+
   def avatar_path(style = :normal)
     avatar.nil? ? "/images/avatar/default/#{style}.png" : avatar.attachment.url(style.to_sym)
   end

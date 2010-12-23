@@ -35,6 +35,7 @@ GEM
       xml-simple
     bcrypt-ruby (2.1.2)
     builder (2.1.2)
+    cancan (1.4.1)
     capistrano (2.5.19)
       highline
       net-scp (>= 1.0.0)
@@ -122,6 +123,7 @@ PLATFORMS
 
 DEPENDENCIES
   aws-s3
+  cancan (= 1.4.1)
   capistrano
   devise (= 1.1.5)
   factory_girl_rails (= 1.0)

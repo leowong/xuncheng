@@ -9,6 +9,7 @@ gem 'sqlite3-ruby', :require => 'sqlite3'
 gem 'devise', '1.1.5'
 gem 'paperclip', '2.3.8'
 gem 'aws-s3', :require => 'aws/s3'
+gem 'cancan', '1.4.1'
 
 # Use unicorn as the web server
 # gem 'unicorn'

@@ -38,7 +38,7 @@ class UsersController < ApplicationController
   def update
     @user = current_user
 
-    [:username, :email].map { |p| params[:user].delete(p) }
+    [:username, :email, :roles].map { |p| params[:user].delete(p) }
 
     if params[:user][:password].blank?
       [:password, :password_confirmation, :current_password].map { |p| params[:user].delete(p) }

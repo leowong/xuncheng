@@ -16,6 +16,7 @@ class TopicsController < ApplicationController
 
   def edit
     @topic = Topic.find(params[:id])
+    authorize! :update, @topic
   end
 
   def create
@@ -31,6 +32,7 @@ class TopicsController < ApplicationController
 
   def update
     @topic = Topic.find(params[:id])
+    authorize! :update, @topic
 
     if @topic.update_attributes(params[:topic])
       redirect_to(@topic, :notice => 'Topic was successfully updated.')
@@ -41,8 +43,9 @@ class TopicsController < ApplicationController
 
   def destroy
     @topic = Topic.find(params[:id])
-    @topic.destroy
+    authorize! :destroy, @topic
 
+    @topic.destroy
     redirect_to(topics_url)
   end
 end
