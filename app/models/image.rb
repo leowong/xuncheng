@@ -1,5 +1,5 @@
 class Image < Asset
-  IMAGE_URI = "image/:hash_path/:style.:extension"
+  IMAGE_URI = "image/:hash_path/:id/:style.:extension"
 
   has_attached_file :attachment,
     :styles => {

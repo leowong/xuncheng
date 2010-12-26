@@ -24,6 +24,7 @@ class TopicsController < ApplicationController
     @topic = current_user.topics.build(params[:topic].merge(:node_id => @node.id))
 
     if @topic.save
+      mark_used_images(@topic)
       redirect_to(@topic, :notice => 'Topic was successfully created.')
     else
       render :action => "new"
@@ -48,4 +49,13 @@ class TopicsController < ApplicationController
     @topic.destroy
     redirect_to(topics_url)
   end
+
+  private
+
+  def mark_used_images(topic)
+      ids = topic.content.scan /\[img\].*?\w{2}\/\w{3}\/\w{27}\/(\d+?)\/\w+?\.?\w+?\?\d+?\[\/img\]/
+      ids.flatten.uniq.each do |id|
+        Image.find(id.to_i).update_attributes(:used => true, :post_type => topic.class.to_s, :post_id => topic.id)
+      end
+  end        
 end

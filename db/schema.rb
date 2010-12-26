@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20101224095543) do
+ActiveRecord::Schema.define(:version => 20101226080352) do
 
   create_table "assets", :force => true do |t|
     t.integer  "viewable_id"
@@ -24,6 +24,9 @@ ActiveRecord::Schema.define(:version => 20101224095543) do
     t.string   "type",                    :limit => 75
     t.integer  "attachment_width"
     t.integer  "attachment_height"
+    t.string   "post_type",               :limit => 50
+    t.integer  "post_id"
+    t.boolean  "used"
   end
 
   add_index "assets", ["viewable_type", "type", "viewable_id"], :name => "index_assets_on_viewable_type_and_type_and_viewable_id"
