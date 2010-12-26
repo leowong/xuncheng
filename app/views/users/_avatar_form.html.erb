@@ -15,7 +15,7 @@
     <%= f.fields_for :avatar do |builder| %>
       <tr>
 	<td class="name">
-	  <%= f.label :attachment, "New" %>
+	  <%= builder.label :attachment, "New" %>
 	</td>
 	<td class="value">
 	  <%= builder.file_field :attachment %>

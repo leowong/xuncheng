@@ -7,8 +7,12 @@ module ApplicationHelper
 
   def wrap_text(content)
     content = auto_link(simple_format(h(content)), :html => { :rel => "nofollow noindex external" })
-    content.gsub /(<a .*?href=".*?".*?>)(.*?)(<\/a>)/ do |s|
+    content = content.gsub /(<a .*?href=".*?".*?>)(.*?)(<\/a>)/ do |s|
       $1 + trim_url($2) + $3
+    end
+
+    content = content.gsub /\[img\](.*?)\[\/img\]/, do |s|
+      image_tag $1
     end
   end
 

@@ -5,6 +5,7 @@ class User < ActiveRecord::Base
   has_many :topics
   has_many :replies
   has_one :avatar, :as => :viewable, :dependent => :destroy
+  has_many :images, :as => :viewable, :dependent => :destroy
 
   accepts_nested_attributes_for :avatar, :reject_if => :all_blank, :allow_destroy => true
 

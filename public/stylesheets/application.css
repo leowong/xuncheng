@@ -696,3 +696,20 @@ table.user td.details .email .icon {
 .form tr.immutable td.value {
     font-size: 14px;
 }
+
+.topic p img {
+    max-width: 635px;
+}
+
+#popup .cell {
+    padding: 10px;
+    border: none;
+}
+
+#cboxLoadedContent {
+    margin-bottom: 0;
+}
+
+#cboxClose {
+    height: 0;
+}

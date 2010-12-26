@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20101222213433) do
+ActiveRecord::Schema.define(:version => 20101224095543) do
 
   create_table "assets", :force => true do |t|
     t.integer  "viewable_id"
@@ -21,9 +21,12 @@ ActiveRecord::Schema.define(:version => 20101222213433) do
     t.datetime "attachment_updated_at"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "type",                    :limit => 75
+    t.integer  "attachment_width"
+    t.integer  "attachment_height"
   end
 
-  add_index "assets", ["viewable_type", "viewable_id"], :name => "index_assets_on_viewable_type_and_viewable_id"
+  add_index "assets", ["viewable_type", "type", "viewable_id"], :name => "index_assets_on_viewable_type_and_type_and_viewable_id"
 
   create_table "nodes", :force => true do |t|
     t.string   "name"

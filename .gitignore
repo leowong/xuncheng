@@ -5,6 +5,7 @@ config/database.yml
 config/aws_s3.yml
 config/initializers/setup_mail.rb
 public/avatar/**/*
+public/image/**/*
 log/*.log
 *.log
 tmp/**/*

@@ -16,6 +16,7 @@ Xuncheng::Application.routes.draw do
   match 'settings' => 'users#edit', :as => :settings
 
   resources :users, :only => [:index, :show, :new, :edit, :create, :update], :path => "u"
+  resources :images, :only => [:new, :create]
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

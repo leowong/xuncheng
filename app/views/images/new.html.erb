@@ -1,0 +1,15 @@
+<div id="upload_images_form" class="cell">
+  <%= form_for @image, :html => { :multipart => true } do |f| %>
+    <div>
+      <strong>Upload image</strong><br />
+    </div>
+    <hr class="space" style="margin-bottom:9px" />
+    <div>
+      <%= f.file_field :attachment %>
+    </div>
+    <hr class="space" style="margin-bottom:14px" />
+    <div>
+      <%= f.submit "Upload", :class => "super normal button" %>
+    </div>
+  <% end %>
+</div>
