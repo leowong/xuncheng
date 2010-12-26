@@ -1,6 +1,6 @@
 class AddSomeColumnsToAsset < ActiveRecord::Migration
   def self.up
-    add_column :assets, :type, :string, :limit => 75
+    add_column :assets, :type, :string, :limit => 50
     add_column :assets, :attachment_width, :integer
     add_column :assets, :attachment_height, :integer
 

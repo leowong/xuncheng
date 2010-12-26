@@ -21,7 +21,7 @@ ActiveRecord::Schema.define(:version => 20101226080352) do
     t.datetime "attachment_updated_at"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.string   "type",                    :limit => 75
+    t.string   "type",                    :limit => 50
     t.integer  "attachment_width"
     t.integer  "attachment_height"
     t.string   "post_type",               :limit => 50
