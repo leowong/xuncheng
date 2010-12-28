@@ -33,6 +33,9 @@ class UsersController < ApplicationController
       @user.clean_up_passwords
       render :action => "new"
     end
+  rescue ActiveRecord::StatementInvalid
+    # In the rare case when race conditions occurs
+    redirect_to signup_path
   end
 
   def update
