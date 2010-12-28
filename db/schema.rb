@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20101226080352) do
+ActiveRecord::Schema.define(:version => 20101228053832) do
 
   create_table "assets", :force => true do |t|
     t.integer  "viewable_id"
@@ -38,16 +38,21 @@ ActiveRecord::Schema.define(:version => 20101226080352) do
     t.datetime "updated_at"
   end
 
-  create_table "replies", :force => true do |t|
+  create_table "posts", :force => true do |t|
+    t.string   "title"
     t.text     "content"
+    t.integer  "user_id"
+    t.integer  "node_id"
     t.integer  "topic_id"
+    t.string   "type"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.integer  "user_id"
   end
 
-  add_index "replies", ["topic_id"], :name => "index_replies_on_topic_id"
-  add_index "replies", ["user_id"], :name => "index_replies_on_user_id"
+  add_index "posts", ["node_id"], :name => "index_posts_on_node_id"
+  add_index "posts", ["topic_id"], :name => "index_posts_on_topic_id"
+  add_index "posts", ["type"], :name => "index_posts_on_type"
+  add_index "posts", ["user_id"], :name => "index_posts_on_user_id"
 
   create_table "sessions", :force => true do |t|
     t.string   "session_id", :null => false
@@ -58,18 +63,6 @@ ActiveRecord::Schema.define(:version => 20101226080352) do
 
   add_index "sessions", ["session_id"], :name => "index_sessions_on_session_id"
   add_index "sessions", ["updated_at"], :name => "index_sessions_on_updated_at"
-
-  create_table "topics", :force => true do |t|
-    t.string   "title"
-    t.text     "content"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-    t.integer  "user_id"
-    t.integer  "node_id"
-  end
-
-  add_index "topics", ["node_id"], :name => "index_topics_on_node_id"
-  add_index "topics", ["user_id"], :name => "index_topics_on_user_id"
 
   create_table "users", :force => true do |t|
     t.string   "email",                               :default => "",    :null => false

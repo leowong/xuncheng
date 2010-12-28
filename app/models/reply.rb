@@ -1,4 +1,4 @@
-class Reply < ActiveRecord::Base
+class Reply < Post
   attr_accessible :content, :topic_id
 
   belongs_to :user
@@ -7,5 +7,5 @@ class Reply < ActiveRecord::Base
   validates :content, :presence => true
   validates :topic_id, :presence => true
 
-  default_scope :order => 'replies.created_at'
+  default_scope :order => 'posts.created_at'
 end
