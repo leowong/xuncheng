@@ -34,7 +34,7 @@ class UsersController < ApplicationController
       render :action => "new"
     end
   rescue ActiveRecord::StatementInvalid
-    # In the rare case when race conditions occurs
+    # In the rare case when a race condition occurs
     redirect_to signup_path
   end
 
