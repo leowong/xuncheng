@@ -37,15 +37,22 @@
   <div class="box">
     <%= form_for [@topic, Reply.new] do |f| %>
       <div class="cell">
-	<div class="top">
-	  ⬆ <%= link_to "Top", "#top" %>
+	<div class="upload_images">
+          <%= link_to "Upload images", new_image_path, :id => "upload_images_link" %>
 	</div>
         <%= f.label :content, "New reply" %>
       </div>
       <div class="cell">
 	<div class="content">
-          <%= f.text_area :content %>
-	  <%= f.submit "Add Reply", :class => "super normal button" %>
+	  <div>
+            <%= f.text_area :content, :class => "content" %>
+	  </div>
+	  <div>
+	    <div class="top">
+	      ⬆ <%= link_to "Top", "#top" %>
+	    </div>
+	    <%= f.submit "Add Reply", :class => "super normal button" %>
+	  </div>
 	</div>
       </div>
     <% end %>

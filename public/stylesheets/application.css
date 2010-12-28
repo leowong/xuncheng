@@ -444,6 +444,7 @@ td {
 .new_reply .top {
     float: right;
     color: #999;
+    margin-top: 5px;
 }
 
 .new_reply .top a {
@@ -697,9 +698,32 @@ table.user td.details .email .icon {
     font-size: 14px;
 }
 
+.topic p img,
+.reply p img {
+    display: block;
+}
+
 .topic p img {
     max-width: 635px;
 }
+
+.reply p img {
+    max-width: 565px;
+}
+
+.upload_images {
+    float: right;
+}
+
+.upload_image a {
+    color: #999;
+}
+
+.upload_images a:hover,
+.upload_images a:active {
+    color: #385F8A;
+}
+
 
 #popup .cell {
     padding: 10px;

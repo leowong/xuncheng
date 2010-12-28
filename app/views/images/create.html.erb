@@ -1,4 +1,4 @@
 <script type="text/javascript">
-  parent.$('#topic_content').append('\n<%= escape_javascript('[img]' + @user.images.last.attachment.url(:original) + '[/img]') %>');
+  parent.$('textarea.content').append('\n<%= escape_javascript('[img]' + @user.images.last.attachment.url(:original) + '[/img]') %>');
   parent.$.fn.colorbox.close();
 </script>

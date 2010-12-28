@@ -1,5 +1,6 @@
 class TopicsController < ApplicationController
   before_filter :authenticate_user!, :except => [:index, :show]
+  include ImagesHelper
 
   def index
     @topics = Topic.all
@@ -49,13 +50,4 @@ class TopicsController < ApplicationController
     @topic.destroy
     redirect_to(topics_url)
   end
-
-  private
-
-  def mark_used_images(topic)
-      ids = topic.content.scan /\[img\].*?\w{2}\/\w{3}\/\w{27}\/(\d+?)\/\w+?\.?\w+?\?\d+?\[\/img\]/
-      ids.flatten.uniq.each do |id|
-        Image.find(id.to_i).update_attributes(:used => true, :post_type => topic.class.to_s, :post_id => topic.id)
-      end
-  end        
 end
