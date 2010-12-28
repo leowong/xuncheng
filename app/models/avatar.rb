@@ -1,5 +1,5 @@
 class Avatar < Asset
-  AVATAR_URI = "avatar/:hash_path/:style.:extension"
+  AVATAR_URI = "avatar/:hash_path/:id/:style.:extension"
 
   has_attached_file :attachment,
     :styles => {
