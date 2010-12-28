@@ -38,13 +38,15 @@ class UsersController < ApplicationController
   def update
     @user = current_user
 
-    [:username, :email, :roles].map { |p| params[:user].delete(p) }
+    if params[:user]
+      [:username, :email, :roles].map { |p| params[:user].delete(p) }
 
-    if params[:user][:password].blank?
-      [:password, :password_confirmation, :current_password].map { |p| params[:user].delete(p) }
-    else
-      unless @user.valid_password?(params[:user][:current_password])
-        @user.errors[:base] << "The password you entered is incorrect"
+      if params[:user][:password].blank?
+        [:password, :password_confirmation, :current_password].map { |p| params[:user].delete(p) }
+      else
+        unless @user.valid_password?(params[:user][:current_password])
+          @user.errors[:base] << "The password you entered is incorrect"
+        end
       end
     end
 
