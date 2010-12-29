@@ -737,3 +737,8 @@ table.user td.details .email .icon {
 #cboxClose {
     height: 0;
 }
+
+select {
+    background: none;
+    border: none;
+}

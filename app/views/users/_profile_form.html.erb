@@ -36,6 +36,14 @@
     </tr>
     <tr>
       <td class="name">
+	<%= f.label :locale, "Language" %>
+      </td>
+      <td class="value">
+	<%= f.collection_select :locale, LANGUAGES, :last, :first %>
+      </td>
+    </tr>
+    <tr>
+      <td class="name">
       </td>
       <td class="value">
 	<%= f.check_box :email_publishing %>
