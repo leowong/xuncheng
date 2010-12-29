@@ -3,3 +3,23 @@
 
 en:
   hello: "Hello world"
+
+  layouts:
+    application:
+      title: "Xuncheng"
+
+  shared:
+    navigation:
+      home: "Home"
+      settings: "Settings"
+      signout: "Sign out"
+    side:
+      nodes: "Nodes"
+
+  topics:
+    index:
+      before_author: "By"
+      before_nodes: "in"
+      after_timestamp: " ago "
+      before_replier: "replied by"
+      after_replier: ""

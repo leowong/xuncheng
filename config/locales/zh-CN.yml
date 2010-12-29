@@ -23,40 +23,40 @@ zh-CN:
 
   datetime:
     distance_in_words:
-      half_a_minute: "半分钟"
+      half_a_minute: "0 分钟"
       less_than_x_seconds:
-        one: "不到一秒"
-        other: "不到 %{count} 秒"
+        one: "0 秒"
+        other: "%{count} 秒"
       x_seconds:
-        one: "一秒"
+        one: "1 秒"
         other: "%{count} 秒"
       less_than_x_minutes:
-        one: "不到一分钟"
-        other: "不到 %{count} 分钟"
+        one: "0 分钟"
+        other: "%{count} 分钟"
       x_minutes:
-        one: "一分钟"
+        one: "1 分钟"
         other: "%{count} 分钟"
       about_x_hours:
-        one: "大约一小时"
-        other: "大约 %{count} 小时"
+        one: "1 小时"
+        other: "%{count} 小时"
       x_days:
-        one: "一天"
+        one: "1 天"
         other: "%{count} 天"
       about_x_months:
-        one: "大约一个月"
-        other: "大约 %{count} 个月"
+        one: "1 个月"
+        other: "约 %{count} 个月"
       x_months:
-        one: "一个月"
+        one: "1 个月"
         other: "%{count} 个月"
       about_x_years:
-        one: "大约一年"
-        other: "大约 %{count} 年"
+        one: "1 年"
+        other: "约 %{count} 年"
       over_x_years:
-        one: "一年多"
-        other: "%{count} 年多"
+        one: "1 年"
+        other: "%{count} 年"
       almost_x_years:
-        one:   "接近一年"
-        other: "接近 %{count} 年"
+        one:   "1 年"
+        other: "%{count} 年"
     prompts:
       year:   "年"
       month:  "月"
@@ -205,3 +205,23 @@ zh-CN:
       create: "新增%{model}"
       update: "更新%{model}"
       submit: "储存%{model}"
+
+  layouts:
+    application:
+      title: "浔城社区"
+
+  shared:
+    navigation:
+      home: "主页"
+      settings: "设置"
+      signout: "注销"
+    side:
+      nodes: "节点"
+
+  topics:
+    index:
+      before_author: ""
+      before_nodes: "发布于"
+      after_timestamp: "前"
+      before_replier: "由"
+      after_replier: "回复"

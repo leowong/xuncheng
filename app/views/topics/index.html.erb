@@ -14,11 +14,14 @@
 	      <%= link_to topic.title, "#{url_for(topic)}#u#{topic.replies.size}" %>
 	    </div>
 	    <div class="meta">
-	      By <strong><%= link_to topic.user.username, topic.user %></strong>
-	      in <strong><%= link_to topic.node.name, topic.node %></strong><br />
-	      <%= time_ago_in_words(topic.updated_at) %> ago
-	      <% unless topic.replies.empty? %>
-	        replied by <strong><%= link_to "#{topic.replies.last.user.username}", topic.replies.last.user %></strong>
+	      <!-- inevitable mess due to bilingual support -->
+	      <%= t('.before_author') %> <strong><%= link_to topic.user.username, topic.user %></strong>
+	      <%= t('.before_nodes') %> <strong><%= link_to topic.node.name, topic.node %></strong><br />
+	      <%= time_ago_in_words(topic.updated_at) %><%= t('.after_timestamp') %><% unless topic.replies.empty? %><%= t('.before_replier') %>
+	        <strong>
+		  <%= link_to "#{topic.replies.last.user.username}", topic.replies.last.user %>
+	        </strong>
+	        <%= t('.after_replier') %>
 	      <% end %>
 	    </div>
           </td>
