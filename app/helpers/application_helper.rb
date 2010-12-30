@@ -10,7 +10,7 @@ module ApplicationHelper
 
     if render[:images]
       content = content.gsub /\[img\](.*?)\[\/img\]/, do |s|
-        image_tag $1
+        image_tag cloudfront($1)
       end
     end
 
@@ -23,6 +23,10 @@ module ApplicationHelper
     content = content.gsub /(<a .*?href=".*?".*?>)(.*?)(<\/a>)/ do |s|
       $1 + trim_url($2) + $3
     end
+  end
+
+  def cloudfront(url)
+    url.gsub(/^https?:\/\/s3.amazonaws.com\/xuncheng/, "http://cdn.xuncheng.net")
   end
 
   private

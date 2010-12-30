@@ -1,7 +1,7 @@
 <%= div_for @topic, :class => "box" do %>
   <div class="cell">
     <div class="avatar">
-      <%= link_to image_tag(@topic.user.avatar_path(:original), :alt => @topic.user.username), @topic.user %>
+      <%= link_to image_tag(cloudfront(@topic.user.avatar_path(:original)), :alt => @topic.user.username), @topic.user %>
     </div>
     <div class="breadcrumbs">
       <%= link_to "Home", root_url %>
