@@ -9,6 +9,7 @@ class ApplicationController < ActionController::Base
   private
 
   def set_locale
+    I18n.locale = I18n.default_locale
     if current_user and current_user.locale
       if I18n.available_locales.include?(current_user.locale.to_sym)
         I18n.locale = current_user.locale
