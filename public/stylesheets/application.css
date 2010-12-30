@@ -1,3 +1,5 @@
+/* Heavily based on Livid's work for v2ex.com */
+
 body {
     font-size: 14px;
     font-family: "Helvetica Neue", "Luxi Sans", "DejaVu Sans", Tahoma, "Hiragino Sans GB", STHeiti !important;
@@ -249,6 +251,7 @@ h2 {
     font-weight: bold;
     margin-left: 15px;
     line-height: 36px;
+    margin-top: 2px;
 }
 
 #logo a {
@@ -738,7 +741,17 @@ table.user td.details .email .icon {
     height: 0;
 }
 
-select {
-    background: none;
-    border: none;
+#footer .logos {
+    float: right;
+}
+
+#footer .description,
+#footer .description a {
+    color: #999;
+    font-size: 12px;
+    padding-top: 15px;
+}
+
+#footer .description p {
+    margin-bottom: 0.5em;
 }

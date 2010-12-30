@@ -206,17 +206,27 @@ zh-CN:
       update: "更新%{model}"
       submit: "储存%{model}"
 
+  punctuation:
+    comma: "，"
+    period: "。"
+
   layouts:
     application:
       title: "浔城社区"
 
   shared:
     navigation:
-      home: "主页"
+      home: "首页"
       settings: "设置"
       signout: "注销"
     side:
       nodes: "节点"
+    footer:
+      started_from: "始于 2011 年 1 月 1 日"
+      from: "来自"
+      location: "江西省九江市"
+      before_rails: "网站程序基于"
+      after_rails: "开发"
 
   topics:
     index:

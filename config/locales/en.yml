@@ -4,6 +4,10 @@
 en:
   hello: "Hello world"
 
+  punctuation:
+    comma: ","
+    period: "."
+
   layouts:
     application:
       title: "Xuncheng"
@@ -15,6 +19,13 @@ en:
       signout: "Sign out"
     side:
       nodes: "Nodes"
+    footer:
+      started_from: " was launched on Jan 1, 2011"
+      from: "from"
+      location: " Jiujiang, Jiangxi, China"
+      before_rails: "A"
+      after_rails: "powered site"
+      period: "."
 
   topics:
     index:
