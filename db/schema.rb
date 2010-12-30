@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20101230122515) do
+ActiveRecord::Schema.define(:version => 20101230125632) do
 
   create_table "assets", :force => true do |t|
     t.integer  "viewable_id"
@@ -56,10 +56,8 @@ ActiveRecord::Schema.define(:version => 20101230122515) do
     t.string   "type"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.integer  "node_id"
   end
 
-  add_index "posts", ["node_id"], :name => "index_posts_on_node_id"
   add_index "posts", ["topic_id"], :name => "index_posts_on_topic_id"
   add_index "posts", ["type"], :name => "index_posts_on_type"
   add_index "posts", ["user_id"], :name => "index_posts_on_user_id"
