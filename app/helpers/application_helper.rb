@@ -5,11 +5,13 @@ module ApplicationHelper
     end
   end
 
-  def wrap_text(content)
+  def wrap_text(content, render = { :images => true })
     content = simple_format(h(content))
 
-    content = content.gsub /\[img\](.*?)\[\/img\]/, do |s|
-      image_tag $1
+    if render[:images]
+      content = content.gsub /\[img\](.*?)\[\/img\]/, do |s|
+        image_tag $1
+      end
     end
 
     content = content.gsub /(<a .*?href=".*?".*?>)(.*?)(<\/a>)/ do |s|
