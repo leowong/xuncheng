@@ -301,6 +301,32 @@ h2 {
     padding: 10px 0 10px 10px;
 }
 
+#side .cell.nodes {
+    font-size: 14px;
+}
+
+#side .center {
+    text-align: center;
+}
+
+#side .login_button {
+    margin-top: 5px;
+    margin-bottom: 14px;
+}
+
+#side .returned_user a:hover,
+#side .returned_user a:active {
+    text-decoration: underline;
+}
+
+#side td.avatar {
+    width: 48px;
+}
+
+#side td.username {
+    font-size: 16px;
+}
+
 #notification .notice.box,
 #notification .alert.box {
     font-size: 12px;

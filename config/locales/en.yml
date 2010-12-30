@@ -4,27 +4,27 @@
 en:
   hello: "Hello world"
 
+  site:
+    name: "Xuncheng"
+    description: "Online society for residents of Jiujiang"
+
   punctuation:
     comma: ","
     period: "."
-
-  layouts:
-    application:
-      title: "Xuncheng"
 
   shared:
     navigation:
       home: "Home"
       settings: "Settings"
-      signout: "Sign out"
     side:
       nodes: "Nodes"
+      returned_user: "Returned user? Please"
     footer:
       started_from: " was launched on Jan 1, 2011"
       from: "from"
       location: " Jiujiang, Jiangxi, China"
-      before_rails: "A"
-      after_rails: "powered site"
+      before_rails: "Developed with"
+      after_rails: ""
       period: "."
 
   topics:
@@ -34,3 +34,9 @@ en:
       after_timestamp: " ago "
       before_replier: "replied by"
       after_replier: ""
+
+  authenticity:
+    signup: "Sign up"
+    signin: "Sign in"
+    signout: "Sign out"
+    join_now: "Join Now"

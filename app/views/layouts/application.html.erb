@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title><%= t('.title') %></title>
+  <title><%= t('site.name') %></title>
   <%= render 'layouts/stylesheets' %>
   <%= render 'layouts/javascripts' %>
   <%= csrf_meta_tag %>
@@ -11,7 +11,7 @@
     <a name="top"></a>
     <div class="container">
       <div id="logo">
-	<span><%= link_to t('.title'), root_url %></span>
+	<span><%= link_to t('site.name'), root_url %></span>
       </div>
       <div id="navigation">
 	<%= render 'shared/navigation' %>

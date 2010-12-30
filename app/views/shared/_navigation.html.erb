@@ -3,10 +3,10 @@
   <% if user_signed_in? %>
     <li><strong><%= link_to current_user.username, current_user %></strong></li>
     <li><%= link_to t('.settings'), settings_path %></li>
-    <li><%= link_to t('.signout'), logout_path %></li>
+    <li><%= link_to t('authenticity.signout'), logout_path %></li>
   <% else %>
-    <li><%= link_to "Sign up", signup_path %></li>
-    <li><%= link_to "Sign in", login_path %></li>
+    <li><%= link_to t('authenticity.signup'), signup_path %></li>
+    <li><%= link_to t('authenticity.signin'), login_path %></li>
   <% end %>
 </ul>
 

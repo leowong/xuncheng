@@ -206,21 +206,21 @@ zh-CN:
       update: "更新%{model}"
       submit: "储存%{model}"
 
+  site:
+    name: "浔城社区"
+    description: "服务九江居民的网络社区"
+
   punctuation:
     comma: "，"
     period: "。"
-
-  layouts:
-    application:
-      title: "浔城社区"
 
   shared:
     navigation:
       home: "首页"
       settings: "设置"
-      signout: "注销"
     side:
       nodes: "节点"
+      returned_user: "如已有账户请"
     footer:
       started_from: "始于 2011 年 1 月 1 日"
       from: "来自"
@@ -235,3 +235,9 @@ zh-CN:
       after_timestamp: "前"
       before_replier: "由"
       after_replier: "回复"
+
+  authenticity:
+    signup: "注册"
+    signin: "登录"
+    signout: "注销"
+    join_now: "现在加入"
