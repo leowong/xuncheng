@@ -36,7 +36,7 @@
       </tr>
     </table>
   </div>
-  <% unless @user.biography.empty? %>
+  <% unless @user.biography.blank? %>
     <div class="cell biography">
       <div class="biography">
         <%= wrap_text(@user.biography, :images => false) %>
