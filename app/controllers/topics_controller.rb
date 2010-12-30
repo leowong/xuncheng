@@ -22,7 +22,9 @@ class TopicsController < ApplicationController
 
   def create
     @node = Node.find(params[:node_id])
-    @topic = current_user.topics.build(params[:topic].merge(:node_id => @node.id))
+    @topic = Topic.new(params[:topic])
+    @topic.nodes = [@node]
+    @topic.user_id = current_user.id
 
     if @topic.save
       mark_used_images(@topic)

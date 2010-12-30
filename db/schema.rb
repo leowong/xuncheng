@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20101229040038) do
+ActiveRecord::Schema.define(:version => 20101230122515) do
 
   create_table "assets", :force => true do |t|
     t.integer  "viewable_id"
@@ -38,15 +38,25 @@ ActiveRecord::Schema.define(:version => 20101229040038) do
     t.datetime "updated_at"
   end
 
+  create_table "nodings", :force => true do |t|
+    t.integer  "node_id"
+    t.integer  "topic_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "nodings", ["node_id"], :name => "index_nodings_on_node_id"
+  add_index "nodings", ["topic_id"], :name => "index_nodings_on_topic_id"
+
   create_table "posts", :force => true do |t|
     t.string   "title"
     t.text     "content"
     t.integer  "user_id"
-    t.integer  "node_id"
     t.integer  "topic_id"
     t.string   "type"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "node_id"
   end
 
   add_index "posts", ["node_id"], :name => "index_posts_on_node_id"

@@ -1,8 +1,9 @@
 class Topic < Post
-  attr_accessible :title, :content, :node_id
+  attr_accessible :title, :content
 
   belongs_to :user
-  belongs_to :node
+  has_many :nodings
+  has_many :nodes, :through => :nodings
   has_many :replies, :dependent => :destroy
 
   validates :title, :presence => true
@@ -12,6 +13,10 @@ class Topic < Post
   default_scope :order => 'posts.updated_at DESC'
 
   scope :replied_by, lambda { |user| topics_replied_by(user) }
+
+  def node_names
+    nodes.map(&:name).join(', ')
+  end
 
   private
 
