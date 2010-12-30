@@ -743,15 +743,16 @@ table.user td.details .email .icon {
 
 #footer .logos {
     float: right;
+    padding-top: 10px;
 }
 
 #footer .description,
 #footer .description a {
     color: #999;
     font-size: 12px;
-    padding-top: 15px;
+    padding-top: 10px;
 }
 
 #footer .description p {
-    margin-bottom: 0.5em;
+    margin-bottom: 4px;
 }
