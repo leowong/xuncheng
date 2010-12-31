@@ -18,9 +18,7 @@ class Avatar < Asset
     :s3_credentials => {
       :access_key_id => ENV['S3_KEY'] || AWS_S3['access_key_id'],
       :secret_access_key => ENV['S3_SECRET'] || AWS_S3['secret_access_key']
-    },
-
-    :s3_headers => {'Cache-Control' => 'max-age=315576000', 'Expires' => 10.years.from_now.httpdate }
+    }
 
   validates_attachment_presence :attachment
   validates_attachment_size :attachment, :less_than => 2.megabytes
