@@ -41,7 +41,13 @@
   </div>
   <div class="cell nodes">
     <% Node.all.each do |node| %>
-      <%= link_to node.name, node, :class => 'node' %>
+      <%= link_to node do %>
+        <div>
+	  <span class="name"><%= node.name %></span>
+	  <span class="separator">&nbsp; • &nbsp;</span>
+	  <span class="description"><%= node.description %></span>
+	</div>
+      <% end %>
     <% end %>
   </div>
 </div>

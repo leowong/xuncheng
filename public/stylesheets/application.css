@@ -301,17 +301,17 @@ h2 {
     padding: 10px 0 10px 10px;
 }
 
-#side .cell.nodes {
-    font-size: 14px;
-}
-
 #side .center {
     text-align: center;
 }
 
 #side .login_button {
-    margin-top: 5px;
+    margin-top: 8px;
     margin-bottom: 14px;
+}
+
+#side .returned_user {
+    margin-bottom: 1px;
 }
 
 #side .returned_user a:hover,
@@ -326,6 +326,28 @@ h2 {
 #side td.username {
     font-size: 16px;
 }
+
+#side .cell.nodes a {
+    text-decoration: none;
+}
+
+#side .cell.nodes span.name {
+    font-size: 14px;
+}
+
+#side .cell.nodes span.separator {
+    color: #AAA;
+}
+
+#side .cell.nodes span.description {
+    color: #CCC;
+    font-size: 12px;
+}
+
+#side .cell.nodes div {
+    white-space: nowrap;
+    overflow: hidden;
+} 
 
 #notification .notice.box,
 #notification .alert.box {
