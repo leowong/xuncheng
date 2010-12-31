@@ -9,7 +9,7 @@
   </thead>
   <tbody>
     <% items.each do |t| %>
-      <tr class="<%= cycle("odd", "even") %>">
+      <tr class="<%= cycle("odd", "even", :name => "items") %>">
 	<td class="replies">
 	  <span <%= raw('class="mist"') if t.replies.size == 0 %>>
 	    <%= t.replies.size %>
@@ -32,3 +32,4 @@
     <% end %>
   </tbody>
 </table>
+<% reset_cycle("items") %>
