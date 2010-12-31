@@ -4,7 +4,7 @@
       <%= link_to image_tag(@topic.user.avatar_path(:original), :alt => @topic.user.username), @topic.user %>
     </div>
     <div class="breadcrumbs">
-      <%= link_to "Home", root_url %>
+      <%= link_to t('site.home'), root_url %>
       <span class="separator">&nbsp;›&nbsp;</span>
       <%= link_to @topic.nodes.first.name, @topic.nodes.first %>
     </div>
