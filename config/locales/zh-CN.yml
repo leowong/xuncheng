@@ -235,6 +235,11 @@ zh-CN:
       after_rails: " 开发"
     error_messages:
       errors: "请改正以下错误之后再继续："
+    item_listing:
+      replies_count: "回复"
+      subject: "标题"
+      author: "作者"
+      timestamp: "更新时间"
 
   topics:
     index:
@@ -255,3 +260,9 @@ zh-CN:
   users:
     new:
       forgot_password: "忘记密码？"
+
+  nodes:
+    show:
+      topics_total: "主题总数"
+      new_topic: "创建新主题"
+      be_the_first: "本节点中暂时还没有主题，我们期待您发表第一篇！"

@@ -31,8 +31,12 @@ en:
       before_rails: "Developed with"
       after_rails: ""
     error_messages:
-      errors: "请改正以下错误之后再继续："
       errors: "Please fix the following problems first:"
+    item_listing:
+      replies_count: "Replies"
+      subject: "Subject"
+      author: "Author"
+      timestamp: "Last Replied"
 
   topics:
     index:
@@ -53,3 +57,9 @@ en:
   users:
     new:
       forgot_password: "Forgot your password?"
+
+  nodes:
+    show:
+      topics_total: "Topics Total"
+      new_topic: "New Topic"
+      be_the_first: "Be the first one!"

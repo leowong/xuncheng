@@ -1,7 +1,7 @@
 <div class="box">
   <div class="cell">
     <div class="topics_counter">
-      <span class="mist">Total Topics</span>
+      <span class="mist"><%= t('.topics_total') %></span>
       <span class="gray"><strong><%= @node.topics.size %></strong></span>
     </div>
     <div class="breadcrumbs">
@@ -17,7 +17,7 @@
     <% end %>
     <div>
       <hr class="space" style="margin-bottom:15px" />
-      <%= link_to 'New Topic', new_node_topic_path(@node), :class => 'super normal button' %>
+      <%= link_to t('.new_topic'), new_node_topic_path(@node), :class => 'super normal button' %>
       <hr class="space" style="margin-bottom:4px" />
     </div>
   </div>
@@ -30,7 +30,7 @@
   <% end %>
   <div class="cell">
     <% if @node.topics.empty? %>
-	Be the first one!
+	<%= t('.be_the_first') %>
     <% end %>
   </div>
 </div>
