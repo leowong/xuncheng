@@ -166,12 +166,17 @@ zh-CN:
         even: "必须为双数"
         taken: "已经被使用"
         record_invalid: "校验失败: %{errors}"
+    models:
+      topic: "主题"
     attributes:
       user:
         username: "用户名"
         email: "电子邮件"
         password: "密码"
         password_confirmation: "确认密码"
+      topic:
+        title: "标题"
+        content: "正文"
 
   activemodel:
     errors:
@@ -208,7 +213,7 @@ zh-CN:
     select:
       prompt: "请选择"
     submit:
-      create: "新增%{model}"
+      create: "创建%{model}"
       update: "更新%{model}"
       submit: "储存%{model}"
 
@@ -229,7 +234,7 @@ zh-CN:
       returned_user: "如已有账户请"
     footer:
       started_from: "始于 2011 年 1 月 1 日"
-      from: "来自"
+      from: "我们来自"
       location: "江西省九江市"
       before_rails: "网站程序基于"
       after_rails: " 开发"
@@ -248,6 +253,10 @@ zh-CN:
       after_timestamp: "前"
       before_replier: "由"
       after_replier: "回复"
+    new:
+      upload_image: "贴图"
+      new_topic: "创建新主题"
+      back_to: "返回到"
 
   authenticity:
     signup: "注册"

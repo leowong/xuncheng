@@ -45,6 +45,10 @@ en:
       after_timestamp: " ago "
       before_replier: "replied by"
       after_replier: ""
+    new:
+      upload_image: "Upload image"
+      new_topic: "New topic"
+      back_to: "Back to"
 
   authenticity:
     signup: "Sign up"
