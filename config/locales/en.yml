@@ -83,6 +83,7 @@ en:
     new:
       forgot_password: "Forgot your password?"
     edit:
+      settings: "Settings"
       avatar: "Avatar"
       password: "Password"
     avatar_form:
@@ -96,6 +97,12 @@ en:
       change_password: "Change Password"
     profile_form:
       save_settings: "Save Settings"
+    show:
+      before_userid: "Member #"
+      after_userid: "."
+      before_timestamp: "Joined at"
+      recent_topics: "Recent Topics"
+      recent_replies: "Recent Replies"
 
   nodes:
     show:

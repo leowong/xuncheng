@@ -18,8 +18,8 @@
           <% end %>
 
 	  <div class="meta">
-	    Member #<%= @user.id %>.
-	    Joined at <%= @user.created_at.to_datetime.strftime('%Y-%m-%d %H:%M:%S') %>.
+	    <%= t('.before_userid') %><%= @user.id %><%= t('.after_userid') %>
+            <%= t('.before_timestamp') %> <%= @user.created_at.to_datetime.strftime('%Y-%m-%d %H:%M:%S') %><%= t('punctuation.period') %>
 	  </div>
 
 	  <% if @user.email_publishing %>
@@ -48,7 +48,7 @@
 <hr class="space" />
 <div class="box">
   <div class="cell">
-    Recent Posted Topics
+    <%= t('.recent_topics') %>
   </div>
   <div class="cell">
     <div class="user_topics">
@@ -60,7 +60,7 @@
 <hr class="space" />
 <div class="box">
   <div class="cell">
-    Recent Replied Topics
+    <%= t('.recent_replies') %>
   </div>
   <div class="cell">
     <div class="user_replies">

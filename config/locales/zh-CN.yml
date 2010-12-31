@@ -292,6 +292,7 @@ zh-CN:
     new:
       forgot_password: "忘记密码？"
     edit:
+      settings: "设置"
       avatar: "更换头像"
       password: "更改密码"
     avatar_form:
@@ -305,7 +306,12 @@ zh-CN:
       change_password: "提交更改"
     profile_form:
       save_settings: "保存设置"
-
+    show:
+      before_userid: "浔城社区第 "
+      after_userid: " 位用户，"
+      before_timestamp: "加入于"
+      recent_topics: "最新主题"
+      recent_replies: "最新回复"
   nodes:
     show:
       topics_total: "主题总数"
