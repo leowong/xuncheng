@@ -80,7 +80,12 @@ en:
     new:
       forgot_password: "Forgot your password?"
     edit:
+      avatar: "Avatar"
       password: "Password"
+    avatar_form:
+      current: "Current"
+      new: "New"
+      upload_avatar: "Upload avatar"
     password_form:
       current: "Current"
       new: "New"

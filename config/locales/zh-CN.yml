@@ -288,7 +288,12 @@ zh-CN:
     new:
       forgot_password: "忘记密码？"
     edit:
+      avatar: "更换头像"
       password: "更改密码"
+    avatar_form:
+      current: "当前头像"
+      new: "更换"
+      upload_avatar: "上传头像"
     password_form:
       current: "当前密码"
       new: "新密码"

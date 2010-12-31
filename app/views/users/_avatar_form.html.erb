@@ -4,7 +4,7 @@
   <table cellpadding="5" cellspacing="0" border="0">
     <tr>
       <td class="name">
-	Current
+	<%= t('.current') %>
       </td>
       <td class="value">
 	<%= image_tag @user.avatar_path(:original) %> &nbsp;
@@ -15,7 +15,7 @@
     <%= f.fields_for :avatar do |builder| %>
       <tr>
 	<td class="name">
-	  <%= builder.label :attachment, "New" %>
+	  <%= builder.label :attachment, t('.new') %>
 	</td>
 	<td class="value">
 	  <%= builder.file_field :attachment %>
@@ -26,7 +26,7 @@
       <td>
       </td>
       <td>
-	<%= f.submit "Upload Avatar", :class => "super normal button" %>
+	<%= f.submit t('.upload_avatar'), :class => "super normal button" %>
       </td>
     </tr>
   </table>
