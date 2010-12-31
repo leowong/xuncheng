@@ -4,7 +4,7 @@
   <table cellpadding="5" cellspacing="0" border="0">
     <tr class="immutable">
       <td class="name">
-	Username
+	<%= User.human_attribute_name(:username) %>
       </td>
       <td class="value">
 	<%= @user.username %>
@@ -12,7 +12,7 @@
     </tr>
     <tr class="immutable">
       <td class="name">
-	Email
+	<%= User.human_attribute_name(:email) %>
       </td>
       <td class="value">
 	<%= @user.email %>
@@ -28,7 +28,7 @@
     </tr>
     <tr>
       <td class="name">
-	<%= f.label :biography, "Bio" %>
+	<%= f.label :biography %>
       </td>
       <td class="value">
 	<%= f.text_area :biography, :class => "ml" %>
@@ -36,7 +36,7 @@
     </tr>
     <tr>
       <td class="name">
-	<%= f.label :locale, "Language" %>
+	<%= f.label :locale %>
       </td>
       <td class="value">
 	<%= f.collection_select :locale, LANGUAGES, :last, :first %>
@@ -47,14 +47,14 @@
       </td>
       <td class="value">
 	<%= f.check_box :email_publishing %>
-	<%= f.label :email_publishing, "Let others see my email address" %>
+	<%= f.label :email_publishing %>
       </td>
     </tr>
     <tr>
       <td>
       </td>
       <td>
-	<%= f.submit "Save Settings", :class => "super normal button" %>
+	<%= f.submit t('.save_settings'), :class => "super normal button" %>
       </td>
     </tr>
   </table>

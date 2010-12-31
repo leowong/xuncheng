@@ -174,6 +174,10 @@ zh-CN:
         email: "电子邮件"
         password: "密码"
         password_confirmation: "确认密码"
+        signature: "签名"
+        biography: "自我介绍"
+        locale: "界面语言"
+        email_publishing: "公开我的电子邮件地址"
       topic:
         title: "标题"
         content: "正文"
@@ -299,6 +303,8 @@ zh-CN:
       new: "新密码"
       confirm: "确认新密码"
       change_password: "提交更改"
+    profile_form:
+      save_settings: "保存设置"
 
   nodes:
     show:

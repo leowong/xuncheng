@@ -8,6 +8,9 @@ en:
     attributes:
       user:
         password_confirmation: "Confirmation"
+        biography: "Bio"
+        locale: "Language"
+        email_publishing: "Let others see my email address"
 
   site:
     name: "Xuncheng"
@@ -91,6 +94,8 @@ en:
       new: "New"
       confirm: "Confirm"
       change_password: "Change Password"
+    profile_form:
+      save_settings: "Save Settings"
 
   nodes:
     show:
