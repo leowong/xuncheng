@@ -10,7 +10,7 @@ module ApplicationHelper
 
     if render[:images]
       content = content.gsub /\[img\](.*?)\[\/img\]/, do |s|
-        image_tag $1
+        image_tag cloudfront($1)
       end
     end
 
