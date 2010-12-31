@@ -762,7 +762,7 @@ table.user td.details .email .icon {
     max-width: 565px;
 }
 
-.upload_images {
+.upload_image {
     float: right;
 }
 
@@ -770,8 +770,8 @@ table.user td.details .email .icon {
     color: #999;
 }
 
-.upload_images a:hover,
-.upload_images a:active {
+.upload_image a:hover,
+.upload_image a:active {
     color: #385F8A;
 }
 

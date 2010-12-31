@@ -10,8 +10,8 @@
     </div>
     <h2><%= @topic.title %></h2>
     <div class="meta">
-      By <%= link_to "#{@topic.user.username}", @topic.user %>
-      at <%= time_ago_in_words(@topic.updated_at) %> ago
+      <%= t('.before_author') %><%= link_to "#{@topic.user.username}", @topic.user %>
+      <%= t('.before_timestamp') %> <%= time_ago_in_words(@topic.created_at) %><%= t('.after_timestamp') %>
     </div>
   </div>
   <div class="content">
@@ -24,7 +24,7 @@
   <div id="replies" class="box">
     <div class="cell">
       <div class="summary">
-	<%= pluralize(@topic.replies.size, "reply") %> |
+	<%= t('.reply', :count => @topic.replies.size) %> |
 	<%= @topic.replies.last.created_at.to_datetime.strftime('%Y-%m-%d %H:%M:%S') %>
       </div>
     </div>
@@ -37,10 +37,10 @@
   <div class="box">
     <%= form_for [@topic, Reply.new] do |f| %>
       <div class="cell">
-	<div class="upload_images">
-          <%= link_to "Upload images", new_image_path, :id => "upload_images_link" %>
+	<div class="upload_image">
+          <%= link_to t('.upload_image'), new_image_path, :id => "upload_image_link" %>
 	</div>
-        <%= f.label :content, "New reply" %>
+        <%= f.label :content, t('.new_reply') %>
       </div>
       <div class="cell">
 	<div class="content">
@@ -49,9 +49,9 @@
 	  </div>
 	  <div>
 	    <div class="top">
-	      ⬆ <%= link_to "Top", "#top" %>
+	      ⬆ <%= link_to t('.top'), "#top" %>
 	    </div>
-	    <%= f.submit "Add Reply", :class => "super normal button" %>
+	    <%= f.submit t('.add_reply'), :class => "super normal button" %>
 	  </div>
 	</div>
       </div>

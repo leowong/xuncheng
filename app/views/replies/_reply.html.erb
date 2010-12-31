@@ -6,7 +6,7 @@
       </td>
       <td class="details valign="top">
 	<div class="meta">
-	  #<%= reply_counter + 1 %> - <%= time_ago_in_words(reply.created_at) %> ago<br />
+	  #<%= reply_counter + 1 %> - <%= time_ago_in_words(reply.created_at) %><%= t('.after_timestamp') %><br />
 	</div>
 	<div class="author">
 	  <strong><%= link_to "#{reply.user.username}", reply.user %></strong>

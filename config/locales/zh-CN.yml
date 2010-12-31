@@ -257,6 +257,21 @@ zh-CN:
       upload_image: "贴图"
       new_topic: "创建新主题"
       back_to: "返回到"
+    show:
+      before_author: ""
+      before_timestamp: " 发布于"
+      after_timestamp: "前"
+      reply:
+        one: "1 条回复"
+        other: "%{count} 条回复"
+      new_reply: "添加回复"
+      upload_image: "贴图"
+      top: "回到顶部"
+      add_reply: "提交"
+
+  replies:
+    reply:
+      after_timestamp: "前"
 
   authenticity:
     signup: "注册"

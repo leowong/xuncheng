@@ -49,6 +49,21 @@ en:
       upload_image: "Upload image"
       new_topic: "New topic"
       back_to: "Back to"
+    show:
+      before_author: "By "
+      before_timestamp: "at"
+      after_timestamp: " ago"
+      reply:
+        one: "1 reply"
+        other: "%{count} replies"
+      new_reply: "New reply"
+      upload_image: "Upload image"
+      top: "Top"
+      add_reply: "Add Reply"
+
+  replies:
+    reply:
+      after_timestamp: " ago"
 
   authenticity:
     signup: "Sign up"
