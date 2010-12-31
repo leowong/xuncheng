@@ -4,9 +4,15 @@
 en:
   hello: "Hello world"
 
+  activerecord:
+    attributes:
+      user:
+        password_confirmation: "Confirmation"
+
   site:
     name: "Xuncheng"
     description: "Online society for residents of Jiujiang"
+    home: "Home"
 
   punctuation:
     comma: ","
@@ -14,18 +20,19 @@ en:
 
   shared:
     navigation:
-      home: "Home"
       settings: "Settings"
     side:
       nodes: "Nodes"
       returned_user: "Returned user? Please"
     footer:
       started_from: " was launched on Jan 1, 2011"
-      from: "from"
+      from: " from"
       location: " Jiujiang, Jiangxi, China"
       before_rails: "Developed with"
       after_rails: ""
-      period: "."
+    error_messages:
+      errors: "请改正以下错误之后再继续："
+      errors: "Please fix the following problems first:"
 
   topics:
     index:
@@ -40,3 +47,9 @@ en:
     signin: "Sign in"
     signout: "Sign out"
     join_now: "Join Now"
+    flash:
+      signup_successful: "Happy new year, %{user}! You can update your profile in Settings page. Have a nice day."
+
+  users:
+    new:
+      forgot_password: "Forgot your password?"

@@ -28,7 +28,7 @@ class UsersController < ApplicationController
 
     if @user.save
       sign_in @user
-      redirect_to(root_url, :notice => 'You have signed up successfully. Please update your profile.')
+      redirect_to(root_url, :notice => t('authenticity.flash.signup_successful', :name => @user.username))
     else
       @user.clean_up_passwords
       render :action => "new"

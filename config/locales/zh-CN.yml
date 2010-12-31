@@ -166,6 +166,12 @@ zh-CN:
         even: "必须为双数"
         taken: "已经被使用"
         record_invalid: "校验失败: %{errors}"
+    attributes:
+      user:
+        username: "用户名"
+        email: "电子邮件"
+        password: "密码"
+        password_confirmation: "确认密码"
 
   activemodel:
     errors:
@@ -209,6 +215,7 @@ zh-CN:
   site:
     name: "浔城社区"
     description: "服务九江居民的网络社区"
+    home: "首页"
 
   punctuation:
     comma: "，"
@@ -216,7 +223,6 @@ zh-CN:
 
   shared:
     navigation:
-      home: "首页"
       settings: "设置"
     side:
       nodes: "节点"
@@ -226,7 +232,9 @@ zh-CN:
       from: "来自"
       location: "江西省九江市"
       before_rails: "网站程序基于"
-      after_rails: "开发"
+      after_rails: " 开发"
+    error_messages:
+      errors: "请改正以下错误之后再继续："
 
   topics:
     index:
@@ -241,3 +249,9 @@ zh-CN:
     signin: "登录"
     signout: "注销"
     join_now: "现在加入"
+    flash:
+      signup_successful: "元旦快乐 %{name}！ 您可以在“设置”页面中添加自我介绍，或者上传喜欢的头像。祝您假期玩得愉快。"
+
+  users:
+    new:
+      forgot_password: "忘记密码？"
