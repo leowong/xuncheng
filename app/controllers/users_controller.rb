@@ -48,13 +48,13 @@ class UsersController < ApplicationController
         [:password, :password_confirmation, :current_password].map { |p| params[:user].delete(p) }
       else
         unless @user.valid_password?(params[:user][:current_password])
-          @user.errors[:base] << "The password you entered is incorrect"
+          @user.errors[:base] << t('authenticity.errors.incorrect_password')
         end
       end
     end
 
     if  @user.errors[:base].empty? && @user.update_attributes(params[:user])
-      redirect_to(@user, :notice => 'User was successfully updated.')
+      redirect_to(@user, :notice => t('authenticity.flash.update_successful'))
     else
       @user.clean_up_passwords
       render :action => "edit"

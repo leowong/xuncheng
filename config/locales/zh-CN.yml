@@ -280,10 +280,20 @@ zh-CN:
     join_now: "现在加入"
     flash:
       signup_successful: "元旦快乐 %{name}！ 您可以在“设置”页面中添加自我介绍，或者上传喜欢的头像。祝您假期玩得愉快。"
+      update_successful: "更新成功。"
+    errors:
+      incorrect_password: "当前密码 错误"
 
   users:
     new:
       forgot_password: "忘记密码？"
+    edit:
+      password: "更改密码"
+    password_form:
+      current: "当前密码"
+      new: "新密码"
+      confirm: "确认新密码"
+      change_password: "提交更改"
 
   nodes:
     show:

@@ -72,10 +72,20 @@ en:
     join_now: "Join Now"
     flash:
       signup_successful: "Happy new year, %{user}! You can update your profile in Settings page. Have a nice day."
+      update_successful: "User was successfully updated."
+    errors:
+      incorrect_password: "The password you entered is incorrect"
 
   users:
     new:
       forgot_password: "Forgot your password?"
+    edit:
+      password: "Password"
+    password_form:
+      current: "Current"
+      new: "New"
+      confirm: "Confirm"
+      change_password: "Change Password"
 
   nodes:
     show:
