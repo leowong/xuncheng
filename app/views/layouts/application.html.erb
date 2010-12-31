@@ -37,6 +37,6 @@
       <%= render 'shared/footer' %>
     </div>
   </div>
-<%= render 'shared/google_analytics' %>
+<%= render 'shared/google_analytics' if Rails.env.production? %>
 </body>
 </html>
