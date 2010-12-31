@@ -67,3 +67,8 @@ en:
       topics_total: "Topics Total"
       new_topic: "New Topic"
       be_the_first: "Be the first one!"
+
+  images:
+    new:
+      add_image: "Add an image"
+      upload: "Upload and insert code"
