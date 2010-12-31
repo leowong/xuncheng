@@ -2,7 +2,7 @@
   <div class="cell">
     <% @users.each do |user| %>
       <div>
-	<%= image_tag cloudfront(user.avatar_path), :alt => user.username %>
+	<%= image_tag user.avatar_path, :alt => user.username %>
       </div>
       <div>
 	<%= user.username %>
