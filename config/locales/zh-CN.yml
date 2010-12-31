@@ -295,3 +295,15 @@ zh-CN:
     new:
       add_image: "添加图片"
       upload: "上传并插入代码"
+
+  devise:
+    sessions:
+      new:
+        remember_me: "下次自动登录"
+    shared:
+      links:
+        forgot_password: "忘记密码？"
+    passwords:
+      new:
+        forgot_password: "忘记密码？"
+        send_reset_mail: "发送密码重置邮件"

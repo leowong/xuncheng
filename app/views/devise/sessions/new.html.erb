@@ -1,9 +1,9 @@
 <div class="box">
   <div class="cell">
     <div class="breadcrumbs">
-      <%= link_to "Home", root_url %>
+      <%= link_to t('site.home'), root_url %>
       <span class="separator">&nbsp;›&nbsp;</span>
-      Sign in
+      <%= t('authenticity.signin') %>
     </div>
   </div>
 
@@ -32,7 +32,7 @@
 	    </td>
 	    <td class="value">
 	      <% if devise_mapping.rememberable? -%>
-	        <%= f.check_box :remember_me %> <%= f.label :remember_me %>
+	        <%= f.check_box :remember_me %> <%= f.label :remember_me, t('.remember_me') %>
 	      <% end -%>
 	    </td>
 	  </tr>
@@ -40,7 +40,7 @@
 	    <td class="name">
 	    </td>
 	    <td class="value">
-	      <%= f.submit "Sign in" %>
+	      <%= f.submit t('authenticity.signin') %>
 	    </td>
 	  </tr>
 	</table>

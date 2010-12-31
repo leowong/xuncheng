@@ -87,3 +87,15 @@ en:
     new:
       add_image: "Add an image"
       upload: "Upload and insert code"
+
+  devise:
+    sessions:
+      new:
+        remember_me: "Remember me"
+    shared:
+      links:
+        forgot_password: "Forgot your password?"
+    passwords:
+      new:
+        forgot_password: "Forgot your password?"
+        send_reset_mail: "Send me reset password instructions"
