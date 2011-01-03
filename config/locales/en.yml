@@ -7,6 +7,8 @@ en:
   activerecord:
     attributes:
       user:
+        username: "Username"
+        email: "Email"
         password_confirmation: "Confirmation"
         biography: "Bio"
         locale: "Language"
