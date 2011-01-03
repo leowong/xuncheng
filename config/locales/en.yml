@@ -76,7 +76,7 @@ en:
     signout: "Sign out"
     join_now: "Join Now"
     flash:
-      signup_successful: "Happy new year, %{user}! You can update your profile in Settings page. Have a nice day."
+      signup_successful: "Welcome, %{user}! You can update your profile in Settings page. Have a nice day!"
       update_successful: "User was successfully updated."
     errors:
       incorrect_password: "The password you entered is incorrect"
