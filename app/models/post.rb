@@ -8,6 +8,7 @@ class Post < ActiveRecord::Base
     end
   end
 
+  private
 
   def users_to_notify
     text = content
