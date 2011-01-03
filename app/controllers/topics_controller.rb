@@ -27,6 +27,7 @@ class TopicsController < ApplicationController
     @topic.user_id = current_user.id
 
     if @topic.save
+      @topic.notify_users
       mark_used_images(@topic)
       redirect_to(@topic, :notice => 'Topic was successfully created.')
     else

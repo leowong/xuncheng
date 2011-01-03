@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20101230125632) do
+ActiveRecord::Schema.define(:version => 20110103094123) do
 
   create_table "assets", :force => true do |t|
     t.integer  "viewable_id"
@@ -30,6 +30,15 @@ ActiveRecord::Schema.define(:version => 20101230125632) do
   end
 
   add_index "assets", ["viewable_type", "type", "viewable_id"], :name => "index_assets_on_viewable_type_and_type_and_viewable_id"
+
+  create_table "callings", :force => true do |t|
+    t.integer  "user_id"
+    t.integer  "post_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "callings", ["user_id"], :name => "index_callings_on_user_id"
 
   create_table "nodes", :force => true do |t|
     t.string   "name"

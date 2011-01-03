@@ -310,8 +310,9 @@ zh-CN:
       before_userid: "浔城社区第 "
       after_userid: " 位用户，"
       before_timestamp: "加入于"
-      recent_topics: "最新主题"
-      recent_replies: "最新回复"
+      recent_notifications: "最新呼叫"
+      recent_topics: "最近主题"
+      recent_replies: "最近回复"
   nodes:
     show:
       topics_total: "主题总数"

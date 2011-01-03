@@ -8,25 +8,32 @@
     </tr>
   </thead>
   <tbody>
-    <% items.each do |t| %>
+    <% items.each do |item| %>
+      <% item.type == "Topic" ? topic = item : topic = item.topic %>
       <tr class="<%= cycle("odd", "even", :name => "items") %>">
 	<td class="replies">
-	  <span <%= raw('class="mist"') if t.replies.size == 0 %>>
-	    <%= t.replies.size %>
+	  <span <%= raw('class="mist"') if topic.replies.size == 0 %>>
+	    <%= topic.replies.size %>
           </span>
 	</td>
 	<td class="subject">
-	  <%= link_to t.title, t %>
+	  <% if item.type == "Topic" %>
+	    <%= link_to topic.title, topic %>
+          <% else %>
+            <%= link_to topic.title, topic_path(topic) + "#r" + item.id.to_s %>
+          <% end %>
 	</td>
 	<td class="author">
-	  <% if (writer ||= nil) == "replier" && !t.replies.empty? %>
-	    <%= link_to t.replies.first.user.username, t.replies.first.user %>
+	  <% if (writer ||= nil) == "replier" && !topic.replies.empty? %>
+	    <%= link_to topic.replies.first.user.username, topic.replies.first.user %>
+	  <% elsif item.type == "Topic" %>
+	    <%= link_to topic.user.username, topic.user %>
 	  <% else %>
-	    <%= link_to t.user.username, t.user %>
+	    <%= link_to item.user.username, item.user %>
 	  <% end %>
 	</td>
 	<td class="last_replied">
-	  <%= (t.replies.empty? ? t.created_at : t.replies.first.created_at).to_datetime.strftime('%Y-%m-%d %H:%M:%S') %>
+          <%= (topic.replies.empty? ? topic.created_at : topic.replies.first.created_at).to_datetime.strftime('%Y-%m-%d %H:%M:%S') %>
 	</td>
       </tr>
     <% end %>

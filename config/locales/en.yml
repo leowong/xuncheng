@@ -101,6 +101,7 @@ en:
       before_userid: "Member #"
       after_userid: "."
       before_timestamp: "Joined at"
+      recent_notifications: "Recent Notifications"
       recent_topics: "Recent Topics"
       recent_replies: "Recent Replies"
 
