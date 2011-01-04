@@ -5,12 +5,18 @@ module ApplicationHelper
     end
   end
 
-  def wrap_text(content, render = { :images => true })
+  def wrap_text(content, render = { :images => true, :videos => true })
     content = simple_format(h(content))
 
     if render[:images]
-      content = content.gsub /\[img\](.*?)\[\/img\]/, do |s|
+      content = content.gsub /\[img\](.*?)\[\/img\]/ do |s|
         image_tag $1
+      end
+    end
+
+    if render[:videos]
+      content = content.gsub /http:\/\/player\.youku\.com\/player\.php\/sid\/\w+?\/v.swf/ do |s|
+        %Q(<embed src="#{$&}" quality="high" width="480" height="400" align="middle" allowScriptAccess="sameDomain" type="application/x-shockwave-flash"></embed>)
       end
     end
 
