@@ -804,3 +804,7 @@ table.user td.details .email .icon {
 #footer .description p {
     margin-bottom: 4px;
 }
+
+form#user_new td.name {
+    width: 120px;
+}

@@ -10,6 +10,7 @@ en:
         contain_whitespace: "can't contain whitespace characters"
     attributes:
       user:
+        login: "Username or Email"
         username: "Username"
         email: "Email"
         password_confirmation: "Confirmation"

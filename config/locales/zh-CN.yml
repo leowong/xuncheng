@@ -171,6 +171,7 @@ zh-CN:
       topic: "主题"
     attributes:
       user:
+        login: "用户名或电子邮件"
         username: "用户名"
         email: "电子邮件"
         password: "密码"

@@ -1,6 +1,8 @@
 class User < ActiveRecord::Base
   # Setup accessible (or protected) attributes for your model
-  attr_accessible :username, :email, :password, :password_confirmation, :remember_me, :avatar_attributes, :signature, :biography, :email_publishing, :locale
+  attr_accessible :username, :email, :password, :password_confirmation, :remember_me, :avatar_attributes, :signature, :biography, :email_publishing, :locale, :login
+
+  attr_accessor :login
 
   has_many :topics
   has_many :replies
@@ -37,6 +39,13 @@ class User < ActiveRecord::Base
 
   def avatar_path(style = :normal)
     avatar.nil? ? "/images/avatar/default/#{style}.png" : avatar.attachment.url(style.to_sym)
+  end
+
+  protected
+
+  def self.find_for_database_authentication(conditions)
+    login = conditions.delete(:login)
+    where(conditions).where(["username = :value OR email = :value", { :value => login }]).first
   end
 
   private
