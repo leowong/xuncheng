@@ -18,7 +18,7 @@ module ApplicationHelper
       $1 + trim_url($2) + $3
     end
 
-    content = auto_link(content, :html => { :rel => "nofollow noindex external" })
+    content = auto_link(content, :html => { :target => "_blank", :rel => "nofollow" })
 
     content = content.gsub /(<a .*?href=".*?".*?>)(.*?)(<\/a>)/ do |s|
       $1 + trim_url($2) + $3
