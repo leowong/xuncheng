@@ -4,18 +4,26 @@
   <table cellpadding="5" cellspacing="0" border="0">
     <tr class="immutable">
       <td class="name">
-	<%= User.human_attribute_name(:username) %>
+        <%# temporarily allowing users to change their username and email %>
+	<%# User.human_attribute_name(:username) %>
+        <%= f.label :username %>
       </td>
       <td class="value">
-	<%= @user.username %>
+        <%# temporarily allowing users to change their username and email %>
+	<%# @user.username %>
+	<%= f.text_field :username, :class => "sl" %>
       </td>
     </tr>
     <tr class="immutable">
       <td class="name">
-	<%= User.human_attribute_name(:email) %>
+        <%# temporarily allowing users to change their username and email %>
+	<%# User.human_attribute_name(:email) %>
+	<%= f.label :email %>
       </td>
       <td class="value">
-	<%= @user.email %>
+        <%# temporarily allowing users to change their username and email %>
+	<%# @user.email %>
+	<%= f.text_field :email, :class => "sl" %>
       </td>
     </tr>
     <tr>
