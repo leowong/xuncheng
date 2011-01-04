@@ -5,6 +5,9 @@ en:
   hello: "Hello world"
 
   activerecord:
+    errors:
+      messages:
+        contain_whitespace: "can't contain whitespace characters"
     attributes:
       user:
         username: "Username"

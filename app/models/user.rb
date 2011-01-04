@@ -12,6 +12,7 @@ class User < ActiveRecord::Base
   accepts_nested_attributes_for :avatar, :reject_if => :all_blank, :allow_destroy => true
 
   validates :username, :presence => true, :uniqueness => true
+  validate :username_cannot_contain_whitespace_characters
 
   # Include default devise modules. Others available are:
   # :registerable, :token_authenticatable, :confirmable, :lockable and :timeoutable
@@ -36,5 +37,11 @@ class User < ActiveRecord::Base
 
   def avatar_path(style = :normal)
     avatar.nil? ? "/images/avatar/default/#{style}.png" : avatar.attachment.url(style.to_sym)
+  end
+
+  private
+
+  def username_cannot_contain_whitespace_characters
+    errors.add(:username, I18n.t('activerecord.errors.messages.contain_whitespace')) if username.index(/\s/)
   end
 end
