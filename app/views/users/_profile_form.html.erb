@@ -1,37 +1,82 @@
 <%= form_for setup_user(@user), :html => { :multipart => true } do |f| %>
   <%= render 'shared/error_messages', :object => f.object %>
 
+  <% registered_in_24_hours = @user.created_at > (Time.now - 24.hours) %>
+  <% if registered_in_24_hours %>
+    <% remaining_time = time_ago_in_words((Time.now - 24.hours) + (Time.now - @user.created_at)) %>
+  <% end %>
+
   <table cellpadding="5" cellspacing="0" border="0">
-    <tr class="immutable">
-      <td class="name">
-        <%# temporarily allowing users to change their username and email %>
-	<%# User.human_attribute_name(:username) %>
-        <%= f.label :username %>
-      </td>
-      <td class="value">
-        <%# temporarily allowing users to change their username and email %>
-	<%# @user.username %>
-	<%= f.text_field :username, :class => "sl" %>
-      </td>
-    </tr>
-    <tr class="immutable">
-      <td class="name">
-        <%# temporarily allowing users to change their username and email %>
-	<%# User.human_attribute_name(:email) %>
-	<%= f.label :email %>
-      </td>
-      <td class="value">
-        <%# temporarily allowing users to change their username and email %>
-	<%# @user.email %>
-	<%= f.text_field :email, :class => "sl" %>
-      </td>
-    </tr>
+
+    <% if registered_in_24_hours %>
+      <tr>
+        <td></td>
+        <td colspan="2">
+	  <span class="fade">
+	    <%= t('.before_username_and_email') %>
+	    <%= User.human_attribute_name(:username) %> <%= t('.and') %>
+	    <%= User.human_attribute_name(:email) %>
+	    <%= t('.after_username_and_email') %>
+	  </span>
+        </td>
+      </tr>
+      <tr>
+        <td class="name">
+          <%= f.label :username %>
+        </td>
+        <td class="value">
+	  <%= f.text_field :username, :class => "sl" %>
+        </td>
+        <td>
+	  <span class="fade">
+	    <%= t('.before_remaining_time') %><%= remaining_time %><%= t('.after_remaining_time') %>
+	  </span>
+        </td>
+      </tr>
+      <tr>
+        <td class="name">
+	  <%= f.label :email %>
+        </td>
+        <td class="value">
+	  <%= f.text_field :email, :class => "sl" %>
+        </td>
+        <td>
+	  <span class="fade">
+	    <%= t('.before_remaining_time') %><%= remaining_time %><%= t('.after_remaining_time') %>
+	  </span>
+        </td>
+      </tr>
+    <% else %>
+      <tr class="immutable">
+        <td class="name">
+          <%= User.human_attribute_name(:username) %>
+        </td>
+        <td class="value">
+          <%= @user.username %>
+        </td>
+        <td>
+        </td>
+      </tr>
+      <tr class="immutable">
+        <td class="name">
+	  <%= User.human_attribute_name(:email) %>
+        </td>
+        <td class="value">
+	  <%= @user.email %>
+        </td>
+        <td>
+        </td>
+      </tr>
+    <% end %>
+
     <tr>
       <td class="name">
 	<%= f.label :signature %>
       </td>
       <td class="value">
 	<%= f.text_field :signature, :class => "sl" %>
+      </td>
+      <td>
       </td>
     </tr>
     <tr>
@@ -41,6 +86,8 @@
       <td class="value">
 	<%= f.text_area :biography, :class => "ml" %>
       </td>
+      <td>
+      </td>
     </tr>
     <tr>
       <td class="name">
@@ -48,6 +95,8 @@
       </td>
       <td class="value">
 	<%= f.collection_select :locale, LANGUAGES, :last, :first %>
+      </td>
+      <td>
       </td>
     </tr>
     <tr>
@@ -57,12 +106,16 @@
 	<%= f.check_box :email_publishing %>
 	<%= f.label :email_publishing %>
       </td>
+      <td>
+      </td>
     </tr>
     <tr>
       <td>
       </td>
       <td>
 	<%= f.submit t('.save_settings'), :class => "super normal button" %>
+      </td>
+      <td>
       </td>
     </tr>
   </table>

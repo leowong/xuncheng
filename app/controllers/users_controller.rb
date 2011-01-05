@@ -45,9 +45,11 @@ class UsersController < ApplicationController
     @user = current_user
 
     if params[:user]
-      # temporarily allowing users to change their username and email
-      # [:username, :email, :roles].map { |p| params[:user].delete(p) }
-      [:roles].map { |p| params[:user].delete(p) }
+      if @user.created_at > (Time.now - 24.hours)
+        [:roles].map { |p| params[:user].delete(p) }
+      else
+        [:username, :email, :roles].map { |p| params[:user].delete(p) }
+      end
 
       if params[:user][:password].blank?
         [:password, :password_confirmation, :current_password].map { |p| params[:user].delete(p) }

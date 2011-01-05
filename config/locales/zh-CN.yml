@@ -285,7 +285,7 @@ zh-CN:
     signout: "注销"
     join_now: "现在加入"
     flash:
-      signup_successful: "欢迎 %{name}！ 您可以在“设置”页面中添加自我介绍，或者上传自己喜欢的头像。祝您愉快！"
+      signup_successful: "欢迎 %{name}！ 您可以在“设置”页面中添加自我介绍，或者上传自己喜欢的头像。在注册后的 24 小时内，您甚至还可以更改用户名或电子邮件地址。祝您愉快！"
       update_successful: "更新成功。"
     errors:
       incorrect_password: "当前密码 错误"
@@ -308,6 +308,11 @@ zh-CN:
       change_password: "提交更改"
     profile_form:
       save_settings: "保存设置"
+      before_username_and_email: "新用户注册 24 小时后，"
+      and: "和"
+      after_username_and_email: "将会被锁定。"
+      before_remaining_time: ""
+      after_remaining_time: "内可修改"
     show:
       before_userid: "浔城社区第 "
       after_userid: " 位用户，"
