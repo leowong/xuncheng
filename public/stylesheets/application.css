@@ -486,6 +486,7 @@ td {
     color: #DDD;
     font-size: 10px;
     font-weight: bold;
+    cursor: pointer;
 }
 
 .reply .meta .timestamp {

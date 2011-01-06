@@ -12,3 +12,11 @@ $(document).ready(function() {
     }
   );
 });
+
+$(document).ready(function() {
+  $(".reply .meta").click(function() {
+    var name = this.getAttribute("data-name");
+    var currentText = $('textarea.content').val();
+    $('textarea.content').focus().val(currentText + '@' + name + ' ');
+  });
+});
