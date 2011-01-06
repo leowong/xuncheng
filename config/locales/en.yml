@@ -73,6 +73,7 @@ en:
   replies:
     reply:
       after_timestamp: " ago"
+      reply: "Reply"
 
   authenticity:
     signup: "Sign up"

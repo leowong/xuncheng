@@ -278,6 +278,7 @@ zh-CN:
   replies:
     reply:
       after_timestamp: "前"
+      reply: "回复"
 
   authenticity:
     signup: "注册"

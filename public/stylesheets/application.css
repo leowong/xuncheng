@@ -477,11 +477,33 @@ td {
     color: gray;
 }
 
+.reply td.details {
+    padding-right: 0;
+}
+
 .reply .meta {
     float: right;
     color: #DDD;
     font-size: 10px;
     font-weight: bold;
+}
+
+.reply .meta .timestamp {
+    vertical-align: top;
+}
+
+.reply .meta .reply_button img {
+    width: 20px;
+    height: 16px;
+    background: url("/images/reply.png") no-repeat 0 0;
+}
+
+.reply.hightlight .meta .timestamp {
+    color: #999;
+}
+
+.reply.hightlight .meta .reply_button img {
+    background: url("/images/reply.png") no-repeat -20px 0;
 }
 
 .reply .author a:link {
