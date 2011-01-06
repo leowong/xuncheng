@@ -1,6 +1,6 @@
 <script type="text/javascript">
   var currentText = parent.$('textarea.content').val();
   var imageLink = '\n<%= escape_javascript('[img]' + cloudfront(@user.images.last.attachment.url(:original)) + '[/img]') %>';
-  parent.$('textarea.content').val(currentText  + imageLink);
+  parent.$('textarea.content').focus().val(currentText  + imageLink);
   parent.$.fn.colorbox.close();
 </script>
