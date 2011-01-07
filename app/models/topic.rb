@@ -18,6 +18,12 @@ class Topic < Post
     nodes.map(&:name).join(', ')
   end
 
+  def update_reply_counters
+    replies.where(:reply_counter => nil).order(:id).each_with_index do |reply, i|
+      reply.update_counter
+    end
+  end
+
   private
 
   def self.topics_replied_by(user)

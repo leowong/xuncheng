@@ -8,4 +8,14 @@ class Reply < Post
   validates :topic_id, :presence => true
 
   default_scope :order => 'posts.created_at'
+
+  def update_counter
+    update_attribute(:reply_counter, counter)
+  end
+
+  private
+
+  def counter
+    topic.replies.where('id <= ?', self.id).order(:id).count
+  end
 end

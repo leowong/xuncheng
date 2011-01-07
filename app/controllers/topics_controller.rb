@@ -8,6 +8,7 @@ class TopicsController < ApplicationController
 
   def show
     @topic = Topic.find(params[:id])
+    @topic.update_reply_counters if @topic.replies.where(:reply_counter => nil).count > 0
   end
 
   def new
