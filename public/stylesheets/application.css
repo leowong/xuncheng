@@ -831,3 +831,7 @@ table.user td.details .email .icon {
 form#user_new td.name {
     width: 120px;
 }
+
+.name.me {
+    border-bottom: 2px solid #FF9632;
+}

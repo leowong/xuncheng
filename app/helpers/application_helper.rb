@@ -8,6 +8,11 @@ module ApplicationHelper
   def wrap_text(content, render = { :images => true, :videos => true })
     content = simple_format(h(content))
 
+    if current_user
+      content = content.gsub '@' + current_user.username,
+        '@' + '<span class="name me">' + current_user.username + '</span>'
+    end
+
     if render[:images]
       content = content.gsub /\[img\](.*?)\[\/img\]/ do |s|
         image_tag $1
