@@ -14,7 +14,7 @@ module ApplicationHelper
     end
 
     if render[:images]
-      content = content.gsub /\[img\](.*?)\[\/img\]/ do |s|
+      content = content.gsub /\[img\](.+?)\[\/img\]/ do |s|
         image_tag $1
       end
     end
