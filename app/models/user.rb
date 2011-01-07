@@ -10,6 +10,7 @@ class User < ActiveRecord::Base
   has_many :images, :as => :viewable, :dependent => :destroy
   has_many :callings
   has_many :notifications, :through => :callings, :class_name => "Post"
+  has_many :unread_notifications, :through => :callings, :class_name => "Post", :conditions => "'callings'.read IS NULL"
 
   accepts_nested_attributes_for :avatar, :reject_if => :all_blank, :allow_destroy => true
 

@@ -327,6 +327,10 @@ h2 {
     font-size: 16px;
 }
 
+#side td.username .messages_count {
+    font-size: 12px;
+}
+
 #side .cell.nodes a {
     text-decoration: none;
 }

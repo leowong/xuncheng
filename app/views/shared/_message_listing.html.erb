@@ -9,7 +9,6 @@
   </thead>
   <tbody>
     <% items.each do |item| %>
-      <% item.type == "Topic" ? topic = item : topic = item.topic %>
       <tr class="<%= cycle("odd", "even", :name => "items") %>">
 	<td class="counter">
 	  <span <%= raw('class="mist"') if item.topic? %>>
@@ -18,7 +17,7 @@
 	</td>
 	<td class="subject">
 	  <% if item.topic? %>
-	    <%= link_to item.title, topic %>
+	    <%= link_to item.title, topic_path(item, :r => 0) %>
           <% else %>
             <%= link_to item.topic.title,
                   topic_path(

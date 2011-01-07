@@ -9,7 +9,7 @@ class UsersController < ApplicationController
     @user = User.find(params[:id])
     @topics = @user.topics
     @replies = Topic.replied_by(@user)
-    @notifications = @user.notifications.order('created_at DESC')
+    @notifications = @user.unread_notifications.order('created_at DESC')
   end
 
   def new
