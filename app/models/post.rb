@@ -5,6 +5,14 @@ class Post < ActiveRecord::Base
     end
   end
 
+  def topic?
+    type == "Topic"
+  end
+
+  def reply?
+    type == "Reply"
+  end
+
   private
 
   def users_to_notify

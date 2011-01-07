@@ -1,4 +1,5 @@
-<%= div_for reply, :class => "cell", :'data-id' => reply.id do %>
+<a name="r<%= reply.reply_counter %>"></a>
+<%= div_for reply, :class => "cell" + (reply_counter + 1 == params[:r].to_i ? " highlight" : ""), :'data-id' => reply.id do %>
   <table cellpadding="0" cellspacing="0" border="0" width="100%">
     <tr>
       <td valign="top" class="avatar">

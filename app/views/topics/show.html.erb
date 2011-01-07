@@ -1,3 +1,7 @@
+<%= content_for :head do %>
+  <link rel="canonical" href="<%= topic_path(@topic) %>" />
+<% end %>
+
 <%= div_for @topic, :class => "box" do %>
   <div class="cell">
     <div class="avatar">

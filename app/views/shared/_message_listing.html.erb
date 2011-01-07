@@ -1,0 +1,42 @@
+<table class="message_listing">
+  <thead>
+    <tr>
+      <th class="counter"><%= t('.reply_counter') %></th>
+      <th class="subject"><%= t('.subject') %></th>
+      <th class="caller"><%= t('.caller') %></th>
+      <th class="timestamp"><%= t('.timestamp') %></th>
+    </tr>
+  </thead>
+  <tbody>
+    <% items.each do |item| %>
+      <% item.type == "Topic" ? topic = item : topic = item.topic %>
+      <tr class="<%= cycle("odd", "even", :name => "items") %>">
+	<td class="counter">
+	  <span <%= raw('class="mist"') if item.topic? %>>
+	    <%= item.reply? ? item.reply_counter : 0 %>
+          </span>
+	</td>
+	<td class="subject">
+	  <% if item.topic? %>
+	    <%= link_to item.title, topic %>
+          <% else %>
+            <%= link_to item.topic.title,
+                  topic_path(
+                    item.topic,
+                    :anchor => "r" + item.reply_counter.to_s,
+                    :r => item.reply_counter
+                  )
+             %>
+          <% end %>
+	</td>
+	<td class="caller">
+	  <%= link_to item.user.username, item.user %>
+	</td>
+	<td class="timestamp">
+	  <%= time_ago_in_words(item.created_at) %><%= t('.ago') %>
+	</td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+<% reset_cycle("items") %>
