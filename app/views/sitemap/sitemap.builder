@@ -9,7 +9,7 @@ xml.urlset :xmlns => 'http://www.sitemaps.org/schemas/sitemap/0.9' do
   @topics.each do |topic|
     xml.url do
       xml.loc topic_url(topic)
-      xml.lastmod topic.updated_at.utc.strftime("%Y-%m-%dT%H:%M:%S_00:00")
+      xml.lastmod topic.updated_at.utc.strftime("%Y-%m-%dT%H:%M:%S+00:00")
       xml.changefreq "weekly"
       xml.priority "0.8"
     end
@@ -17,7 +17,7 @@ xml.urlset :xmlns => 'http://www.sitemaps.org/schemas/sitemap/0.9' do
   @nodes.each do |node|
     xml.url do
       xml.loc node_url(node)
-      xml.lastmod node.topics.first.updated_at.utc.strftime("%Y-%m-%dT%H:%M:%S_00:00") unless node.topics.empty?
+      xml.lastmod node.topics.first.updated_at.utc.strftime("%Y-%m-%dT%H:%M:%S+00:00") unless node.topics.empty?
       xml.changefreq "weekly"
       xml.priority "0.6"
     end
@@ -25,7 +25,7 @@ xml.urlset :xmlns => 'http://www.sitemaps.org/schemas/sitemap/0.9' do
   @users.each do |user|
     xml.url do
       xml.loc user_url(user)
-      xml.lastmod user.updated_at.utc.strftime("%Y-%m-%dT%H:%M:%S_00:00")
+      xml.lastmod user.updated_at.utc.strftime("%Y-%m-%dT%H:%M:%S+00:00")
       xml.changefreq "weekly"
       xml.priority "0.6"
     end
