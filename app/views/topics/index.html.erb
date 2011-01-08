@@ -8,10 +8,10 @@
           </td>
           <td class="details">
 	    <div class="counter">
-	      <%= link_to topic.replies.size.to_s, "#{url_for(topic)}#u#{topic.replies.size}", :target => "_blank" %>
+	      <%= link_to topic.replies.size.to_s, "#{url_for(topic)}#u#{topic.replies.size}" %>
 	    </div>
 	    <div class="title">
-	      <%= link_to topic.title, "#{url_for(topic)}#u#{topic.replies.size}", :target => "_blank" %>
+	      <%= link_to topic.title, "#{url_for(topic)}#u#{topic.replies.size}" %>
 	    </div>
 	    <div class="meta">
 	      <!-- inevitable mess due to bilingual support -->
