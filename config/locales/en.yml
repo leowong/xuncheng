@@ -8,6 +8,7 @@ en:
     errors:
       messages:
         contain_whitespace: "can't contain whitespace characters"
+        contain_at_sign: "can't contain @ symbol"
     attributes:
       user:
         login: "Username or Email"

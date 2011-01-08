@@ -16,6 +16,7 @@ class User < ActiveRecord::Base
 
   validates :username, :presence => true, :uniqueness => true
   validate :username_cannot_contain_whitespace_characters
+  validate :username_cannot_contain_at_sign
 
   # Include default devise modules. Others available are:
   # :registerable, :token_authenticatable, :confirmable, :lockable and :timeoutable
@@ -53,5 +54,9 @@ class User < ActiveRecord::Base
 
   def username_cannot_contain_whitespace_characters
     errors.add(:username, I18n.t('activerecord.errors.messages.contain_whitespace')) if username.index(/\s/)
+  end
+
+  def username_cannot_contain_at_sign
+    errors.add(:username, I18n.t('activerecord.errors.messages.contain_at_sign')) if username.index(/@/)
   end
 end

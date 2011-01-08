@@ -18,6 +18,7 @@ class Post < ActiveRecord::Base
   def users_to_notify
     text = content
     text += " " + title if type == "Topic"
+    text = text.gsub('@', ' @')
     text.scan(/@(\S+)/).flatten.uniq.map do |name|
       User.find_by_username(name)
     end.select { |user| not user.nil? }
