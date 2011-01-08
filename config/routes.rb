@@ -18,6 +18,8 @@ Xuncheng::Application.routes.draw do
   resources :users, :only => [:index, :show, :new, :edit, :create, :update], :path => "u"
   resources :images, :only => [:new, :create]
 
+  match 'sitemap.xml' => 'sitemap#sitemap'
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

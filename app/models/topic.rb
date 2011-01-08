@@ -1,7 +1,7 @@
 class Topic < Post
   attr_accessible :title, :content
 
-  belongs_to :user
+  belongs_to :user, :touch => true
   has_many :nodings
   has_many :nodes, :through => :nodings
   has_many :replies, :dependent => :destroy

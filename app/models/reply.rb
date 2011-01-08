@@ -1,7 +1,7 @@
 class Reply < Post
   attr_accessible :content, :topic_id
 
-  belongs_to :user
+  belongs_to :user, :touch => true
   belongs_to :topic, :touch => true
 
   validates :content, :presence => true
