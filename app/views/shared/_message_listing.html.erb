@@ -17,14 +17,15 @@
 	</td>
 	<td class="subject">
 	  <% if item.topic? %>
-	    <%= link_to item.title, topic_path(item, :r => 0) %>
+	    <%= link_to item.title, topic_path(item, :r => 0), :target => "_blank" %>
           <% else %>
             <%= link_to item.topic.title,
                   topic_path(
                     item.topic,
                     :anchor => "r" + item.reply_counter.to_s,
                     :r => item.reply_counter
-                  )
+                  ),
+	          :target => "_blank"
              %>
           <% end %>
 	</td>
