@@ -26,7 +26,7 @@ role :db, domain, :primary => true
 namespace :deploy do
   desc "Restart application"
   task :restart do
-    run "rvmsudo thin restart -C /etc/thin192/#{application}.yml"
+    run "rvmsudo thin restart -C /etc/thin192/#{application}.yml -O"
   end
 
   desc "installs Bundler if it is not already installed"
