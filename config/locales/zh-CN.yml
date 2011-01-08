@@ -226,7 +226,7 @@ zh-CN:
 
   site:
     name: "浔城社区"
-    description: "服务九江居民的网络社区"
+    description: "九江居民的网络社区"
     home: "首页"
 
   punctuation:
@@ -240,7 +240,7 @@ zh-CN:
       nodes: "节点"
       returned_user: "如已有账户请"
     footer:
-      started_from: "始于 2011 年 1 月 1 日"
+      started_from: "启动于 2011 年 1 月 1 日"
       from: "我们来自"
       location: "江西省九江市"
       before_rails: "网站程序基于"
