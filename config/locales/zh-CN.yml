@@ -228,6 +228,8 @@ zh-CN:
     name: "浔城社区"
     description: "九江居民的网络社区"
     home: "首页"
+    meta_description: "来自江西省九江市的地方性社区论坛。"
+    meta_keywords: "江西, 九江, 浔城, 微博, 社区, 论坛"
 
   punctuation:
     comma: "，"

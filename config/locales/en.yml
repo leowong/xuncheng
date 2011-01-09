@@ -21,8 +21,10 @@ en:
 
   site:
     name: "Xuncheng"
-    description: "Online society for residents of Jiujiang"
+    description: "Online society for people from Jiujiang"
     home: "Home"
+    meta_description: "Forum/microblog for people from Jiujiang, Jiangxi, China."
+    meta_keywords: "Jiangxi, Jiujiang, forum, microblog"
 
   punctuation:
     comma: ","

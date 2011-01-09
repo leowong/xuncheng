@@ -6,6 +6,8 @@
   <%= render 'layouts/javascripts' %>
   <%= csrf_meta_tag %>
   <%= auto_discovery_link_tag :rss, topics_url(:rss), :title => t('site.name') %>
+  <meta name="description" content="<%= t('site.meta_description') %>" />
+  <meta name="keywords" content="<%= t('site.meta_keywords') %>" />
   <%= yield(:head) %>
 </head>
 <body>
