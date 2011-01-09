@@ -8,8 +8,7 @@
     </tr>
   </thead>
   <tbody>
-    <% items.each do |item| %>
-      <% item.type == "Topic" ? topic = item : topic = item.topic %>
+    <% items.each do |topic| %>
       <tr class="<%= cycle("odd", "even", :name => "items") %>">
 	<td class="replies">
 	  <span <%= raw('class="mist"') if topic.replies.size == 0 %>>
@@ -17,19 +16,13 @@
           </span>
 	</td>
 	<td class="subject">
-	  <% if item.type == "Topic" %>
-	    <%= link_to topic.title, topic %>
-          <% else %>
-            <%= link_to topic.title, topic_path(topic) + "#r" + item.id.to_s %>
-          <% end %>
+	  <%= link_to topic.title, topic %>
 	</td>
 	<td class="author">
 	  <% if (writer ||= nil) == "replier" && !topic.replies.empty? %>
 	    <%= link_to topic.replies.first.user.username, topic.replies.first.user %>
-	  <% elsif item.type == "Topic" %>
-	    <%= link_to topic.user.username, topic.user %>
 	  <% else %>
-	    <%= link_to item.user.username, item.user %>
+	    <%= link_to topic.user.username, topic.user %>
 	  <% end %>
 	</td>
 	<td class="last_replied">
