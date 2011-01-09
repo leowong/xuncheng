@@ -41,7 +41,7 @@ class TopicsController < ApplicationController
     if @topic.save
       @topic.notify_users
       mark_used_images(@topic)
-      redirect_to(@topic, :notice => 'Topic was successfully created.')
+      redirect_to(@topic, :notice => t('topics.notice.create_successful'))
     else
       render :action => "new"
     end
@@ -52,7 +52,7 @@ class TopicsController < ApplicationController
     authorize! :update, @topic
 
     if @topic.update_attributes(params[:topic])
-      redirect_to(@topic, :notice => 'Topic was successfully updated.')
+      redirect_to(@topic, :notice => t('topics.notice.update_successful'))
     else
       render :action => "edit"
     end

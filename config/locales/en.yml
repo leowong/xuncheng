@@ -76,6 +76,9 @@ en:
       upload_image: "Upload image"
       top: "Top"
       add_reply: "Add Reply"
+    notice:
+      create_successful: 'Topic was successfully created.'
+      update_successful: 'Topic was successfully updated.'
 
   replies:
     reply:
