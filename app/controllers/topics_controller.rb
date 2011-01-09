@@ -4,12 +4,22 @@ class TopicsController < ApplicationController
 
   def index
     @topics = Topic.all
+
+    respond_to do |format|
+      format.html
+      format.rss { render :layout => false }
+    end
   end
 
   def show
     @topic = Topic.find(params[:id])
     @topic.update_reply_counters if @topic.replies.where(:reply_counter => nil).count > 0
     mark_message_read(@topic, params[:r]) if current_user and params[:r]
+
+    respond_to do |format|
+      format.html
+      format.rss { render :layout => false }
+    end
   end
 
   def new

@@ -5,6 +5,7 @@
   <%= render 'layouts/stylesheets' %>
   <%= render 'layouts/javascripts' %>
   <%= csrf_meta_tag %>
+  <%= auto_discovery_link_tag :rss, topics_url(:rss), :title => t('site.name') %>
   <%= yield(:head) %>
 </head>
 <body>
