@@ -1,8 +1,6 @@
-<%= content_for :title do %>
-  <%= @topic.title %>
-<% end %>
+<% title @topic.title %>
 
-<%= content_for :head do %>
+<% content_for :head do %>
   <%= auto_discovery_link_tag :rss, topic_url(@topic, :rss), :title => @topic.title %>
   <link rel="canonical" href="<%= topic_path(@topic) %>" />
 <% end %>

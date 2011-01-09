@@ -1,4 +1,10 @@
 module ApplicationHelper
+  def title(page_title)
+    content_for(:title) do
+      page_title.to_s
+    end
+  end
+
   def setup_user(user)
     user.tap do |u|
       u.build_avatar if u.avatar.nil?

@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title><%= t('site.name') %> › <%= yield(:title).empty? ? t('site.description') : yield(:title) %></title>
+  <title><%= t('site.name') %> › <%= content_for?(:title) ? yield(:title) : t('site.description') %></title>
   <%= render 'layouts/stylesheets' %>
   <%= render 'layouts/javascripts' %>
   <%= csrf_meta_tag %>
