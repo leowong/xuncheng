@@ -7,7 +7,7 @@ xml.rss :version => "2.0" do
 
     for reply in @topic.replies.reverse
       xml.item do
-        xml.title reply.content
+        xml.title truncate(reply.content, :length => 50)
         xml.pubDate reply.created_at.to_s(:rfc822)
         xml.link topic_url(@topic, :anchor => "r#{reply.reply_counter}")
         xml.guid topic_url(@topic, :anchor => "r#{reply.reply_counter}")
