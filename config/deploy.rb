@@ -1,4 +1,5 @@
 default_run_options[:pty] = true
+ssh_options[:forward_agent] = true
 
 # using mri 1.9.2 instead
 $:.unshift(File.expand_path('./lib', ENV['rvm_path'])) # Add RVM's lib directory to the load path.
@@ -11,7 +12,7 @@ set :domain, 'xuncheng.net'
 set :application, 'xuncheng'
 
 # the rest should be good
-set :repository,  "#{user}@#{domain}:git/#{application}.git"
+set :repository,  "git@github.com:leowong/xuncheng.git"
 set :deploy_to, "/home/#{user}/www/#{domain}"
 set :deploy_via, :remote_cache
 set :scm, 'git'
