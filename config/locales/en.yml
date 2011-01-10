@@ -86,6 +86,10 @@ en:
     reply:
       after_timestamp: " ago"
       reply: "Reply"
+    create:
+      reply:
+        one: "1 reply"
+        other: "%{count} replies"
 
   authenticity:
     signup: "Sign up"

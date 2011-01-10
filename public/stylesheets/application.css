@@ -861,3 +861,7 @@ form#user_new td.name {
 .reply.cell.highlight {
     background: #f9f9f9 url("/images/triangle.png") no-repeat left top;
 }
+
+#replies.box {
+    margin-top: 20px;
+}

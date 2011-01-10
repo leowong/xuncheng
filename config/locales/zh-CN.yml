@@ -291,6 +291,10 @@ zh-CN:
     reply:
       after_timestamp: "前"
       reply: "回复"
+    create:
+      reply:
+        one: "1 条回复"
+        other: "%{count} 条回复"
 
   authenticity:
     signup: "注册"

@@ -1,0 +1,8 @@
+var counter = "<%= escape_javascript(t('.reply', :count => @reply.reply_counter)) %>";
+var timestamp = "<%= escape_javascript(@reply.created_at.to_datetime.strftime('%Y-%m-%d %H:%M:%S')) %>";
+
+$("#replies").append("<%= escape_javascript(render(:partial => @reply)) %>");
+$("#replies .cell .summary .counter").html(counter);
+$("#replies .cell .summary .timestamp").html(timestamp);
+$("#replies").show();
+$("#new_reply")[0].reset();

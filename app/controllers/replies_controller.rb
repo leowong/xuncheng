@@ -9,6 +9,13 @@ class RepliesController < ApplicationController
     @reply.notify_users
     mark_used_images(@reply) if @reply
 
-    redirect_to @topic
+    respond_to do |format|
+      if @reply
+        format.html { redirect_to @topic }
+        format.js
+      else
+        format.html { redirect_to @topic }
+      end
+    end
   end
 end
