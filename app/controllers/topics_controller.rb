@@ -15,6 +15,7 @@ class TopicsController < ApplicationController
     @topic = Topic.find(params[:id])
     @topic.update_reply_counters if @topic.replies.where(:reply_counter => nil).size > 0
     mark_message_read(@topic, params[:r]) if current_user and params[:r]
+    @topic.increment_pageviews
 
     respond_to do |format|
       format.html

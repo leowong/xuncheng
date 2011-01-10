@@ -276,6 +276,8 @@ zh-CN:
       before_author: ""
       before_timestamp: " 发布于"
       after_timestamp: "前"
+      before_pageviews: "共"
+      after_pageviews: "人次访问"
       reply:
         one: "1 条回复"
         other: "%{count} 条回复"

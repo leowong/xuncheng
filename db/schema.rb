@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110107165811) do
+ActiveRecord::Schema.define(:version => 20110110140745) do
 
   create_table "assets", :force => true do |t|
     t.integer  "viewable_id"
@@ -67,6 +67,7 @@ ActiveRecord::Schema.define(:version => 20110107165811) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "reply_counter"
+    t.integer  "pageviews_count"
   end
 
   add_index "posts", ["topic_id", "reply_counter"], :name => "index_posts_on_topic_id_and_reply_counter", :unique => true

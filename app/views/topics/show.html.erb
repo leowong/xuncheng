@@ -18,7 +18,8 @@
     <h2><%= @topic.title %></h2>
     <div class="meta">
       <%= t('.before_author') %><%= link_to "#{@topic.user.username}", @topic.user %>
-      <%= t('.before_timestamp') %> <%= time_ago_in_words(@topic.created_at) %><%= t('.after_timestamp') %>
+      <%= t('.before_timestamp') %> <%= time_ago_in_words(@topic.created_at) %><%= t('.after_timestamp') %><%= t('punctuation.comma') %>
+      <%= t('.before_pageviews') %> <%= @topic.pageviews_count %> <%= t('.after_pageviews') %><%= t('punctuation.period') %>
     </div>
   </div>
   <div class="content">

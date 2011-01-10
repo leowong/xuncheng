@@ -22,6 +22,11 @@ class Topic < Post
     end
   end
 
+  def increment_pageviews
+    current_count = pageviews_count || 0
+    update_attribute(:pageviews_count, current_count + 1)
+  end
+
   private
 
   def self.topics_replied_by(user)
