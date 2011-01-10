@@ -24,7 +24,9 @@ class Topic < Post
 
   def increment_pageviews
     current_count = pageviews_count || 0
+    Topic.record_timestamps=false
     update_attribute(:pageviews_count, current_count + 1)
+    Topic.record_timestamps=true
   end
 
   private
