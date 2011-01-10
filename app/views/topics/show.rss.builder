@@ -5,7 +5,7 @@ xml.rss :version => "2.0" do
     xml.description @topic.content
     xml.link topic_url(@topic)
 
-    for reply in @topic.replies.reverse
+    for reply in @topic.replies.order('created_at DESC')
       xml.item do
         xml.title truncate(reply.content, :length => 50)
         xml.pubDate reply.created_at.to_s(:rfc822)

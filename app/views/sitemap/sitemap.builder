@@ -17,7 +17,7 @@ xml.urlset :xmlns => 'http://www.sitemaps.org/schemas/sitemap/0.9' do
   @nodes.each do |node|
     xml.url do
       xml.loc node_url(node)
-      xml.lastmod node.topics.first.updated_at.utc.strftime("%Y-%m-%dT%H:%M:%S+00:00") unless node.topics.empty?
+      xml.lastmod node.topics.last.created_at.utc.strftime("%Y-%m-%dT%H:%M:%S+00:00") unless node.topics.empty?
       xml.changefreq "weekly"
       xml.priority "0.6"
     end

@@ -20,13 +20,13 @@
 	</td>
 	<td class="author">
 	  <% if (writer ||= nil) == "replier" && !topic.replies.empty? %>
-	    <%= link_to topic.replies.first.user.username, topic.replies.first.user %>
+	    <%= link_to topic.replies.last.user.username, topic.replies.last.user %>
 	  <% else %>
 	    <%= link_to topic.user.username, topic.user %>
 	  <% end %>
 	</td>
 	<td class="last_replied">
-          <%= (topic.replies.empty? ? topic.created_at : topic.replies.first.created_at).to_datetime.strftime('%Y-%m-%d %H:%M:%S') %>
+          <%= (topic.replies.empty? ? topic.created_at : topic.replies.last.created_at).to_datetime.strftime('%Y-%m-%d %H:%M:%S') %>
 	</td>
       </tr>
     <% end %>

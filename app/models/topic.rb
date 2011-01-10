@@ -10,8 +10,6 @@ class Topic < Post
   validates :content, :presence => true
   validates :user_id, :presence => true
 
-  default_scope :order => 'posts.updated_at DESC'
-
   scope :replied_by, lambda { |user| topics_replied_by(user) }
 
   def node_names
@@ -28,6 +26,7 @@ class Topic < Post
 
   def self.topics_replied_by(user)
     topic_ids = %(SELECT topic_id FROM posts WHERE user_id = :user_id AND posts.type = 'Reply')
-    where("posts.user_id <> :user_id AND posts.id IN (#{topic_ids})", { :user_id => user })
+    order("posts.created_at DESC").
+      where("posts.user_id <> :user_id AND posts.id IN (#{topic_ids})", { :user_id => user })
   end
 end

@@ -7,8 +7,6 @@ class Reply < Post
   validates :content, :presence => true
   validates :topic_id, :presence => true
 
-  default_scope :order => 'posts.created_at'
-
   def update_counter
     update_attribute(:reply_counter, counter)
   end
@@ -16,6 +14,6 @@ class Reply < Post
   private
 
   def counter
-    topic.replies.where('id <= ?', self.id).order(:id).count
+    topic.replies.where('id <= ?', self.id).size
   end
 end

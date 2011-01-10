@@ -3,7 +3,7 @@ class TopicsController < ApplicationController
   include ImagesHelper
 
   def index
-    @topics = Topic.all
+    @topics = Topic.order('created_at DESC')
 
     respond_to do |format|
       format.html
@@ -13,7 +13,7 @@ class TopicsController < ApplicationController
 
   def show
     @topic = Topic.find(params[:id])
-    @topic.update_reply_counters if @topic.replies.where(:reply_counter => nil).count > 0
+    @topic.update_reply_counters if @topic.replies.where(:reply_counter => nil).size > 0
     mark_message_read(@topic, params[:r]) if current_user and params[:r]
 
     respond_to do |format|
