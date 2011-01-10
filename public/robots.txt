@@ -3,3 +3,8 @@
 # To ban all spiders from the entire site uncomment the next two lines:
 # User-Agent: *
 # Disallow: /
+User-agent: *
+Disallow: /signup
+Disallow: /login
+Disallow: /d/password
+Sitemap: http://xuncheng.net/sitemap.xml
