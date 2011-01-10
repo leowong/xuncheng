@@ -35,7 +35,7 @@
 	<%= @topic.replies.last.created_at.to_datetime.strftime('%Y-%m-%d %H:%M:%S') %>
       </div>
     </div>
-    <%= render @topic.replies %>
+    <%= render @topic.replies.order('created_at') %>
   </div>
 <% end %>
 
