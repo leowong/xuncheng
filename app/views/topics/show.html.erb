@@ -57,6 +57,7 @@
 	    <div class="top">
 	      ⬆ <%= link_to t('.top'), "#top" %>
 	    </div>
+	    <%= hidden_field_tag :last_reply_counter, @topic.replies.size %>
 	    <%= f.submit t('.add_reply'), :class => "super normal button" %>
 	  </div>
 	</div>
