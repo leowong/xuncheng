@@ -71,7 +71,7 @@ en:
       before_author: "By "
       before_timestamp: "at"
       after_timestamp: " ago"
-      before_pageviews: ""
+      before_pageviews: "with"
       after_pageviews: "total pageviews"
       reply:
         one: "1 reply"
