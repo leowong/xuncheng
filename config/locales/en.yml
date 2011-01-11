@@ -15,6 +15,7 @@ en:
         username: "Username"
         email: "Email"
         password_confirmation: "Confirmation"
+        signature: "Signature"
         biography: "Bio"
         locale: "Language"
         email_publishing: "Let others see my email address"
