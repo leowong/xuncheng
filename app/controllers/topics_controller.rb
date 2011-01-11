@@ -3,7 +3,7 @@ class TopicsController < ApplicationController
   include ImagesHelper
 
   def index
-    @topics = Topic.order('updated_at DESC')
+    @topics = Topic.order('updated_at DESC').limit(30)
 
     respond_to do |format|
       format.html
