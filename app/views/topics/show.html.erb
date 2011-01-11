@@ -42,7 +42,7 @@
 <% if user_signed_in? %>
   <hr class="space" />
   <div class="box">
-    <%= form_for [@topic, Reply.new], :remote => true, :format => :js do |f| %>
+    <%= form_for [@topic, Reply.new], :remote => true do |f| %>
       <div class="cell">
 	<div class="upload_image">
           <%= link_to t('.upload_image'), new_image_path, :id => "upload_image_link" %>

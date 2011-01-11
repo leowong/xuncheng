@@ -14,8 +14,8 @@ class RepliesController < ApplicationController
 
     respond_to do |format|
       if @reply
+        format.js if request.xhr?
         format.html { redirect_to @topic }
-        format.js
       else
         format.html { redirect_to @topic }
       end

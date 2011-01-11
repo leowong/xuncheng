@@ -11,3 +11,11 @@ $("#replies .cell .summary .timestamp").html(timestamp_tag);
 $("#replies").show();
 $("#last_reply_counter").val(counter);
 $("#new_reply")[0].reset();
+
+$(document).ready(function() {
+  $(".reply.cell").slice(-<%= @replies.size %>).highlightCurrent();
+});
+
+$(document).ready(function() {
+  $(".reply .meta").slice(-<%= @replies.size %>).insertName();
+});
