@@ -58,7 +58,7 @@ en:
       timestamp: "Last Replied"
 
   topics:
-    index:
+    topic:
       before_author: "By"
       before_nodes: "in"
       after_timestamp: " ago "
@@ -160,5 +160,4 @@ en:
         send_reset_mail: "Send me reset password instructions"
 
   pagination:
-    previous: "Previous"
-    next: "Next"
+    more: "more"

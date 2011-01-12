@@ -6,8 +6,12 @@ class TopicsController < ApplicationController
     @topics = Topic.paginate(:page => params[:page], :order => 'updated_at DESC')
 
     respond_to do |format|
-      format.html
-      format.rss { render :layout => false }
+      if request.xhr?
+        format.js
+      else
+        format.html
+        format.rss { render :layout => false }
+      end
     end
   end
 

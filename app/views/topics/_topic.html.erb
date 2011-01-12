@@ -1,0 +1,28 @@
+<%= div_for topic, :class => "cell" do %>
+  <table class="topic" cellpadding="0" cellspacing="0" border="0" width="100%">
+    <tr>
+      <td valign="top" class="avatar">
+        <%= link_to image_tag(topic.user.avatar_path, :alt => topic.user.username), topic.user %>
+      </td>
+      <td class="details">
+        <div class="counter">
+	  <%= link_to topic.replies.size.to_s, "#{url_for(topic)}#u#{topic.replies.size}" %>
+	</div>
+	<div class="title">
+	  <%= link_to topic.title, "#{url_for(topic)}#u#{topic.replies.size}" %>
+	</div>
+	<div class="meta">
+	  <!-- inevitable mess due to bilingual support -->
+	  <%= t('.before_author') %> <strong><%= link_to topic.user.username, topic.user %></strong>
+	  <%= t('.before_nodes') %> <strong><%= link_to topic.nodes.first.name, topic.nodes.first %></strong><br />
+	  <%= time_ago_in_words(topic.updated_at) %><%= t('.after_timestamp') %><% unless topic.replies.empty? %><%= t('.before_replier') %>
+	    <strong>
+	      <%= link_to "#{topic.replies.last.user.username}", topic.replies.last.user %>
+	    </strong>
+	    <%= t('.after_replier') %>
+          <% end %>
+        </div>
+      </td>
+    </tr>
+  </table>
+<% end %>

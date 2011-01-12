@@ -870,11 +870,6 @@ form#user_new td.name {
     text-align: center;
 }
 
-.pagination {
-    color: #777;
-}
-
-.pagination em {
-    font-style: normal;
-    font-weight: bold;
+a#paginate {
+    color: #999;
 }

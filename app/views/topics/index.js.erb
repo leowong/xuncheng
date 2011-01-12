@@ -1,0 +1,6 @@
+$("#paginate").before("<%= escape_javascript(render @topics) %>");
+<% if @topics.current_page < @topics.total_pages %>
+  $("#paginate").attr("href", "<%= escape_javascript(topics_url(:page => @topics.current_page + 1)) %>")
+<% else %>
+  $("#paginate").empty().remove();
+<% end %>
