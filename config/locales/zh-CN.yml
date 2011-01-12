@@ -361,3 +361,7 @@ zh-CN:
       new:
         forgot_password: "忘记密码？"
         send_reset_mail: "发送密码重置邮件"
+
+  pagination:
+    previous: "上一页"
+    next: "下一页"

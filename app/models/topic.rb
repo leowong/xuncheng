@@ -12,6 +12,8 @@ class Topic < Post
 
   scope :replied_by, lambda { |user| topics_replied_by(user) }
 
+  self.per_page = 30
+
   def node_names
     nodes.map(&:name).join(', ')
   end

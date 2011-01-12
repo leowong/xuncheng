@@ -865,3 +865,16 @@ form#user_new td.name {
 #replies.box {
     margin-top: 20px;
 }
+
+.center {
+    text-align: center;
+}
+
+.pagination {
+    color: #777;
+}
+
+.pagination em {
+    font-style: normal;
+    font-weight: bold;
+}

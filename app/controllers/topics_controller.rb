@@ -3,7 +3,7 @@ class TopicsController < ApplicationController
   include ImagesHelper
 
   def index
-    @topics = Topic.order('updated_at DESC').limit(30)
+    @topics = Topic.paginate(:page => params[:page], :order => 'updated_at DESC')
 
     respond_to do |format|
       format.html

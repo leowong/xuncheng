@@ -10,6 +10,7 @@ gem 'devise', '1.1.5'
 gem 'paperclip', '2.3.8'
 gem 'aws-s3', :require => 'aws/s3'
 gem 'cancan', '1.4.1'
+gem 'will_paginate', '3.0.pre2'
 
 # Use unicorn as the web server
 # gem 'unicorn'
