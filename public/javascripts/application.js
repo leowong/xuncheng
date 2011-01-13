@@ -24,7 +24,7 @@ jQuery.fn.insertName = function() {
 };
 
 $(document).ready(function() {
-  $("#upload_image_link").colorbox({innerWidth:"320px", innerHeight:"120px", iframe:true, returnFocus:false});
+  $("#upload_image_link").colorbox({innerWidth:"360px", innerHeight:"150px", iframe:true, returnFocus:false});
 });
 
 $(document).ready(function() {

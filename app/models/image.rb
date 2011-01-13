@@ -4,7 +4,7 @@ class Image < Asset
   has_attached_file :attachment,
     :styles => {
       :thumb => ['73x73#', :jpg],
-      :original  => ['635>', :jpg]
+      :original  => ['565>', :jpg]
     },
 
     :convert_options => { :all => '-strip -background white -flatten +matte' },

@@ -245,6 +245,7 @@ h2 {
 #logo {
     color: white;
     float: left;
+    display: inline;
     font-size: 24px;
     font-weight: bold;
     margin-left: 15px;
@@ -261,8 +262,7 @@ h2 {
     color: white;
     float: right;
     font-size: 14px;
-    line-height: 14px;
-    margin-top: 13px;
+    margin-top: 12px;
     text-align: right;
 }
 
@@ -296,7 +296,7 @@ h2 {
     background-color: transparent;
     width: 272px;
     float: right;
-    padding: 10px 0 10px 10px;
+    padding: 10px 0 10px 0;
 }
 
 #side .center {
@@ -822,14 +822,11 @@ table.user td.details .email .icon {
 #popup .cell {
     padding: 10px;
     border: none;
+    text-align: left;
 }
 
 #cboxLoadedContent {
     margin-bottom: 0;
-}
-
-#cboxClose {
-    height: 0;
 }
 
 #footer .logos {
