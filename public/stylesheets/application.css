@@ -229,9 +229,7 @@ h2 {
 
 #header {
     height: 40px;
-    background-color: #222;
-    background: -moz-linear-gradient(center top , #444, #111) repeat scroll 0 0 transparent;
-    background: -webkit-gradient(linear, left top, left bottom, from(#444), to(#111));
+    background: #222 url("/images/header-slider.png") top left repeat-x;
 }
 
 #wrapper {
