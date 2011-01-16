@@ -12,10 +12,7 @@ $("#replies").show();
 $("#last_reply_counter").val(counter);
 $("#new_reply")[0].reset();
 
-$(document).ready(function() {
-  $(".reply.cell").slice(-<%= @replies.size %>).highlightCurrent();
-});
+$(".reply.cell").slice(-<%= @replies.size %>).highlightCurrent();
+$(".reply .meta").slice(-<%= @replies.size %>).insertName();
 
-$(document).ready(function() {
-  $(".reply .meta").slice(-<%= @replies.size %>).insertName();
-});
+$("#reply_submit").removeAttr('disabled').removeClass('disabled');

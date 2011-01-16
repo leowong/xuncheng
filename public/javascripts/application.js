@@ -34,3 +34,17 @@ $(document).ready(function() {
 $(document).ready(function() {
   $(".reply .meta").insertName();
 });
+
+$(document).ready(function() {
+  $("#new_topic").submit(function() {
+    $("#topic_submit").attr("disabled", true).addClass('disabled');
+    return true;
+  });
+});
+
+$(document).ready(function() {
+  $("#new_reply").submit(function() {
+    $("#reply_submit").attr("disabled", true).addClass('disabled');
+    return true;
+  });
+});

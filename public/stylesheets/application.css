@@ -71,6 +71,10 @@ a:link, a:visited, a:active {
 .inverse.button:hover { background-color: #999; color: #fff; text-shadow: 0px -1px 1px rgba(0, 0, 0, 0.5); text-decoration: none; text-decoration: none; font-weight: 600; cursor: pointer; -moz-box-shadow: 0px 1px 2px rgba(200, 200, 200, 1); border: 1px solid rgba(150, 150, 150, 0.6); }
 .inverse.button:active { background-color: #888; color: #fff; text-shadow: 0px -1px 1px rgba(0, 0, 0, 0.5); text-decoration: none; text-decoration: none; font-weight: 600; cursor: pointer; -moz-box-shadow: 0px 1px 2px rgba(200, 200, 200, 1); border: 1px solid rgba(150, 150, 150, 0.6); }
 
+.disabled.button, .disabled.button:hover {
+    color: #999;
+}
+
 /* forms */
 
 input[type="text"], input[type="password"], input.text, input.title, textarea, select {
