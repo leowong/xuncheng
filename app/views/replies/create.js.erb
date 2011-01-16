@@ -1,18 +1,20 @@
-var counter = <%= escape_javascript(@reply.reply_counter.to_s) %>
-var counter_tag = "<%= escape_javascript(t('.reply', :count => @reply.reply_counter)) %>";
-var timestamp_tag = "<%= escape_javascript(@reply.created_at.to_datetime.strftime('%Y-%m-%d %H:%M:%S')) %>";
+<% unless @reply.new_record? %>
+  var counter = <%= escape_javascript(@reply.reply_counter.to_s) %>
+  var counter_tag = "<%= escape_javascript(t('.reply', :count => @reply.reply_counter)) %>";
+  var timestamp_tag = "<%= escape_javascript(@reply.created_at.to_datetime.strftime('%Y-%m-%d %H:%M:%S')) %>";
 
-<% @replies.each do |reply| %>
-  $("#replies").append("<%= escape_javascript(render(:partial => reply)) %>");
+  <% @replies.each do |reply| %>
+    $("#replies").append("<%= escape_javascript(render(:partial => reply)) %>");
+  <% end %>
+
+  $("#replies .cell .summary .counter").html(counter_tag);
+  $("#replies .cell .summary .timestamp").html(timestamp_tag);
+  $("#replies").show();
+  $("#last_reply_counter").val(counter);
+  $("#new_reply")[0].reset();
+
+  $(".reply.cell").slice(-<%= @replies.size %>).highlightCurrent();
+  $(".reply .meta").slice(-<%= @replies.size %>).insertName();
 <% end %>
-
-$("#replies .cell .summary .counter").html(counter_tag);
-$("#replies .cell .summary .timestamp").html(timestamp_tag);
-$("#replies").show();
-$("#last_reply_counter").val(counter);
-$("#new_reply")[0].reset();
-
-$(".reply.cell").slice(-<%= @replies.size %>).highlightCurrent();
-$(".reply .meta").slice(-<%= @replies.size %>).insertName();
 
 $("#reply_submit").removeAttr('disabled').removeClass('disabled');

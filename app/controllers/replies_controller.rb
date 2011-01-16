@@ -7,18 +7,17 @@ class RepliesController < ApplicationController
     params[:reply].delete(:last_reply_counter)
     @topic = Topic.find(params[:topic_id])
     @reply = current_user.replies.create(params[:reply].merge(:topic_id => @topic.id))
-    @reply.update_counter
-    @reply.notify_users
-    mark_used_images(@reply) if @reply
-    @replies = @topic.replies.order('created_at').where('reply_counter > ?', @last_reply_counter)
+
+    unless @reply.new_record?
+      @reply.update_counter
+      @reply.notify_users
+      mark_used_images(@reply)
+      @replies = @topic.replies.order('created_at').where('reply_counter > ?', @last_reply_counter)
+    end
 
     respond_to do |format|
-      if @reply
-        format.js if request.xhr?
-        format.html { redirect_to @topic }
-      else
-        format.html { redirect_to @topic }
-      end
+      format.js if request.xhr?
+      format.html { redirect_to @topic }
     end
   end
 end
