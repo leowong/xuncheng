@@ -34,6 +34,9 @@ gem 'will_paginate', '3.0.pre2'
 group :development, :test do
   gem 'rspec-rails', '2.2.1'
   gem 'webrat', '0.7.2'
+  gem 'wirble'
+  gem 'hirb'
+  gem 'awesome_print'
 end
 
 group :development do
