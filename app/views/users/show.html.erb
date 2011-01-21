@@ -54,7 +54,7 @@
   </div>
   <div class="cell">
     <div class="notifications">
-      <%= render 'shared/message_listing', :items => @notifications  %>
+      <%= render 'shared/notification_listing', :items => @notifications  %>
     </div>
   </div>
 </div>
@@ -62,23 +62,7 @@
 <hr class="space" />
 <div class="box">
   <div class="cell">
-    <%= t('.recent_topics') %>
+    <%= t('.messages') %>
   </div>
-  <div class="cell">
-    <div class="user_topics">
-      <%= render 'shared/item_listing', :items => @topics, :writer => "replier" %>
-    </div>
-  </div>
-</div>
-
-<hr class="space" />
-<div class="box">
-  <div class="cell">
-    <%= t('.recent_replies') %>
-  </div>
-  <div class="cell">
-    <div class="user_replies">
-      <%= render 'shared/item_listing', :items => @replies %>
-    </div>
-  </div>
+  <%= render 'shared/message_listing', :messages => @messages %>
 </div>

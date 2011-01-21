@@ -380,7 +380,7 @@ td {
 .topic td.details,
 .reply td.details {
     padding-left: 12px;
-    vertical-align:top;
+    vertical-align: top;
 }
 
 .topic td.details .counter {
@@ -588,69 +588,50 @@ table tr.even td {
     background-color: #F9F9F9;
 }
 
-.item_listing th,
-.item_listing td,
 .message_listing th,
 .message_listing td {
     font-size: 14px;
     line-height: 24px;
 }
 
-.item_listing th.replies,
-.item_listing td.replies,
 .message_listing th.counter,
 .message_listing td.counter {
     width: 50px;
     text-align: right;
 }
 
-.item_listing td.replies,
 .message_listing td.counter {
-    color: #F93;
+    color: #393;
     font-weight: bold;
 }
 
-.user_topics .item_listing td.replies,
-.user_replies .item_listing td.replies {
-    color: #393;
-}
-
-.item_listing th.subject,
-.item_listing td.subject,
 .message_listing th.subject,
 .message_listing td.subject {
     width: auto;
     text-align: left;
 }
 
-.item_listing th.author,
-.item_listing td.author,
 .message_listing th.caller,
 .message_listing td.caller {
     width: 80px;
     text-align: left;
 }
 
-.item_listing td.author a,
 .message_listing td.caller a {
     color: gray;
 }
 
-.item_listing td.author a:hover,
 .message_listing td.caller a:hover {
     color: #385F8A;
     text-decoration: none;
 }
 
-.item_listing th.last_replied,
-.item_listing td.last_replied,
 .message_listing th.timestamp,
 .message_listing td.timestamp {
     width: 110px;
     text-align: left;
 }
 
-.item_listing td.last_replied,
 .message_listing td.timestamp {
     color: #999;
     font-size: 12px;
@@ -871,4 +852,64 @@ form#user_new td.name {
 
 a#paginate {
     color: #999;
+}
+
+.message.cell {
+    padding-bottom: 0;
+}
+
+.message.cell td.avatar {
+    width: 48px;
+    vertical-align: top;
+}
+
+.message.cell td.details {
+    padding: 5px 0 5px 12px;
+    vertical-align: top;
+}
+
+.message.cell td.details .title {
+    font-size: 16px;
+    padding: 3px 0 5px 0;
+}
+
+.message.cell td.details .title a:hover,
+.message.cell td.details .title a:hover {
+  text-decoration: underline;
+}
+
+.message.cell td.details .meta {
+    color: #999;
+    font-size: 10px;
+    line-height: 16px;
+}
+
+.message.cell td.details .meta a:link {
+    color: gray;
+}
+
+.message.cell td.details .meta a:hover {
+    color: #385F8A;
+}
+
+.message.cell p img {
+    max-width: 565px;
+}
+
+.message.cell td.details .content {
+    color: #000;
+    font-size: 14px;
+    padding: 0;
+    line-height: 1.8;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.message.cell td.details .content p {
+    margin-bottom: 1em;
+}
+
+.message.cell td.details .meta {
+    font-size: 10px;
+    margin: 0px 0 12px 0;
 }

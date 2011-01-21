@@ -250,16 +250,19 @@ zh-CN:
     error_messages:
       errors: "请改正以下错误之后再继续："
     message_listing:
+      ago: "前"
+    notification_listing:
       reply_counter: "楼层"
       subject: "主题"
       caller: "来自"
       timestamp: "时间"
       ago: "前"
-    item_listing:
-      replies_count: "回复"
-      subject: "标题"
-      author: "作者"
-      timestamp: "更新时间"
+    message_listing:
+      re: "回复："
+      after_timestamp: "前"
+      before_replier: "由"
+      after_publisher: "发布"
+      after_replier: "回复"
 
   topics:
     topic:
@@ -337,8 +340,7 @@ zh-CN:
       after_userid: " 位用户，"
       before_timestamp: "加入于"
       recent_notifications: "最新呼叫"
-      recent_topics: "最近主题"
-      recent_replies: "最近回复"
+      messages: "主题和回复"
   nodes:
     show:
       topics_total: "主题总数"

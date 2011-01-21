@@ -6,6 +6,7 @@ class User < ActiveRecord::Base
 
   has_many :topics
   has_many :replies
+  has_many :posts
   has_one :avatar, :as => :viewable, :dependent => :destroy
   has_many :images, :as => :viewable, :dependent => :destroy
   has_many :callings

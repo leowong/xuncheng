@@ -46,16 +46,19 @@ en:
     error_messages:
       errors: "Please fix the following problems first:"
     message_listing:
+      ago: " ago"
+    notification_listing:
       reply_counter: "Counter"
       subject: "Subject"
       caller: "By"
       timestamp: "At"
       ago: " ago"
-    item_listing:
-      replies_count: "Replies"
-      subject: "Subject"
-      author: "Author"
-      timestamp: "Last Replied"
+    message_listing:
+      re: "Re: "
+      after_timestamp: " ago "
+      before_replier: "replied by"
+      after_publisher: ""
+      after_replier: ""
 
   topics:
     topic:
@@ -133,8 +136,7 @@ en:
       after_userid: "."
       before_timestamp: "Joined at"
       recent_notifications: "Recent Notifications"
-      recent_topics: "Recent Topics"
-      recent_replies: "Recent Replies"
+      messages: "Topics & Replies"
 
   nodes:
     show:

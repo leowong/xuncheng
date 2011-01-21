@@ -17,7 +17,7 @@
 	  <%= t('.before_nodes') %> <strong><%= link_to topic.nodes.first.name, topic.nodes.first %></strong><br />
 	  <%= time_ago_in_words(topic.updated_at) %><%= t('.after_timestamp') %><% unless topic.replies.empty? %><%= t('.before_replier') %>
 	    <strong>
-	      <%= link_to "#{topic.replies.last.user.username}", topic.replies.last.user %>
+	      <%= link_to topic.replies.last.user.username, topic.replies.last.user %>
 	    </strong>
 	    <%= t('.after_replier') %>
           <% end %>

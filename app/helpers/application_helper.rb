@@ -11,7 +11,7 @@ module ApplicationHelper
     end
   end
 
-  def wrap_text(content, render = { :images => true, :videos => true })
+  def wrap_text(content, render={ :images => true, :videos => true })
     content = simple_format(h(content))
 
     if current_user
@@ -44,6 +44,20 @@ module ApplicationHelper
 
   def cloudfront(url)
     url.gsub(/^https?:\/\/s3.amazonaws.com\/xuncheng/, "http://cdn.xuncheng.net")
+  end
+
+  def link_to_post_title(post, opt={ :reply_prefix => '' })
+    return '' unless %w(Post Topic Reply).include?(post.class.to_s)
+    if post.topic?
+      link_to post.title, topic_path(post, :r => 0)
+    else
+      link_to opt[:reply_prefix] + post.topic.title,
+              topic_path(
+                post.topic,
+                :anchor => "r" + post.reply_counter.to_s,
+                :r => post.reply_counter
+              )
+    end 
   end
 
   private

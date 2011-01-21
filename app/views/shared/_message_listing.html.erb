@@ -1,41 +1,24 @@
-<table class="message_listing">
-  <thead>
-    <tr>
-      <th class="counter"><%= t('.reply_counter') %></th>
-      <th class="subject"><%= t('.subject') %></th>
-      <th class="caller"><%= t('.caller') %></th>
-      <th class="timestamp"><%= t('.timestamp') %></th>
-    </tr>
-  </thead>
-  <tbody>
-    <% items.each do |item| %>
-      <tr class="<%= cycle("odd", "even", :name => "items") %>">
-	<td class="counter">
-	  <span <%= raw('class="mist"') if item.topic? %>>
-	    <%= item.reply? ? item.reply_counter : 0 %>
-          </span>
+<% for message in messages do %>
+  <div class="message cell">
+    <table cellpadding="0" cellspacing="0" border="0" width="100%">
+      <tr>
+	<td class="avatar" valign="top">
+	  <%= link_to image_tag(message.user.avatar_path, :alt => message.user.username), message.user %>
 	</td>
-	<td class="subject">
-	  <% if item.topic? %>
-	    <%= link_to item.title, topic_path(item, :r => 0) %>
-          <% else %>
-            <%= link_to item.topic.title,
-                  topic_path(
-                    item.topic,
-                    :anchor => "r" + item.reply_counter.to_s,
-                    :r => item.reply_counter
-                  )
-             %>
-          <% end %>
-	</td>
-	<td class="caller">
-	  <%= link_to item.user.username, item.user %>
-	</td>
-	<td class="timestamp">
-	  <%= time_ago_in_words(item.created_at) %><%= t('.ago') %>
+	<td class="details" valign="top">
+	  <div class="title">
+            <%= link_to_post_title message, :reply_prefix => t('.re') %>
+	  </div>
+	  <div class="meta">
+	    <%= time_ago_in_words(message.created_at) %><%= t('.after_timestamp') %><%= t('.before_replier') %>
+	    <strong><%= link_to message.user.username, message.user %></strong>
+	    <%= message.topic? ? t('.after_publisher') : t('.after_replier') %>
+	  </div>
+	  <div class="content">
+	    <%= wrap_text(message.content) %>
+	  </div>
 	</td>
       </tr>
-    <% end %>
-  </tbody>
-</table>
-<% reset_cycle("items") %>
+    </table>
+  </div>
+<% end %>
