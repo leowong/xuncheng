@@ -1,0 +1,35 @@
+<table class="item_listing">
+  <thead>
+    <tr>
+      <th class="replies"><%= t('.replies_count') %></th>
+      <th class="subject"><%= t('.subject') %></th>
+      <th class="author"><%= t('.author') %></th>
+      <th class="last_replied"><%= t('.timestamp') %></th>
+    </tr>
+  </thead>
+  <tbody>
+    <% items.each do |topic| %>
+      <tr class="<%= cycle("odd", "even", :name => "items") %>">
+      <td class="replies">
+	  <span <%= raw('class="mist"') if topic.replies.size == 0 %>>
+	      <%= topic.replies.size %>
+          </span>
+	</td>
+      <td class="subject">
+	  <%= link_to topic.title, topic %>
+	</td>
+      <td class="author">
+	  <% if (writer ||= nil) == "replier" && !topic.replies.empty? %>
+	    <%= link_to topic.replies.last.user.username, topic.replies.last.user %>
+	  <% else %>
+	    <%= link_to topic.user.username, topic.user %>
+	  <% end %>
+	</td>
+      <td class="last_replied">
+          <%= (topic.replies.empty? ? topic.created_at : topic.replies.last.created_at).to_datetime.strftime('%Y%m%d %H:%M:%S') %>
+</td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+<% reset_cycle("items") %>

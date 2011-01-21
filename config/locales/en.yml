@@ -45,14 +45,17 @@ en:
       after_rails: ""
     error_messages:
       errors: "Please fix the following problems first:"
-    message_listing:
-      ago: " ago"
     notification_listing:
       reply_counter: "Counter"
       subject: "Subject"
       caller: "By"
       timestamp: "At"
       ago: " ago"
+    item_listing:
+      replies_count: "Replies"
+      subject: "Subject"
+      author: "Author"
+      timestamp: "Last Replied"
     message_listing:
       re: "Re: "
       after_timestamp: " ago "

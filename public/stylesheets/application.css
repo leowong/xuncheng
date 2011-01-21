@@ -588,50 +588,65 @@ table tr.even td {
     background-color: #F9F9F9;
 }
 
+.item_listing th,
+.item_listing td,
 .message_listing th,
 .message_listing td {
     font-size: 14px;
     line-height: 24px;
 }
 
+.item_listing th.replies,
+.item_listing td.replies,
 .message_listing th.counter,
 .message_listing td.counter {
     width: 50px;
     text-align: right;
 }
 
+.item_listing td.replies,
 .message_listing td.counter {
     color: #393;
     font-weight: bold;
 }
 
+.item_listing th.subject,
+.item_listing td.subject,
 .message_listing th.subject,
 .message_listing td.subject {
     width: auto;
     text-align: left;
 }
 
+
+.item_listing th.author,
+.item_listing td.author,
 .message_listing th.caller,
 .message_listing td.caller {
     width: 80px;
     text-align: left;
 }
 
+.item_listing td.author a,
 .message_listing td.caller a {
     color: gray;
 }
 
+.item_listing td.author a:hover,
 .message_listing td.caller a:hover {
     color: #385F8A;
     text-decoration: none;
 }
 
+.item_listing th.last_replied,
+.item_listing td.last_replied,
 .message_listing th.timestamp,
 .message_listing td.timestamp {
     width: 110px;
     text-align: left;
 }
 
+.item_listing td.last_replied,
 .message_listing td.timestamp {
     color: #999;
     font-size: 12px;
