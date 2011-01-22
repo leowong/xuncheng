@@ -50,18 +50,6 @@
 <hr class="space" />
 <div class="box">
   <div class="cell">
-    <%= t('.recent_notifications') %>
-  </div>
-  <div class="cell">
-    <div class="notifications">
-      <%= render 'shared/notification_listing', :items => @notifications  %>
-    </div>
-  </div>
-</div>
-
-<hr class="space" />
-<div class="box">
-  <div class="cell">
     <%= t('.messages') %>
   </div>
   <%= render 'shared/message_listing', :messages => @messages %>

@@ -59,6 +59,7 @@ en:
     message_listing:
       re: "Re: "
       after_timestamp: " ago "
+      before_publisher: "published by"
       before_replier: "replied by"
       after_publisher: ""
       after_replier: ""
@@ -139,7 +140,7 @@ en:
       after_userid: "."
       before_timestamp: "Joined at"
       recent_notifications: "Recent Notifications"
-      messages: "Topics & Replies"
+      messages: "Messages"
 
   nodes:
     show:

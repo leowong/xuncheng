@@ -10,7 +10,9 @@
             <%= link_to_post_title message, :reply_prefix => t('.re') %>
 	  </div>
 	  <div class="meta">
-	    <%= time_ago_in_words(message.created_at) %><%= t('.after_timestamp') %><%= t('.before_replier') %>
+	    <%= time_ago_in_words(message.created_at) %><%=
+                t('.after_timestamp') %><%=
+                message.topic? ? t('.before_publisher') : t('.before_replier') %>
 	    <strong><%= link_to message.user.username, message.user %></strong>
 	    <%= message.topic? ? t('.after_publisher') : t('.after_replier') %>
 	  </div>

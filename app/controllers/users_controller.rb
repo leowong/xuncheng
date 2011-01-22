@@ -7,8 +7,7 @@ class UsersController < ApplicationController
 
   def show
     @user = User.find(params[:id])
-    @notifications = @user.unread_notifications.order('created_at DESC')
-    @messages = @user.posts.order('created_at DESC').limit(30)
+    @messages = Post.messages_of(@user).limit(30)
   end
 
   def new
