@@ -21,7 +21,7 @@ class Post < ActiveRecord::Base
   private
 
   def self.messages_of(user)
-    notification_ids = %(SELECT posts.id FROM posts INNER JOIN callings ON posts.id = callings.post_id WHERE (("callings".user_id = 1)))
+    notification_ids = %(SELECT posts.id FROM posts INNER JOIN callings ON posts.id = callings.post_id WHERE (("callings".user_id = :user_id)))
     where("posts.user_id = :user_id OR posts.id IN (#{notification_ids})", { :user_id => user }).
       order("posts.created_at DESC").
       select("DISTINCT posts.*")
