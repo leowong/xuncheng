@@ -249,12 +249,6 @@ zh-CN:
       after_rails: " 开发"
     error_messages:
       errors: "请改正以下错误之后再继续："
-    notification_listing:
-      reply_counter: "楼层"
-      subject: "主题"
-      caller: "来自"
-      timestamp: "时间"
-      ago: "前"
     item_listing:
       replies_count: "回复"
       subject: "标题"
