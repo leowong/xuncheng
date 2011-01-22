@@ -479,6 +479,18 @@ td {
     margin-bottom: 1em;
 }
 
+.box .cell .new_node_link {
+    float: right;
+}
+
+.box .cell .new_node_link a {
+    color: gray;
+}
+
+.box .cell .new_node_link a:hover {
+    color: #385F8A;
+}
+
 .box .cell .summary {
     color: gray;
 }

@@ -36,6 +36,7 @@ en:
       settings: "Settings"
     side:
       nodes: "Nodes"
+      new_node: "New"
       returned_user: "Returned user? Please"
     footer:
       started_from: " was launched on Jan 1, 2011"
@@ -137,10 +138,18 @@ en:
       messages: "Messages"
 
   nodes:
+    new:
+      new_node: "New node"
+      nodes: "Nodes"
     show:
       topics_total: "Topics Total"
       new_topic: "New Topic"
       be_the_first: "Be the first one!"
+    form:
+      create_node: "Create Node"
+    notice:
+      create_successful: "Node was successfully created."
+      update_successful: "Node was successfully updated."
 
   images:
     new:

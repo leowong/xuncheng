@@ -184,6 +184,9 @@ zh-CN:
       topic:
         title: "标题"
         content: "正文"
+      node:
+        name: "节点名称"
+        description: "详细描述"
 
   activemodel:
     errors:
@@ -240,6 +243,7 @@ zh-CN:
       settings: "设置"
     side:
       nodes: "节点"
+      new_node: "新建"
       returned_user: "如已有账户请"
     footer:
       started_from: "启动于 2011 年 1 月 1 日"
@@ -340,10 +344,18 @@ zh-CN:
       recent_notifications: "最新呼叫"
       messages: "消息"
   nodes:
+    new:
+      new_node: "新建节点"
+      nodes: "所有节点"
     show:
       topics_total: "主题总数"
       new_topic: "创建新主题"
       be_the_first: "本节点中暂时还没有主题，我们期待您发表第一篇！"
+    form:
+      create_node: "创建节点"
+    notice:
+      create_successful: "节点创建成功。"
+      update_successful: "节点更新成功。"
 
   images:
     new:

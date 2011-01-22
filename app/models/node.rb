@@ -5,6 +5,5 @@ class Node < ActiveRecord::Base
   has_many :topics, :through => :nodings
 
   validates :name, :presence => true
-
-  default_scope :order => 'nodes.created_at'
+  validates :description, :presence => true
 end

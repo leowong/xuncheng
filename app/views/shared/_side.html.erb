@@ -35,12 +35,15 @@
 <hr class="space" />
 <div class="box">
   <div class="cell">
+    <div class="new_node_link">
+      <%= link_to t('.new_node'), new_node_path %>
+    </div>
     <div class="summary">
       <%= t('.nodes') %>
     </div>
   </div>
   <div class="cell nodes">
-    <% Node.all.each do |node| %>
+    <% Node.order('created_at DESC').each do |node| %>
       <%= link_to node do %>
         <div>
 	  <span class="name"><%= node.name %></span>

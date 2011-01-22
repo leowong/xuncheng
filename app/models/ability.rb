@@ -9,7 +9,7 @@ class Ability
     else
       can :read, :all
       if user.role?(:author)
-        can :create, [Topic, Reply, Avatar, Image]
+        can :create, [Node, Topic, Reply, Avatar, Image]
       end
     end
   end
