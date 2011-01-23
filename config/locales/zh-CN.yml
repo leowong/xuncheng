@@ -351,6 +351,7 @@ zh-CN:
       topics_total: "主题总数"
       new_topic: "创建新主题"
       be_the_first: "本节点中暂时还没有主题，我们期待您发表第一篇！"
+      node_users: "邻居"
     form:
       create_node: "创建节点"
     notice:

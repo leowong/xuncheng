@@ -1,5 +1,21 @@
 <% title @node.name %>
 
+<% if @node.users.size > 0 %>
+  <%= content_for :people do %>
+    <hr class="space" />
+    <div class="box">
+      <div class="cell">
+        <%= t('.node_users') %>
+      </div>
+      <div class="cell nodes">
+        <% @node.users.each do |user| %>
+          <%= link_to image_tag(user.avatar_path(:mini), :alt => user.username), user %>
+        <% end %>
+      </div>
+    </div>
+  <% end %>
+<% end %>
+
 <div class="box">
   <div class="cell">
     <div class="topics_counter">

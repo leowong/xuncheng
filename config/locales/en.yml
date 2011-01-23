@@ -145,6 +145,7 @@ en:
       topics_total: "Topics Total"
       new_topic: "New Topic"
       be_the_first: "Be the first one!"
+      node_users: "Neighbors"
     form:
       create_node: "Create Node"
     notice:
