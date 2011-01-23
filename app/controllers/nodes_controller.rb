@@ -26,6 +26,8 @@ class NodesController < ApplicationController
     else
       render :action => "new"
     end
+  rescue ActiveRecord::StatementInvalid
+    redirect_to new_node_path
   end
 
   def update

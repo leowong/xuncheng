@@ -6,6 +6,6 @@ class Node < ActiveRecord::Base
   has_many :groupings
   has_many :users, :through => :groupings
 
-  validates :name, :presence => true
+  validates :name, :presence => true, :uniqueness => true
   validates :description, :presence => true
 end
