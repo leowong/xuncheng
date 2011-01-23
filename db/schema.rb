@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110123185232) do
+ActiveRecord::Schema.define(:version => 20110123202957) do
 
   create_table "assets", :force => true do |t|
     t.integer  "viewable_id"
@@ -56,6 +56,7 @@ ActiveRecord::Schema.define(:version => 20110123185232) do
     t.string   "description"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.boolean  "active"
   end
 
   add_index "nodes", ["name"], :name => "index_nodes_on_name", :unique => true

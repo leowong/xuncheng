@@ -33,11 +33,19 @@
         <span class="ash"><%= @node.description %></span>
       </div>
     <% end %>
-    <div>
-      <hr class="space" style="margin-bottom:15px" />
-      <%= link_to t('.new_topic'), new_node_topic_path(@node), :class => 'super normal button' %>
-      <hr class="space" style="margin-bottom:4px" />
-    </div>
+    <% if @node.active %>
+      <div>
+        <hr class="space" style="margin-bottom:15px" />
+        <%= link_to t('.new_topic'), new_node_topic_path(@node), :class => 'super normal button' %>
+        <hr class="space" style="margin-bottom:4px" />
+      </div>
+    <% else %>
+      <div>
+        <hr class="space" style="margin-bottom:15px" />
+        <%= t('.node_closed') %>
+        <hr class="space" style="margin-bottom:4px" />
+      </div>
+    <% end %>      
   </div>
   <% unless @node.topics.empty? %>
     <div class="cell">

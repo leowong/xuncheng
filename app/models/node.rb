@@ -1,5 +1,5 @@
 class Node < ActiveRecord::Base
-  attr_accessible :name, :description
+  attr_accessible :name, :description, :active
 
   has_many :nodings
   has_many :topics, :through => :nodings
@@ -8,4 +8,6 @@ class Node < ActiveRecord::Base
 
   validates :name, :presence => true, :uniqueness => true
   validates :description, :presence => true
+
+  scope :active, where(:active => true)
 end

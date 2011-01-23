@@ -146,6 +146,7 @@ en:
       new_topic: "New Topic"
       be_the_first: "Be the first one!"
       node_users: "Neighbors"
+      node_closed: "The node was closed."
     form:
       create_node: "Create Node"
     notice:
