@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110116130018) do
+ActiveRecord::Schema.define(:version => 20110123141237) do
 
   create_table "assets", :force => true do |t|
     t.integer  "viewable_id"
@@ -40,6 +40,16 @@ ActiveRecord::Schema.define(:version => 20110116130018) do
   end
 
   add_index "callings", ["user_id"], :name => "index_callings_on_user_id"
+
+  create_table "groupings", :force => true do |t|
+    t.integer  "user_id"
+    t.integer  "node_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "groupings", ["node_id"], :name => "index_groupings_on_node_id"
+  add_index "groupings", ["user_id"], :name => "index_groupings_on_user_id"
 
   create_table "nodes", :force => true do |t|
     t.string   "name"
