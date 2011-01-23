@@ -22,6 +22,7 @@ class NodesController < ApplicationController
     @node = Node.new(params[:node])
 
     if @node.save
+      @node.users << current_user
       redirect_to(@node, :notice => t('nodes.notice.create_successful'))
     else
       render :action => "new"
