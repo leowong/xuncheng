@@ -152,6 +152,10 @@ en:
     notice:
       create_successful: "Node was successfully created."
       update_successful: "Node was successfully updated."
+    join:
+      join_node: "Join Node"
+    quit:
+      quit_node: "Quit Node"
 
   images:
     new:

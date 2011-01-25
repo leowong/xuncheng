@@ -1,0 +1,6 @@
+<%= form_for current_user.groupings.find_by_node_id(@node),
+             :html => { :method => :delete } do |f| %>
+  <div class="actions">
+    <%= f.submit t('.quit_node'), :class => "super normal button" %>
+  </div>
+<% end %>

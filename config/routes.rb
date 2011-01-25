@@ -17,6 +17,7 @@ Xuncheng::Application.routes.draw do
 
   resources :users, :only => [:index, :show, :new, :edit, :create, :update], :path => "u"
   resources :images, :only => [:new, :create]
+  resources :groupings, :only => [:create, :destroy]
 
   match 'sitemap.xml' => 'sitemap#sitemap'
 

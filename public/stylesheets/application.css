@@ -922,3 +922,7 @@ a#paginate {
     font-size: 10px;
     margin: 0px 0 12px 0;
 }
+
+table.node_buttons {
+    width: auto;
+}

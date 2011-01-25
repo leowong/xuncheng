@@ -36,7 +36,16 @@
     <% if @node.active? %>
       <div>
         <hr class="space" style="margin-bottom:15px" />
-        <%= link_to t('.new_topic'), new_node_topic_path(@node), :class => 'super normal button' %>
+	<table class="node_buttons">
+	  <tr>
+	    <td>
+              <%= link_to t('.new_topic'), new_node_topic_path(@node), :class => 'super normal button' %>
+            </td>
+            <td>
+ 	      <%= render 'join_form' if current_user %>
+            </td>
+          </tr>
+        </table>
         <hr class="space" style="margin-bottom:4px" />
       </div>
     <% else %>

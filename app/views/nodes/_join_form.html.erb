@@ -1,0 +1,7 @@
+<div id="join_form">
+  <% if @node.users.include?(current_user) %>
+    <%= render 'quit' %>
+  <% else %>
+    <%= render 'join' %>
+  <% end %>
+</div>

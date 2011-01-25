@@ -46,6 +46,14 @@ class User < ActiveRecord::Base
     avatar.nil? ? "/images/avatar/default/#{style}.png" : avatar.attachment.url(style.to_sym)
   end
 
+  def join_group(node)
+    node.users << self unless node.users.include?(self)
+  end
+
+  def quit_group(node)
+    node.users.delete(self) if node.users.include?(self)
+  end
+
   protected
 
   def self.find_for_database_authentication(conditions)
