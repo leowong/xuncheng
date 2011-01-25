@@ -33,7 +33,7 @@
         <span class="ash"><%= @node.description %></span>
       </div>
     <% end %>
-    <% if @node.active %>
+    <% if @node.active? %>
       <div>
         <hr class="space" style="margin-bottom:15px" />
         <%= link_to t('.new_topic'), new_node_topic_path(@node), :class => 'super normal button' %>
@@ -54,9 +54,9 @@
       </div>
     </div>
   <% end %>
-  <div class="cell">
-    <% if @node.topics.empty? %>
-	<%= t('.be_the_first') %>
-    <% end %>
-  </div>
+  <% if @node.active? and @node.topics.empty? %>
+    <div class="cell">
+      <%= t('.be_the_first') %>
+    </div>
+  <% end %>
 </div>

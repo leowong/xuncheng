@@ -19,7 +19,10 @@ class NodesController < ApplicationController
   end
 
   def create
-    @node = Node.new(params[:node].merge(:active => true))
+    unless current_user.role?(:admin)
+      params[:node][:active] = true
+    end
+    @node = Node.new(params[:node])
 
     if @node.save
       @node.users << current_user

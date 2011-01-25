@@ -18,14 +18,16 @@
 	<%= f.text_field :description, :class => "sl" %>
       </td>
     </tr>
-    <tr>
-      <td>
-      </td>
-      <td>
-        <%= f.check_box :active %>
-	<%= f.label :active %>
-      </td>
-    </tr>
+    <% if current_user.role? :admin %>
+      <tr>
+        <td>
+        </td>
+        <td>
+          <%= f.check_box :active %>
+	  <%= f.label :active %>
+        </td>
+      </tr>
+    <% end %>
     <tr>
       <td>
       </td>

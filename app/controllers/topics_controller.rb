@@ -43,7 +43,7 @@ class TopicsController < ApplicationController
     @topic.nodes = [@node]
     @topic.user_id = current_user.id
 
-    if @node.active and @topic.save
+    if @node.active? and @topic.save
       @topic.notify_users
       mark_used_images(@topic)
       redirect_to(@topic, :notice => t('topics.notice.create_successful'))
