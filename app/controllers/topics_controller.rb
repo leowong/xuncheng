@@ -18,7 +18,6 @@ class TopicsController < ApplicationController
   def show
     @topic = Topic.find(params[:id])
     @topic.update_reply_counters if @topic.replies.where(:reply_counter => nil).size > 0
-    mark_message_read(@topic, params[:r]) if current_user and params[:r]
     @topic.increment_pageviews
 
     respond_to do |format|
@@ -69,17 +68,5 @@ class TopicsController < ApplicationController
 
     @topic.destroy
     redirect_to(topics_url)
-  end
-
-  private
-
-  def mark_message_read(topic, reply_counter)
-    if reply_counter.to_i == 0
-      post = topic
-    else
-      post = Reply.where(:topic_id => topic.id, :reply_counter => params[:r]).first
-    end
-    calling = current_user.callings.where(:post_id => post.id).first if post
-    calling.update_attribute(:read, true) if calling and calling.read.nil?
   end
 end
