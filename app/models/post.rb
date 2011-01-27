@@ -6,6 +6,7 @@ class Post < ActiveRecord::Base
     users_to_notify.each do |user|
       user.notifications << self unless user.notifications.include?(self)
     end
+    self.user.notifications << self unless self.user.notifications.include?(self)
   end
 
   def topic?
@@ -16,16 +17,7 @@ class Post < ActiveRecord::Base
     type == "Reply"
   end
 
-  scope :messages, lambda { |user| messages_of(user) }
-
   private
-
-  def self.messages_of(user)
-    notification_ids = %(SELECT posts.id FROM posts INNER JOIN callings ON posts.id = callings.post_id WHERE (("callings".user_id = :user_id)))
-    where("posts.user_id = :user_id OR posts.id IN (#{notification_ids})", { :user_id => user }).
-      order("posts.created_at DESC").
-      select("DISTINCT posts.*")
-  end
 
   def users_to_notify
     text = content
