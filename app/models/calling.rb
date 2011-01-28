@@ -7,7 +7,7 @@ class Calling < ActiveRecord::Base
 
   scope :with_type, lambda { |type| where("types_mask & #{2**TYPES.index(type.to_s)} > 0") }
 
-  TYPES = %w[author notification]
+  TYPES = %w[author notification subscriber]
 
   def types=(types)
     self.types_mask = (types & TYPES).map { |t| 2**TYPES.index(t) }.sum

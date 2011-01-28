@@ -26,6 +26,7 @@ class User < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable
 
   scope :with_role, lambda { |role| where("roles_mask & #{2**ROLES.index(role.to_s)} > 0") }
+  scope :node_subscribers, lambda { |post| subscribers_for(post) }
 
   ROLES = %w[admin moderator author]
 
@@ -58,6 +59,13 @@ class User < ActiveRecord::Base
   def self.find_for_database_authentication(conditions)
     login = conditions.delete(:login)
     where(conditions).where(["username = :value OR email = :value", { :value => login }]).first
+  end
+
+  def self.subscribers_for(post)
+    node_ids = %(SELECT nodes.id FROM nodes INNER JOIN nodings ON nodes.id = nodings.node_id WHERE (nodings.topic_id = :post_id))
+    joins(:groupings).
+      where("groupings.node_id IN (#{node_ids})", { :post_id => post }).
+      select('DISTINCT users.*')
   end
 
   private

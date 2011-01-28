@@ -8,6 +8,12 @@ class Post < ActiveRecord::Base
     users_to_notify.each do |user|
       notify_user(user, "notification")
     end
+
+    if self.topic?
+      User.node_subscribers(self).each do |user|
+        notify_user(user, "subscriber")
+      end
+    end
   end
 
   def topic?
