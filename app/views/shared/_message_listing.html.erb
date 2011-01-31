@@ -14,7 +14,13 @@
                 t('.after_timestamp') %><%=
                 message.topic? ? t('.before_publisher') : t('.before_replier') %>
 	    <strong><%= link_to message.user.username, message.user %></strong>
-	    <%= message.topic? ? t('.after_publisher') : t('.after_replier') %>
+	    <% if message.topic? %>
+	      <%= t('.after_publisher') %><% if message.nodes.size > 0 %><%= t('.before_nodes') %>
+	        <strong><%= raw links_to_node_names(message, ' • ') %></strong>
+	      <% end %>
+	    <% else %>
+	      <%= t('.after_replier') %>
+	    <% end %>
 	  </div>
 	  <div class="content">
 	    <%= wrap_text(message.content) %>

@@ -12,10 +12,10 @@
 	  <%= link_to topic.title, "#{url_for(topic)}#u#{topic.replies.size}" %>
 	</div>
 	<div class="meta">
-	  <!-- inevitable mess due to bilingual support -->
-	  <%= t('.before_author') %> <strong><%= link_to topic.user.username, topic.user %></strong>
-	  <% if topic.nodes.size > 0 %>
-	    <%= t('.before_nodes') %> <strong><%= raw links_to_node_names(topic, ' • ') %></strong>
+	  <%= t('.before_author') %>
+	  <strong><%= link_to topic.user.username, topic.user %></strong>
+	  <%= t('.after_author') %><% if topic.nodes.size > 0 %><%=
+            t('.before_nodes') %> <strong><%= raw links_to_node_names(topic, ' • ') %></strong>
           <% end %>
 	  <br />
 	  <%= time_ago_in_words(topic.updated_at) %><%= t('.after_timestamp') %><% unless topic.replies.empty? %><%= t('.before_replier') %>

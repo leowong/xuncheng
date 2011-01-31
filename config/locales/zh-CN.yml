@@ -265,11 +265,13 @@ zh-CN:
       before_replier: "由"
       after_publisher: "发布"
       after_replier: "回复"
+      before_nodes: "于"
 
   topics:
     topic:
       before_author: ""
-      before_nodes: "发布于"
+      after_author: "发布"
+      before_nodes: "于"
       after_timestamp: "前"
       before_replier: "由"
       after_replier: "回复"

@@ -732,6 +732,10 @@ table.user td.details h2 {
     line-height: 22px;
 }
 
+table.user td.details h2 a {
+    color: #000;
+}
+
 table.user td.details .signature {
     color: #999;
     font-size: 16px;

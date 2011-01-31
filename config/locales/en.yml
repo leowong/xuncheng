@@ -58,10 +58,12 @@ en:
       before_replier: "replied by"
       after_publisher: ""
       after_replier: ""
+      before_nodes: " in "
 
   topics:
     topic:
       before_author: "By"
+      after_author: ""
       before_nodes: "in"
       after_timestamp: " ago "
       before_replier: "replied by"

@@ -5,12 +5,12 @@
     <table cellpadding="0" cellspacing="0" border="0" width="100%" class="user">
       <tr>
 	<td class="avatar" width="73" valign="top" align="center">
-	  <%= image_tag @user.avatar_path(:original), :alt => @user.username %>
+	  <%= link_to image_tag(@user.avatar_path(:original), :alt => @user.username), @user %>
 	</td>
 	<td class="details" width="auto" align="left" valign="top">
 
 	  <div class="username">
-	    <h2><%= @user.username %></h2>
+	    <h2><%= link_to @user.username, @user %></h2>
 	  </div>
 
 	  <% if @user.signature %>
