@@ -13,7 +13,7 @@
     <div class="breadcrumbs">
       <%= link_to t('site.home'), root_url %>
       <span class="separator">&nbsp;›&nbsp;</span>
-      <%= link_to @topic.nodes.first.name, @topic.nodes.first %>
+      <%= raw links_to_node_names(@topic, ' • ') %>
     </div>
     <h2><%= @topic.title %></h2>
     <div class="meta">

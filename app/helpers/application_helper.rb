@@ -60,6 +60,12 @@ module ApplicationHelper
     end 
   end
 
+  def links_to_node_names(topic, separator=', ')
+    topic.nodes.map do |node|
+      link_to h(node.name), node
+    end.join(separator)
+  end
+
   private
 
   def trim_url(url, max_width = 42)

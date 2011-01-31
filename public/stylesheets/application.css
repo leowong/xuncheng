@@ -923,6 +923,20 @@ a#paginate {
     margin: 0px 0 12px 0;
 }
 
-table.node_buttons {
-    width: auto;
+.join_form {
+    float: right;
+}
+
+input#grouping_submit {
+    color: #555;
+    font-size: 12px;
+    background-color: #EEE;
+    border: none;
+    padding: 1px 3px;
+    margin: 0;
+    cursor: pointer;
+}
+
+input#grouping_submit:hover {
+    background-color: #E0E0E0;
 }
